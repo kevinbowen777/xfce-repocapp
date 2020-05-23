@@ -1,0 +1,17 @@
+apps/
+core/
+exo/
+garcon/
+libxfce4ui/
+libxfce4util/
+panel-plugins/
+thunar-plugins/
+thunar/
+xfce4-appfinder/
+xfce4-build/
+xfce4-panel/
+xfce4-session/
+xfce4-settings/
+xfconf/
+xfdesktop/
+xfwm4/
