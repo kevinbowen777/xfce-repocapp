@@ -7,7 +7,7 @@
 #
 #
 # version: 0.1
-# updated: 20200523
+# updated: 20200821
 # @author: kevin.bowen@gmail.com
 #
 # ---------------------------------------------------------------------- #
@@ -15,12 +15,12 @@
 import os
 
 
-panel_list = ['xfce-screensaver', 'xfmpc', 'xfdashboard',
+panel_list = ['xfce4-screensaver', 'xfmpc', 'xfdashboard',
               'xfce4-volumed-pulse', 'xfce4-terminal', 'xfce4-taskmanager',
               'xfce4-screenshooter', 'xfce4-panel-profiles',
               'xfce4-notifyd', 'xfce4-mixer', 'xfce4-dict',
               'xfburn', 'ristretto', 'parole', 'mousepad',
-              'gigalo', 'catfish']
+              'gigolo', 'catfish']
 
 os.mkdir('../apps')
 os.chdir('../apps')
