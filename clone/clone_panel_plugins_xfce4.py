@@ -2,12 +2,12 @@
 
 # ---------------------------------------------------------------------- #
 #
-# Name: git_panel_plugins_xfce4.py
-# Purpose: Pulls Xfce4 git panel-plugins code from GitLab repositories
+# Name: clone_panel_plugins_xfce4.py
+# Purpose: Clones Xfce4 git panel-plugins repos from gitlab.xfce.org
 #
 #
 # version: 0.2
-# updated: 20200523
+# updated: 20200917
 # @author: kevin.bowen@gmail.com
 #
 # ---------------------------------------------------------------------- #
@@ -32,8 +32,8 @@ panel_list = ['xfce4-battery-plugin', 'xfce4-calculator-plugin',
               'xfce4-wavelan-plugin', 'xfce4-weather-plugin',
               'xfce4-whiskermenu-plugin', 'xfce4-xkb-plugin']
 
-os.mkdir('../panel-plugins')
-os.chdir('../panel-plugins')
+os.mkdir('../../panel-plugins')
+os.chdir('../../panel-plugins')
 
 for item in panel_list:
     os.system('git clone https://gitlab.xfce.org/panel-plugins/' + item)

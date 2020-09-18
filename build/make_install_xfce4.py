@@ -7,12 +7,12 @@
 import os
 
 build_list = ['libxfce4util', 'xfconf', 'libxfce4ui', 'garcon', 'exo',
-                'xfce4-panel', 'thunar', 'xfce4-settings',
-                'xfce4-session', 'xfdesktop', 'xfwm4', 'xfce4-appfinder']
+              'xfce4-panel', 'thunar', 'xfce4-settings',
+              'xfce4-session', 'xfdesktop', 'xfwm4', 'xfce4-appfinder']
 
 os.environ["PKG_CONFIG_PATH"] = "/usr/lib/pkgconfig:/usr"
 print(os.environ["PKG_CONFIG_PATH"])
 for item in build_list:
-   os.chdir(item)
-   os.system('./autogen.sh --prefix=/usr && make >> ../logs/xfce4_build.log')
-   os.chdir("..")
+    os.chdir(item)
+    os.system('sudo make install')
+    os.chdir("..")
