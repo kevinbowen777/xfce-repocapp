@@ -23,5 +23,6 @@ os.chdir('../www')
 
 for item in xfce4_www_list:
     os.chdir(item)
+    print('\n' + item + ':')
     os.system('git pull')
     os.chdir('../')

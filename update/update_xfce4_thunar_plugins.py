@@ -24,5 +24,6 @@ os.chdir('../thunar-plugins')
 
 for item in xfce4_thunar_plugins_list:
     os.chdir(item)
+    print('\n' + item + ':')
     os.system('git pull ')
     os.chdir('../')

@@ -26,5 +26,6 @@ os.chdir('../apps')
 
 for item in xfce4_apps_list:
     os.chdir(item)
+    print('\n' + item + ':')
     os.system('git pull ')
     os.chdir('../')

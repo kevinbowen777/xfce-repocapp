@@ -38,5 +38,6 @@ os.chdir('../panel-plugins')
 
 for item in xfce4_panel_plugins_list:
     os.chdir(item)
+    print('\n' + item + ':')
     os.system('git pull ')
     os.chdir('../')

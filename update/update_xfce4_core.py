@@ -24,5 +24,6 @@ os.chdir('../core')
 
 for item in xfce4_core_list:
     os.chdir(item)
+    print('\n' + item + ':')
     os.system('git pull ')
     os.chdir('../')
