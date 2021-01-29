@@ -41,6 +41,7 @@ A collection of scripts to maintain local Xfce repositories
 ----
 ### Installation
 
+        git clone https://gitlab.com/kevinbowen/xfce4-build.git
         git clone https://github.com/kevinbowen777/xfce4-build.git
 
 ----
