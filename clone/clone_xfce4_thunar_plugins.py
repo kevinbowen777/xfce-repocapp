@@ -23,4 +23,4 @@ os.makedirs('../thunar-plugins', exist_ok=True)
 os.chdir('../thunar-plugins')
 
 for item in xfce4_thunar_plugins_list:
-    os.system('git  clone https:/lab.xfce.org/thunar-plugins/' + item + '.git')
+    os.system('git clone https://gitlab.xfce.org/thunar-plugins/' + item + '.git')
