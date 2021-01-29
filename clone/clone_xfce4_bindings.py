@@ -2,12 +2,12 @@
 
 # ---------------------------------------------------------------------- #
 #
-# Name: clone_bindings_xfce4.py
+# Name: clone_xfce4_bindings.py
 # Purpose: Clone Xfce4 git bindings repositories from gitlab.xfce.org/bindings
 #
 #
-# version: 0.2
-# updated: 20200917
+# version: 0.3
+# updated: 20210128
 # @author: kevin.bowen@gmail.com
 #
 # ---------------------------------------------------------------------- #
@@ -15,10 +15,10 @@
 import os
 
 
-bindings_list = ['thunarx-python', 'xfce4-vala']
+xfce4_bindings_list = ['thunarx-python', 'xfce4-vala']
 
-os.mkdir('../../bindings')
-os.chdir('../../bindings')
+os.makedirs('../bindings', exist_ok=True)
+os.chdir('../bindings')
 
-for item in bindings_list:
-    os.system('git clone https://gitlab.xfce.org/bindings/' + item)
+for item in xfce4_bindings_list:
+    os.system('git clone https://gitlab.xfce.org/bindings/' + item + '.git')

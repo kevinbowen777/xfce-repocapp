@@ -2,12 +2,12 @@
 
 # ---------------------------------------------------------------------- #
 #
-# Name: update_bindings_xfce4.py
-# Purpose: Update Xfce4 git bindings repositories from gitlab.xfce.org/bindings
+# Name: update_xfce4_bindings.py
+# Purpose: update local Xfce4 binding repositories pulled from
+#           https://gitlab.xfce.org/bindings
 #
-#
-# version: 0.1
-# updated: 20200917
+# version: 0.3
+# updated: 20210128
 # @author: kevin.bowen@gmail.com
 #
 # ---------------------------------------------------------------------- #
@@ -15,11 +15,11 @@
 import os
 
 
-bindings_list = ['thunarx-python', 'xfce4-vala']
+xfce4_bindings_list = ['thunarx-python', 'xfce4-vala']
 
-os.chdir('../../bindings')
+os.chdir('../bindings')
 
-for item in bindings_list:
+for item in xfce4_bindings_list:
     os.chdir(item)
     os.system('git pull')
     os.chdir('../')

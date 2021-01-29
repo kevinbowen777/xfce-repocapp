@@ -2,7 +2,7 @@
 
 # Xfce-build
 
-A collection of scripts to clone & update Xfce repositories
+A collection of scripts to maintain local Xfce repositories
 
 ----
 ### Build scripts
@@ -10,27 +10,38 @@ A collection of scripts to clone & update Xfce repositories
 ----
 ### Clone scripts
 
- - clone_apps_xfce4.py - Pulls Xfce4 git apps code from gitlab.xfce.org
- - clone_panel_plugins_xfce4.py - Pulls Xfce4 git panel-plugins code from gitlab.xfce.org
- - clone_bindings_xfce4.py
- - clone_thunar_plugins_xfce4.py
- - clone_core_xfce4.py - Pulls Xfce4 git core code from gitlab.xfce.org
- - clone_www_xfce4.py
+        Clone Xfce4 repositories from https://gitlab.xfce.org
+
+ - clone_xfce4_apps.py
+ - clone_xfce4_bindings.py
+ - clone_xfce4_core.py 
+ - clone_xfce4_panel_plugins.py
+ - clone_xfce4_thunar_plugins.py
+ - clone_xfce4_www.py
 
 ----
 ### Purge scripts
 
+ - purge_xfce4_apps.py
+ - purge_xfce4_core.py
+ - purge_xfce4_bindings.py
+ - purge_xfce4_panel_plugins.py
+ - purge_xfce4_thunar_plugins.py
+ - purge_xfce4_www.py
+
 ----
 ### Update scripts
 
- - update_apps_xfce4.py - Pulls Xfce4 git apps code from gitlab.xfce.org
- - update_panel_plugins_xfce4.py - Pulls Xfce4 git panel-plugins code from gitlab.xfce.org
- - update_bindings_xfce4.py
- - update_thunar_plugins_xfce4.py
- - update_core_xfce4.py - Pulls Xfce4 git core code from gitlab.xfce.org
-
+ - update_xfce4_apps.py
+ - update_xfce4_bindings.py
+ - update_xfce4_core.py
+ - update_xfce4_panel_plugins.py
+ - update_xfce4_thunar_plugins.py
+ - update_xfce4_www.py
 ----
 ### Installation
+
+        git clone https://github.com/kevinbowen777/xfce4-build.git
 
 ----
 ### Reporting Bugs
