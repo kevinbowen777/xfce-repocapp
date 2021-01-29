@@ -24,4 +24,4 @@ os.makedirs('../core', exist_ok=True)
 os.chdir('../core')
 
 for item in xfce4_core_list:
-    os.system('clone https:/lab.xfce.org/xfce/' + item + '.git')
+    os.system('git clone https://gitlab.xfce.org/xfce/' + item + '.git')
