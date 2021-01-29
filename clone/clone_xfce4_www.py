@@ -23,4 +23,4 @@ os.makedirs('../www', exist_ok=True)
 os.chdir('../www')
 
 for item in xfce4_www_list:
-    os.system('git clone https:/lab.xfce.org/www/' + item + '.git')
+    os.system('git clone https://gitlab.xfce.org/www/' + item + '.git')
