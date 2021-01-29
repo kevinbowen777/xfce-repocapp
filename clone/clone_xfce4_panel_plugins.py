@@ -39,4 +39,4 @@ os.makedirs('../panel-plugins', exist_ok=True)
 os.chdir('../panel-plugins')
 
 for item in xfce4_panel_plugins_list:
-    os.system('git  clone https:/lab.xfce.org/panel-plugins/' + item + '.git')
+    os.system('git clone https://gitlab.xfce.org/panel-plugins/' + item + '.git')
