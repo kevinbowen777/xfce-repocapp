@@ -26,4 +26,4 @@ os.makedirs('../apps', exist_ok=True)
 os.chdir('../apps')
 
 for item in xfce4_apps_list:
-    os.system('clone https:/lab.xfce.org/apps/' + item + '.git')
+    os.system('git clone https://gitlab.xfce.org/apps/' + item + '.git')
