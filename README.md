@@ -7,10 +7,19 @@ A collection of scripts to maintain local Xfce repositories
 ----
 ### Build scripts
 
+        Run autogen & make against repositories
+
+ - autogen_make_xfce_apps.py
+ - autogen_make_xfce_bindings.py
+ - autogen_make_xfce_core.py
+ - autogen_make_xfce_panel_plugins.py
+ - autogen_make_xfce_template.py
+ - autogen_make_xfce_thunar_plugins.py
+
 ----
 ### Clone scripts
 
-        Clone Xfce4 repositories from https://gitlab.xfce.org
+        Clone Xfce repositories from https://gitlab.xfce.org
 
  - clone_xfce4_apps.py
  - clone_xfce4_bindings.py
