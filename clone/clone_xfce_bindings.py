@@ -13,9 +13,10 @@
 # ---------------------------------------------------------------------- #
 
 import os
+import sys
+sys.path.append('./')
 
-
-xfce_bindings_list = ['thunarx-python', 'xfce4-vala']
+from repo_arrays import xfce_bindings_list
 
 os.makedirs('../bindings', exist_ok=True)
 os.chdir('../bindings')
