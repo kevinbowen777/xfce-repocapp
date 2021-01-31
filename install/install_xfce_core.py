@@ -2,7 +2,7 @@
 
 # ---------------------------------------------------------------------- #
 #
-# Name: install_xfce_template.py
+# Name: install_xfce_core.py
 # Purpose: install local Xfce core repositories
 #
 # version: 0.1
@@ -19,8 +19,6 @@ xfce_core_list = ['exo', 'garcon', 'libxfce4ui', 'libxfce4util',
              'xfce4-panel', 'xfce4-power-manager', 'xfce4-session',
              'xfce4-settings', 'xfconf', 'xfdesktop', 'xfwm4']
 
-os.environ["PKG_CONFIG_PATH"] = "/usr/lib/pkgconfig:/usr"
-print(os.environ["PKG_CONFIG_PATH"])
 for item in xfce_core_list:
     os.chdir(item)
     os.system('sudo make install')
