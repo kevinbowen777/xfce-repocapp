@@ -34,5 +34,5 @@ os.environ["PKG_CONFIG_PATH"] = "/usr/lib/pkgconfig:/usr"
 print(os.environ["PKG_CONFIG_PATH"])
 for item in xfce_panel_plugins_list:
     os.chdir(item)
-    os.system('./autogen.sh --prefix=/usr && make >> ../logs/xfce4_build.log')
+    os.system('./autogen.sh --prefix=/usr && make >> ../logs/xfce_build.log')
     os.chdir("..")
