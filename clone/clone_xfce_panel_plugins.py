@@ -2,13 +2,12 @@
 
 # ---------------------------------------------------------------------- #
 #
-# Name: clone_xfce4_panel_plugins.py
-# Purpose: Clones Xfce4 panel-plugins repos from
+# Name: clone_xfce_panel_plugins.py
+# Purpose: Clones Xfce4 panel-plugins repositories pulled  from
 #           https://gitlab.xfce.org/panel-plugins
 #
-#
 # version: 0.3
-# updated: 20210128
+# updated: 20210130
 # @author: kevin.bowen@gmail.com
 #
 # ---------------------------------------------------------------------- #
@@ -16,7 +15,7 @@
 import os
 
 
-xfce4_panel_plugins_list = ['xfce4-battery-plugin', 'xfce4-calculator-plugin',
+xfce_panel_plugins_list = ['xfce4-battery-plugin', 'xfce4-calculator-plugin',
                             'xfce4-clipman-plugin', 'xfce4-cpufreq-plugin',
                             'xfce4-cpugraph-plugin', 'xfce4-datetime-plugin',
                             'xfce4-diskperf-plugin', 'xfce4-embed-plugin',
@@ -38,5 +37,5 @@ xfce4_panel_plugins_list = ['xfce4-battery-plugin', 'xfce4-calculator-plugin',
 os.makedirs('../panel-plugins', exist_ok=True)
 os.chdir('../panel-plugins')
 
-for item in xfce4_panel_plugins_list:
+for item in xfce_panel_plugins_list:
     os.system('git clone https://gitlab.xfce.org/panel-plugins/' + item + '.git')
