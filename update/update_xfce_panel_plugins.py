@@ -2,12 +2,12 @@
 
 # ---------------------------------------------------------------------- #
 #
-# Name: update_xfce4_panel-plugins.py
-# Purpose: update local Xfce4 panel-plugin  repositories from
+# Name: update_xfce_panel-plugins.py
+# Purpose: update local Xfce panel-plugin repositories pulled from
 #           https://gitlab.xfce.org/panel-plugins
 #
 # version: 0.3
-# updated: 20210128
+# updated: 20210130
 # @author: kevin.bowen@gmail.com
 #
 # ---------------------------------------------------------------------- #
@@ -15,7 +15,7 @@
 import os
 
 
-xfce4_panel_plugins_list = ['xfce4-battery-plugin', 'xfce4-calculator-plugin',
+xfce_panel_plugins_list = ['xfce4-battery-plugin', 'xfce4-calculator-plugin',
                             'xfce4-clipman-plugin', 'xfce4-cpufreq-plugin',
                             'xfce4-cpugraph-plugin', 'xfce4-datetime-plugin',
                             'xfce4-diskperf-plugin', 'xfce4-embed-plugin',
@@ -36,7 +36,7 @@ xfce4_panel_plugins_list = ['xfce4-battery-plugin', 'xfce4-calculator-plugin',
 
 os.chdir('../panel-plugins')
 
-for item in xfce4_panel_plugins_list:
+for item in xfce_panel_plugins_list:
     os.chdir(item)
     print('\n' + item + ':')
     os.system('git pull ')
