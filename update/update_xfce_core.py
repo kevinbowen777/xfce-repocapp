@@ -6,24 +6,22 @@
 # Purpose: update local Xfce core repositories pulled from
 #           https://gitlab.xfce.org/xfce
 #
-# version: 0.3
-# updated: 20210130
+# version: 0.5
+# updated: 20210131
 # @author: kevin.bowen@gmail.com
 #
 # ---------------------------------------------------------------------- #
 
 import os
+import sys
+sys.path.append('./')
 
-xfce_core_list = ['exo', 'garcon', 'libxfce4ui', 'libxfce4util',
-                   'thunar', 'thunar-volman', 'tumbler',
-                   'xfce4-appfinder', 'xfce4-dev-tools',
-                   'xfce4-panel', 'xfce4-power-manager', 'xfce4-session',
-                   'xfce4-settings', 'xfconf', 'xfdesktop', 'xfwm4']
+from repo_arrays import xfce_core_list
 
 os.chdir('../core')
 
 for item in xfce_core_list:
     os.chdir(item)
-    print('\n' + item + ':')
-    os.system('git pull ')
+    print('Updating ' + item + ':')
+    os.system('git pull')
     os.chdir('../')
