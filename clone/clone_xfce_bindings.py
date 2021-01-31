@@ -6,8 +6,8 @@
 # Purpose: Clone Xfce bindings repositories pulled from 
 #           https://gitlab.xfce.org/bindings
 #
-# version: 0.3
-# updated: 20210130
+# version: 0.5
+# updated: 20210131
 # @author: kevin.bowen@gmail.com
 #
 # ---------------------------------------------------------------------- #

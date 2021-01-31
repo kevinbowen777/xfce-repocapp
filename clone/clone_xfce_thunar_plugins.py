@@ -6,18 +6,17 @@
 # Purpose: Clones Xfce4 thunar-plugins repositories pulled from
 #           https:/lab.xfce.org/thunar-plugins
 #
-# version: 0.3
-# updated: 20210130
+# version: 0.5
+# updated: 20210131
 # @author: kevin.bowen@gmail.com
 #
 # ---------------------------------------------------------------------- #
 
 import os
+import sys
+sys.path.append('./')
 
-
-xfce_thunar_plugins_list = ['thunar-archive-plugin',
-                             'thunar-media-tags-plugin',
-                             'thunar-shares-plugin', 'thunar-vcs-plugin']
+from repo_arrays import xfce_thunar_plugins_list
 
 os.makedirs('../thunar-plugins', exist_ok=True)
 os.chdir('../thunar-plugins')
