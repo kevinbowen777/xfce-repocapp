@@ -24,15 +24,15 @@ select options in "${menu[@]}"; do
 	    # optionally call a function or run some code here
             ;;
         "Build")
-            echo "We are building some Xfce shit."
+            echo "We are building some Xfce sources."
 	    # optionally call a function or run some code here
             ;;
         "Purge")
-            echo "We are purging some Xfce shit."
+            echo "We are purging some Xfce sources."
 	    # optionally call a function or run some code here
             ;;
         "Update")
-            echo "We are updating some Xfce shit."
+            echo "We are updating some Xfce sources."
 	    # optionally call a function or run some code here
 	    break
             ;;
