@@ -6,23 +6,20 @@
 # Purpose: delete the local Xfce4 core repositories originally pulled from
 #           https://gitlab.xfce.org/xfce
 #
-# version: 0.3
-# updated: 20210130
+# version: 0.5
+# updated: 20210131
 # @author: kevin.bowen@gmail.com
 #
 # ---------------------------------------------------------------------- #
 
-
 import os
+import sys
+sys.path.append('./')
 
-xfce_core_list = ['exo', 'garcon', 'libxfce4ui', 'libxfce4util',
-                   'thunar', 'thunar-volman', 'tumbler',
-                   'xfce4-appfinder', 'xfce4-dev-tools',
-                   'xfce4-panel', 'xfce4-power-manager', 'xfce4-session',
-                   'xfce4-settings', 'xfconf', 'xfdesktop', 'xfwm4']
+from repo_arrays import xfce_core_list
 
-confirm = input('Are you sure you want to remove the Xfce core repos? ')
-if confirm.lower() == 'yes':
+confirm = input('Are you sure you want to remove the Xfce core repos[y|n]? ')
+if confirm.lower() == 'y':
     for item in xfce_core_list:
         os.system('rm -rf ../core/' + item)
         print("The " + item + " Xfce core repo has been purged.")
