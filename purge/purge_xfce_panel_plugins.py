@@ -2,19 +2,19 @@
 
 # ---------------------------------------------------------------------- #
 #
-# Name: purge_xfce4_panel_plugins.py
-# Purpose: delete the local Xfce4 panel-plugins repositories pulled from
+# Name: purge_xfce_panel_plugins.py
+# Purpose: delete the local Xfce panel-plugins repositories pulled from
 #           https://gitlab.xfce.org/panel-plugins
 #
 # version: 0.3
-# updated: 20210128
+# updated: 20210130
 # @author: kevin.bowen@gmail.com
 #
 # ---------------------------------------------------------------------- #
 
 import os
 
-xfce4_panel_plugins_list = ['xfce4-battery-plugin', 'xfce4-calculator-plugin',
+xfce_panel_plugins_list = ['xfce4-battery-plugin', 'xfce4-calculator-plugin',
                             'xfce4-clipman-plugin', 'xfce4-cpufreq-plugin',
                             'xfce4-cpugraph-plugin', 'xfce4-datetime-plugin',
                             'xfce4-diskperf-plugin', 'xfce4-embed-plugin',
@@ -36,7 +36,7 @@ xfce4_panel_plugins_list = ['xfce4-battery-plugin', 'xfce4-calculator-plugin',
 confirm = input('Are you sure you want to remove the Xfce panel-plugins'
                 ' repositories? ')
 if confirm.lower() == 'yes':
-    for item in xfce4_panel_plugins_list:
+    for item in xfce_panel_plugins_list:
         os.system('rm -rf ../panel-plugins/' + item)
         print("The " + item + " Xfce panel-plugin repo has been purged.")
     os.system('rmdir ../panel-plugins/')

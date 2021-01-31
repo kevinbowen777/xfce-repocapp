@@ -2,24 +2,24 @@
 
 # ---------------------------------------------------------------------- #
 #
-# Name: purge_xfce4_bindings.py
-# Purpose: delete Xfce4 bindings repositories from
+# Name: purge_xfce_bindings.py
+# Purpose: delete the local Xfce bindings repositories originally pulled from
 #           https://gitlab.xfce.org/bindings
 #
 # version: 0.3
-# updated: 20210128
+# updated: 20210130
 # @author: kevin.bowen@gmail.com
 #
 # ---------------------------------------------------------------------- #
 
 import os
 
-xfce4_bindings_list = ['thunarx-python', 'xfce4-vala']
+xfce_bindings_list = ['thunarx-python', 'xfce4-vala']
 
 confirm = input('Are you sure you want to remove the Xfce bindings '
                 'repositories? ')
 if confirm.lower() == 'yes':
-    for item in xfce4_bindings_list:
+    for item in xfce_bindings_list:
         os.system('rm -rf ../bindings/' + item)
         print("The " + item + " Xfce bindings repo has been purged.")
     os.system('rmdir ../bindings/')

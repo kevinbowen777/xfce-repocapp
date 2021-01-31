@@ -2,8 +2,8 @@
 
 # ---------------------------------------------------------------------- #
 #
-# Name: purge_xfce4_www.py
-# Purpose: delete the Xfce4 local www repositories pulled from
+# Name: purge_xfce_www.py
+# Purpose: delete the local Xfce www repositories pulled from
 #           https://gitlab.xfce.org/www
 #
 # version: 0.3
