@@ -2,11 +2,11 @@
 
 # ---------------------------------------------------------------------- #
 #
-# Name: autogen_make_xfce_template.py
-# Purpose: Build local Xfce xxxx repositories
+# Name: install_xfce_template.py
+# Purpose: install local Xfce core repositories
 #
 # version: 0.1
-# updated: 20210130
+# updated: 20210131
 # @author: kevin.bowen@gmail.com
 #
 # ---------------------------------------------------------------------- #
@@ -23,5 +23,5 @@ os.environ["PKG_CONFIG_PATH"] = "/usr/lib/pkgconfig:/usr"
 print(os.environ["PKG_CONFIG_PATH"])
 for item in xfce_core_list:
     os.chdir(item)
-    os.system('./autogen.sh --prefix=/usr && make >> ../logs/xfce_build.log')
+    os.system('sudo make install')
     os.chdir("..")
