@@ -2,7 +2,13 @@
 
 # Xfce-build
 
-A collection of scripts to maintain local Xfce repositories
+A collection of created scripts to maintain local Xfce repositories.
+
+The purpose of the scripts contained in the xfce-build repository is to 
+facilitate managing your local Xfce repositories in bulk. 
+Cloning, running automake, installing, purging and updating tasks are 
+performed in groups, organized by categories, according to the official 
+Xfce repository structure (https://gitlab.xfce.org).
 
 ----
 ### Build scripts
@@ -48,7 +54,15 @@ A collection of scripts to maintain local Xfce repositories
  - update_xfce_thunar_plugins.py
  - update_xfce_www.py
 ----
-### Installation
+### Installation scripts
+
+ - install_xfce_apps.py
+ - install_xfce_bindings.py
+ - install_xfce_core.py
+ - install_xfce_panel_plugins.py
+ - install_xfce_thunar_plugins.py
+
+### Installation of repository
 
         git clone https://gitlab.com/kevinbowen/xfce-build.git
         git clone https://github.com/kevinbowen777/xfce-build.git
