@@ -13,7 +13,7 @@ Xfce repository structure (https://gitlab.xfce.org).
 ----
 ### Build scripts
 
-        Run autogen & make against repositories
+        Run autogen & make against local component repositories
 
  - autogen_make_xfce_apps.py
  - autogen_make_xfce_bindings.py
@@ -37,6 +37,8 @@ Xfce repository structure (https://gitlab.xfce.org).
 ----
 ### Purge scripts
 
+        Delete local component repositories by category 
+
  - purge_xfce_apps.py
  - purge_xfce_core.py
  - purge_xfce_bindings.py
@@ -47,6 +49,8 @@ Xfce repository structure (https://gitlab.xfce.org).
 ----
 ### Update scripts
 
+         Update local component repositories with git pull 
+        
  - update_xfce_apps.py
  - update_xfce_bindings.py
  - update_xfce_core.py
@@ -55,6 +59,8 @@ Xfce repository structure (https://gitlab.xfce.org).
  - update_xfce_www.py
 ----
 ### Installation scripts
+
+          Install components into local system git sudo make install
 
  - install_xfce_apps.py
  - install_xfce_bindings.py
@@ -69,3 +75,6 @@ Xfce repository structure (https://gitlab.xfce.org).
 
 ----
 ### Reporting Bugs
+
+   Visit the [Issues page](https://gitlab.com/kevinbowen/xfce-build/-/issues) 
+     to view currently open bug reports or open a new issue. 
