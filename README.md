@@ -60,7 +60,7 @@ Xfce repository structure (https://gitlab.xfce.org).
 ----
 ### Installation scripts
 
-          Install components into local system git sudo make install
+          Install components into local system with sudo make install
 
  - install_xfce_apps.py
  - install_xfce_bindings.py
@@ -68,7 +68,7 @@ Xfce repository structure (https://gitlab.xfce.org).
  - install_xfce_panel_plugins.py
  - install_xfce_thunar_plugins.py
 
-### Installation of repository
+### Installation of xfce-build project
 
         git clone https://gitlab.com/kevinbowen/xfce-build.git
         git clone https://github.com/kevinbowen777/xfce-build.git
