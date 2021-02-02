@@ -41,12 +41,12 @@ Xfce repository structure (https://gitlab.xfce.org).
 
          Update local component repositories with git pull 
         
- - update_xfce_apps.py
- - update_xfce_bindings.py
- - update_xfce_core.py
- - update_xfce_panel_plugins.py
- - update_xfce_thunar_plugins.py
- - update_xfce_www.py
+ - pull_xfce_apps.py
+ - pull_xfce_bindings.py
+ - pull_xfce_core.py
+ - pull_xfce_panel_plugins.py
+ - pull_xfce_thunar_plugins.py
+ - pull_xfce_www.py
 
 ----
 ### Purge scripts
