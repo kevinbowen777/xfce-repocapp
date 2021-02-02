@@ -2,27 +2,15 @@
 
 # Xfce-repocapp
 
-repocapp - repository (C)lone (A)utomake (P)ull (P)urge
+repocapp - repository (C)lone (A)utogen (P)ull (P)urge
 
-A collection of created scripts to maintain local Xfce repositories.
+A collection of scripts to maintain local Xfce repositories.
 
-The purpose of the scripts contained in the xfce-build repository is to 
+The purpose of the scripts contained in the xfce-repocapp repository is to 
 facilitate managing your local Xfce repositories in bulk. 
 Cloning, running automake, installing, purging and updating tasks are 
 performed in groups, organized by categories, according to the official 
 Xfce repository structure (https://gitlab.xfce.org).
-
-----
-### Build scripts
-
-        Run autogen & make against local component repositories
-
- - autogen_make_xfce_apps.py
- - autogen_make_xfce_bindings.py
- - autogen_make_xfce_core.py
- - autogen_make_xfce_panel_plugins.py
- - autogen_make_xfce_template.py
- - autogen_make_xfce_thunar_plugins.py
 
 ----
 ### Clone scripts
@@ -37,6 +25,30 @@ Xfce repository structure (https://gitlab.xfce.org).
  - clone_xfce_www.py
 
 ----
+### Autogen (Build) scripts
+
+        Run autogen & make against local component repositories
+
+ - autogen_make_xfce_apps.py
+ - autogen_make_xfce_bindings.py
+ - autogen_make_xfce_core.py
+ - autogen_make_xfce_panel_plugins.py
+ - autogen_make_xfce_template.py
+ - autogen_make_xfce_thunar_plugins.py
+
+----
+### Pull (Update) scripts
+
+         Update local component repositories with git pull 
+        
+ - update_xfce_apps.py
+ - update_xfce_bindings.py
+ - update_xfce_core.py
+ - update_xfce_panel_plugins.py
+ - update_xfce_thunar_plugins.py
+ - update_xfce_www.py
+
+----
 ### Purge scripts
 
         Delete local component repositories by category 
@@ -49,17 +61,7 @@ Xfce repository structure (https://gitlab.xfce.org).
  - purge_xfce_www.py
 
 ----
-### Update scripts
 
-         Update local component repositories with git pull 
-        
- - update_xfce_apps.py
- - update_xfce_bindings.py
- - update_xfce_core.py
- - update_xfce_panel_plugins.py
- - update_xfce_thunar_plugins.py
- - update_xfce_www.py
-----
 ### Installation scripts
 
           Install components into local system with sudo make install
@@ -69,6 +71,8 @@ Xfce repository structure (https://gitlab.xfce.org).
  - install_xfce_core.py
  - install_xfce_panel_plugins.py
  - install_xfce_thunar_plugins.py
+
+----
 
 ### Installation of xfce-build project
 
