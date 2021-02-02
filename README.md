@@ -1,6 +1,8 @@
-[![License](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://gitlab.com/kevinbowen/xfce-build/-/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://gitlab.com/kevinbowen/xfce-repocapp/-/blob/master/LICENSE)
 
-# Xfce-build
+# Xfce-repocapp
+
+repocapp - repository (C)lone (A)utomake (P)ull (P)urge
 
 A collection of created scripts to maintain local Xfce repositories.
 
@@ -70,11 +72,11 @@ Xfce repository structure (https://gitlab.xfce.org).
 
 ### Installation of xfce-build project
 
-        git clone https://gitlab.com/kevinbowen/xfce-build.git
-        git clone https://github.com/kevinbowen777/xfce-build.git
+        git clone https://gitlab.com/kevinbowen/xfce-repocapp.git
+        git clone https://github.com/kevinbowen777/xfce-repocapp.git
 
 ----
 ### Reporting Bugs
 
-   Visit the [Issues page](https://gitlab.com/kevinbowen/xfce-build/-/issues) 
+   Visit the [Issues page](https://gitlab.com/kevinbowen/xfce-repocapp/-/issues) 
      to view currently open bug reports or open a new issue. 
