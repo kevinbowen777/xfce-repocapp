@@ -3,7 +3,8 @@
 # Xfce-repocapp
 
 repocapp - repository (C)lone (A)utogen (P)ull (P)urge
-
+              (This also includes clean & installation scripts)
+              
 A collection of scripts to maintain local Xfce repositories.
 
 The purpose of the scripts contained in the xfce-repocapp repository is to 
@@ -71,6 +72,18 @@ Xfce repository structure (https://gitlab.xfce.org).
  - install_xfce_core.py
  - install_xfce_panel_plugins.py
  - install_xfce_thunar_plugins.py
+
+----
+
+### Clean scripts
+
+          Clean local component directories (make clean)
+
+ - clean_xfce_apps.py
+ - clean_xfce_bindings.py
+ - clean_xfce_core.py
+ - clean_xfce_panel_plugins.py
+ - clean_xfce_thunar_plugins.py
 
 ----
 
