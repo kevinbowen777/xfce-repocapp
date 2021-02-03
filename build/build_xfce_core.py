@@ -2,26 +2,32 @@
 
 # {{{ ------------------------------------------------------------------- #
 #
-# Name: autogen_make_xfce_core.py
+# Name: build_xfce_core.py
 # Purpose: Build local Xfce core repositories
 #
-# version: 0.1
-# updated: 20210130
+# version: 0.5
+# updated: 20210203
 # @author: kevin.bowen@gmail.com
 #
 # }}} ------------------------------------------------------------------- #
 
 import os
+import sys
+import time
 
-xfce_core_list = ['exo', 'garcon', 'libxfce4ui', 'libxfce4util',
-             'thunar', 'thunar-volman', 'tumbler',
-             'xfce4-appfinder', 'xfce4-dev-tools',
-             'xfce4-panel', 'xfce4-power-manager', 'xfce4-session',
-             'xfce4-settings', 'xfconf', 'xfdesktop', 'xfwm4']
+sys.path.append('./')
+
+from repo_arrays import xfce_core_list
+
+os.chdir('../core/')
 
 os.environ["PKG_CONFIG_PATH"] = "/usr/lib/pkgconfig:/usr"
-print(os.environ["PKG_CONFIG_PATH"])
+
 for item in xfce_core_list:
     os.chdir(item)
-    os.system('./autogen.sh --prefix=/usr && make >> ../logs/xfce_build.log')
+    print('\nRunning autogen.sh for ' + item + '...\n')
+    os.system('./autogen.sh --prefix=/usr')
+    print('\nRunning make for ' + item + '...\n')
+    time.sleep(1.5)
+    os.system('make')
     os.chdir("..")

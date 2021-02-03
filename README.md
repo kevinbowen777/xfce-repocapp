@@ -30,12 +30,12 @@ Xfce repository structure (https://gitlab.xfce.org).
 
         Run autogen & make against local component repositories
 
- - autogen_make_xfce_apps.py
- - autogen_make_xfce_bindings.py
- - autogen_make_xfce_core.py
- - autogen_make_xfce_panel_plugins.py
- - autogen_make_xfce_template.py
- - autogen_make_xfce_thunar_plugins.py
+ - build_xfce_apps.py
+ - build_xfce_bindings.py
+ - build_xfce_core.py
+ - build_xfce_panel_plugins.py
+ - build_xfce_template.py
+ - build_xfce_thunar_plugins.py
 
 ----
 ### Pull (Update) scripts

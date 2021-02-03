@@ -2,26 +2,31 @@
 
 # {{{ ------------------------------------------------------------------- #
 #
-# Name: autogen_make_xfce_apps.py
+# Name: build_xfce_apps.py
 # Purpose: Build local Xfce apps repositories
 #
-# version: 0.1
-# updated: 20210130
+# version: 0.5
+# updated: 20210203
 # @author: kevin.bowen@gmail.com
 #
 # }}} ------------------------------------------------------------------- #
 
 import os
+import sys
+import time
+sys.path.append('./')
 
-xfce_apps_list = ['catfish', 'gigolo', 'mousepad', 'parole', 'ristretto',
-             'xfburn', 'xfce4-dict', 'xfce4-mixer', 'xfce4-notifyd',
-             'xfce4-panel-profiles', 'xfce4-screensaver',
-             'xfce4-screenshooter', 'xfce4-taskmanager', 'xfce4-terminal',
-             'xfce4-volumed-pulse', 'xfdashboard', 'xfmpc']
+from repo_arrays import xfce_apps_list
+
+os.chdir('../apps/')
 
 os.environ["PKG_CONFIG_PATH"] = "/usr/lib/pkgconfig:/usr"
-print(os.environ["PKG_CONFIG_PATH"])
+
 for item in xfce_apps_list:
     os.chdir(item)
-    os.system('./autogen.sh --prefix=/usr && make >> ../logs/xfce_build.log')
+    print('\nRunning autogen.sh for ' + item + '...\n')
+    os.system('./autogen.sh --prefix=/usr')
+    print('\nRunning make for ' + item + '...\n')
+    time.sleep(1.5)
+    os.system('make')
     os.chdir("..")

@@ -12,12 +12,21 @@
 # }}} ------------------------------------------------------------------- #
 
 import os
+import sys
+import time
+sys.path.append('./')
 
-xfce_bindings_list = ['thunarx-python', 'xfce4-vala']
+from repo_arrays import xfce_bindings_list
+
+os.chdir('../bindings/')
 
 os.environ["PKG_CONFIG_PATH"] = "/usr/lib/pkgconfig:/usr"
-print(os.environ["PKG_CONFIG_PATH"])
+
 for item in xfce_bindings_list:
     os.chdir(item)
-    os.system('./autogen.sh --prefix=/usr && make >> ../logs/xfce_build.log')
+    print('\nRunning autogen.sh for ' + item + '...\n')
+    os.system('./autogen.sh --prefix=/usr')
+    print('\nRunning make for ' + item + '...\n')
+    time.sleep(1.5)
+    os.system('make')
     os.chdir("..")
