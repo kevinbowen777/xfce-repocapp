@@ -14,10 +14,10 @@
 import os
 import sys
 import time
+from repo_arrays import xfce_thunar_plugins_list
 
 sys.path.append('./')
 
-from repo_arrays import xfce_thunar_plugins_list
 
 os.chdir('../thunar-plugins/')
 
