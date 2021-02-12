@@ -14,9 +14,10 @@
 
 import os
 import sys
+from repo_arrays import xfce_panel_plugins_list
+
 sys.path.append('./')
 
-from repo_arrays import xfce_panel_plugins_list
 
 confirm = input('Are you sure you want to remove the Xfce panel-plugins'
                 ' repositories[y|n]? ')
