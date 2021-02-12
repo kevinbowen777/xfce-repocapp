@@ -3,7 +3,7 @@
 # {{{ ------------------------------------------------------------------ #
 #
 # Name: clone_xfce_bindings.py
-# Purpose: Clone Xfce bindings repositories pulled from 
+# Purpose: Clone Xfce bindings repositories pulled from
 #           https://gitlab.xfce.org/bindings
 #
 # version: 0.5
@@ -14,9 +14,10 @@
 
 import os
 import sys
+from repo_arrays import xfce_bindings_list
+
 sys.path.append('./')
 
-from repo_arrays import xfce_bindings_list
 
 os.makedirs('../bindings', exist_ok=True)
 os.chdir('../bindings')

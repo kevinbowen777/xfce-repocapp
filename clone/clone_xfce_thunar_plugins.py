@@ -14,9 +14,10 @@
 
 import os
 import sys
+from repo_arrays import xfce_thunar_plugins_list
+
 sys.path.append('./')
 
-from repo_arrays import xfce_thunar_plugins_list
 
 os.makedirs('../thunar-plugins', exist_ok=True)
 os.chdir('../thunar-plugins')

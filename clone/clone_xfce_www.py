@@ -14,9 +14,10 @@
 
 import os
 import sys
+from repo_arrays import xfce_www_list
+
 sys.path.append('./')
 
-from repo_arrays import xfce_www_list
 
 os.makedirs('../www', exist_ok=True)
 os.chdir('../www')
