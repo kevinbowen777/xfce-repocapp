@@ -14,9 +14,8 @@
 
 import os
 import sys
-from repo_arrays import xfce_bindings_list
-
 sys.path.append('./')
+from repo_arrays import xfce_bindings_list
 
 
 os.makedirs('../bindings', exist_ok=True)

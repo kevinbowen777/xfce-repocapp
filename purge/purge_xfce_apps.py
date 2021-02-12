@@ -14,9 +14,8 @@
 
 import os
 import sys
-from repo_arrays import xfce_apps_list
-
 sys.path.append('./')
+from repo_arrays import xfce_apps_list
 
 
 confirm = input('Are you sure you want to remove the Xfce app repos[y|n]? ')

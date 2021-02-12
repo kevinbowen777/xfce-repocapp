@@ -14,9 +14,8 @@
 
 import os
 import sys
-from repo_arrays import xfce_apps_list
-
 sys.path.append('./')
+from repo_arrays import xfce_apps_list
 
 
 os.makedirs('../apps', exist_ok=True)

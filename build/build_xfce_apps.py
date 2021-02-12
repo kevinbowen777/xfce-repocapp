@@ -14,9 +14,8 @@
 import os
 import sys
 import time
-from repo_arrays import xfce_apps_list
-
 sys.path.append('./')
+from repo_arrays import xfce_apps_list
 
 
 os.chdir('../apps/')
