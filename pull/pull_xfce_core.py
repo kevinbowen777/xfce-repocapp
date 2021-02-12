@@ -14,9 +14,10 @@
 
 import os
 import sys
+from repo_arrays import xfce_core_list
+
 sys.path.append('./')
 
-from repo_arrays import xfce_core_list
 
 os.chdir('../core')
 
