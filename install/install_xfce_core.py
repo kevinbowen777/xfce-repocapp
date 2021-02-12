@@ -12,12 +12,12 @@
 # }}} ------------------------------------------------------------------ #
 
 import os
+import sys
+sys.path.append('./')
+from repo_arrays import xfce_core_list
 
-xfce_core_list = ['exo', 'garcon', 'libxfce4ui', 'libxfce4util',
-             'thunar', 'thunar-volman', 'tumbler',
-             'xfce4-appfinder', 'xfce4-dev-tools',
-             'xfce4-panel', 'xfce4-power-manager', 'xfce4-session',
-             'xfce4-settings', 'xfconf', 'xfdesktop', 'xfwm4']
+
+os.chdir('../core')
 
 for item in xfce_core_list:
     os.chdir(item)

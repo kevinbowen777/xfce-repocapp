@@ -12,14 +12,12 @@
 # }}} ------------------------------------------------------------------ #
 
 import os
+import sys
+sys.path.append('./')
+from repo_arrays import xfce_apps_list
 
 
-xfce_apps_list = ['catfish', 'gigolo', 'mousepad', 'parole', 'ristretto',
-                   'xfburn', 'xfce4-dict', 'xfce4-mixer', 'xfce4-notifyd',
-                   'xfce4-panel-profiles', 'xfce4-screensaver',
-                   'xfce4-screenshooter', 'xfce4-taskmanager',
-                   'xfce4-terminal', 'xfce4-volumed-pulse', 'xfdashboard',
-                   'xfmpc']
+os.chdir('../apps')
 
 for item in xfce_apps_list:
     os.chdir(item)

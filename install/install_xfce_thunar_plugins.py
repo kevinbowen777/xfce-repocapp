@@ -12,11 +12,12 @@
 # }}} ------------------------------------------------------------------ #
 
 import os
+import sys
+sys.path.append('./')
+from repo_arrays import xfce_thunar_plugins_list
 
 
-xfce_thunar_plugins_list = ['thunar-archive-plugin',
-                             'thunar-media-tags-plugin',
-                             'thunar-shares-plugin', 'thunar-vcs-plugin']
+os.chdir('../thunar-plugins')
 
 for item in xfce_thunar_plugins_list:
     os.chdir(item)
