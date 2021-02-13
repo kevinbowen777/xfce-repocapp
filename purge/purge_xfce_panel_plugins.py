@@ -22,22 +22,25 @@ sys.path.append(parentdir)
 
 from repo_arrays import xfce_panel_plugins_list
 from query import query_yes_no
+from repodir import repodir
 
+repopath = repodir('panel-plugins')
 os.chdir(currentdir)
 
-confirm = query_yes_no('Are you sure you want to remove the Xfce panel-plugins repositories? ')
+confirm = query_yes_no('Are you sure you want to remove the Xfce '
+                       'panel-plugins repositories? ')
 if confirm == 'yes':
     for item in xfce_panel_plugins_list:
-        filePath = ('../../panel-plugins/' + item)
+        filePath = (repopath + item)
         try:
             shutil.rmtree(filePath)
             print(item + ' directory has been deleted.')
-        except:
+        except ValueError:
             print("Error while deleting", item + " directory.")
     try:
-        shutil.rmtree('../../panel-plugins')
+        shutil.rmtree(repopath)
         print('The panel-plugins directory has been deleted.')
-    except:
+    except ValueError:
         print("Error while deleting panel-plugins directory.")
 else:
     print("No repositories have been deleted. Have a nice day.")
