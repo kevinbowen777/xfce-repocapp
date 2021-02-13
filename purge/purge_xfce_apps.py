@@ -22,22 +22,24 @@ sys.path.append(parentdir)
 
 from repo_arrays import xfce_apps_list
 from query import query_yes_no
+from repodir import repodir
 
+repopath = repodir('apps')
 os.chdir(currentdir)
 
-confirm = query_yes_no('Are you sure you want to remove the Xfce apps repositories? ')
+confirm = query_yes_no('This will remove the Xfce apps repositories. ')
 if confirm == 'yes':
     for item in xfce_apps_list:
-        filePath = ('../../apps/' + item)
+        filePath = (repopath + item)
         try:
             shutil.rmtree(filePath)
             print(item + ' directory has been deleted.')
-        except:
+        except ValueError:
             print("Error while deleting", item + " directory.")
     try:
-        shutil.rmtree('../../apps')
+        shutil.rmtree(repopath)
         print('The apps directory has been deleted.')
-    except:
+    except ValueError:
         print("Error while deleting apps directory.")
 else:
     print("No repositories have been deleted. Have a nice day.")

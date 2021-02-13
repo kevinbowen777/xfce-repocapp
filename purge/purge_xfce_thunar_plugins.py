@@ -22,22 +22,25 @@ sys.path.append(parentdir)
 
 from repo_arrays import xfce_thunar_plugins_list
 from query import query_yes_no
+from repodir import repodir
 
+repopath = repodir('thunar-plugins')
 os.chdir(currentdir)
 
-confirm = query_yes_no('Are you sure you want to remove the Xfce thunar-plugins repositories? ')
+confirm = query_yes_no('Are you sure you want to remove the Xfce '
+                       'thunar-plugins repositories? ')
 if confirm == 'yes':
     for item in xfce_thunar_plugins_list:
-        filePath = ('../../thunar-plugins/' + item)
+        filePath = (repopath + item)
         try:
             shutil.rmtree(filePath)
             print(item + ' directory has been deleted.')
-        except:
+        except ValueError:
             print("Error while deleting", item + " directory.")
     try:
-        shutil.rmtree('../../thunar-plugins')
+        shutil.rmtree(repopath)
         print('The thunar-plugins directory has been deleted.')
-    except:
+    except ValueError:
         print("Error while deleting thunar-plugins directory.")
 else:
     print("No repositories have been deleted. Have a nice day.")

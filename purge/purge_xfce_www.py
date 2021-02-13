@@ -23,22 +23,25 @@ sys.path.append(parentdir)
 
 from repo_arrays import xfce_www_list
 from query import query_yes_no
+from repodir import repodir
 
+repopath = repodir('www')
 os.chdir(currentdir)
 
-confirm = query_yes_no('Are you sure you want to remove the Xfce www repositories? ')
+confirm = query_yes_no('Are you sure you want to remove the Xfce www '
+                       'repositories? ')
 if confirm == 'yes':
     for item in xfce_www_list:
-        filePath = ('../../www/' + item)
+        filePath = (repopath + item)
         try:
             shutil.rmtree(filePath)
             print(item + ' directory has been deleted.')
-        except:
+        except ValueError:
             print("Error while deleting", item + " directory.")
     try:
-        shutil.rmtree('../../www')
+        shutil.rmtree(repopath)
         print('The www directory has been deleted.')
-    except:
+    except ValueError:
         print("Error while deleting www directory.")
 else:
     print("No repositories have been deleted. Have a nice day.")

@@ -22,23 +22,25 @@ sys.path.append(parentdir)
 
 from repo_arrays import xfce_bindings_list
 from query import query_yes_no
+from repodir import repodir
 
+repopath = repodir('bindings')
 os.chdir(currentdir)
 
-
-confirm = query_yes_no('Are you sure you want to remove the Xfce bindings repositories? ')
+confirm = query_yes_no('Are you sure you want to remove the Xfce bindings '
+                       'repositories? ')
 if confirm == 'yes':
     for item in xfce_bindings_list:
-        filePath = ('../../bindings/' + item)
+        filePath = (repopath + item)
         try:
             shutil.rmtree(filePath)
             print(item + ' directory has been deleted.')
-        except:
+        except ValueError:
             print("Error while deleting", item + " directory.")
     try:
-        shutil.rmtree('../../bindings')
+        shutil.rmtree(repopath)
         print('The bindings directory has been deleted.')
-    except:
+    except ValueError:
         print("Error while deleting bindings directory.")
 else:
     print("No repositories have been deleted. Have a nice day.")
