@@ -6,25 +6,38 @@
 # Purpose: delete the local Xfce panel-plugins repositories pulled from
 #           https://gitlab.xfce.org/panel-plugins
 #
-# version: 0.5
-# updated: 20210131
+# version: 0.6
+# updated: 20210212
 # @author: kevin.bowen@gmail.com
 #
 # }}} ------------------------------------------------------------------ #
 
 import os
 import sys
-sys.path.append('./')
+import shutil
+
+currentdir = os.path.dirname(os.path.realpath(__file__))
+parentdir = os.path.dirname(currentdir)
+sys.path.append(parentdir)
+
 from repo_arrays import xfce_panel_plugins_list
+from query import query_yes_no
 
+os.chdir(currentdir)
 
-confirm = input('Are you sure you want to remove the Xfce panel-plugins'
-                ' repositories[y|n]? ')
-if confirm.lower() == 'y':
+confirm = query_yes_no('Are you sure you want to remove the Xfce panel-plugins repositories? ')
+if confirm == 'yes':
     for item in xfce_panel_plugins_list:
-        os.system('rm -rf ../panel-plugins/' + item)
-        print("The " + item + " Xfce panel-plugin repo has been purged.")
-    os.system('rmdir ../panel-plugins/')
-    print('The panel-plugins directory has been deleted.')
+        filePath = ('../../panel-plugins/' + item)
+        try:
+            shutil.rmtree(filePath)
+            print(item + ' directory has been deleted.')
+        except:
+            print("Error while deleting", item + " directory.")
+    try:
+        shutil.rmtree('../../panel-plugins')
+        print('The panel-plugins directory has been deleted.')
+    except:
+        print("Error while deleting panel-plugins directory.")
 else:
     print("No repositories have been deleted. Have a nice day.")

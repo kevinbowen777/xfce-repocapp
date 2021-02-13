@@ -6,25 +6,38 @@
 # Purpose: delete the local Xfce thunar-plugin repositories pulled from
 #           https://gitlab.xfce.org/thunar-plugins
 #
-# version: 0.5
-# updated: 20210131
+# version: 0.6
+# updated: 20210212
 # @author: kevin.bowen@gmail.com
 #
 # }}} ------------------------------------------------------------------ #
 
 import os
 import sys
-sys.path.append('./')
+import shutil
+
+currentdir = os.path.dirname(os.path.realpath(__file__))
+parentdir = os.path.dirname(currentdir)
+sys.path.append(parentdir)
+
 from repo_arrays import xfce_thunar_plugins_list
+from query import query_yes_no
 
+os.chdir(currentdir)
 
-confirm = input('Are you sure you want to remove the Xfce thunar-plugins'
-                ' repositories[y|n]? ')
-if confirm.lower() == 'y':
+confirm = query_yes_no('Are you sure you want to remove the Xfce thunar-plugins repositories? ')
+if confirm == 'yes':
     for item in xfce_thunar_plugins_list:
-        os.system('rm -rf ../thunar-plugins/' + item)
-        print("The " + item + " Xfce thunar-plugin repo has been purged.")
-    os.system('rmdir ../thunar-plugins/')
-    print('The thunar-plugins directory has been deleted.')
+        filePath = ('../../thunar-plugins/' + item)
+        try:
+            shutil.rmtree(filePath)
+            print(item + ' directory has been deleted.')
+        except:
+            print("Error while deleting", item + " directory.")
+    try:
+        shutil.rmtree('../../thunar-plugins')
+        print('The thunar-plugins directory has been deleted.')
+    except:
+        print("Error while deleting thunar-plugins directory.")
 else:
     print("No repositories have been deleted. Have a nice day.")
