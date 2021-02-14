@@ -21,6 +21,7 @@ sys.path.append(parentdir)
 import repo_arrays
 from repodir import repodir
 
+os.chdir(currentdir)
 os.chdir(repodir('bindings'))
 
 for item in repo_arrays.xfce_bindings_list:

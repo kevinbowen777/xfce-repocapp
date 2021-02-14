@@ -22,6 +22,7 @@ sys.path.append(parentdir)
 import repo_arrays
 from repodir import repodir
 
+os.chdir(currentdir)
 os.chdir(repodir('panel-plugins'))
 
 for item in repo_arrays.xfce_panel_plugins_list:

@@ -22,6 +22,7 @@ sys.path.append(parentdir)
 import repo_arrays
 from repodir import repodir
 
+os.chdir(currentdir)
 os.chdir(repodir('panel-plugins'))
 os.environ["PKG_CONFIG_PATH"] = "/usr/lib/pkgconfig:/usr"
 
