@@ -23,7 +23,7 @@ sys.path.append(parentdir)
 import repo_arrays
 from repodir import repodir
 
-
+os.chdir(currentdir)
 os.makedirs(repodir('bindings'), exist_ok=True)
 os.chdir(repodir('bindings'))
 
