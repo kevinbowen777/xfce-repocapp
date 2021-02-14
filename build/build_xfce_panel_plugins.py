@@ -5,8 +5,8 @@
 # Name: autogen_make_xfce_panel_plugins.py
 # Purpose: Build local Xfce panel-plugins repositories
 #
-# version: 0.5
-# updated: 20210203
+# version: 0.6
+# updated: 20210213
 # @author: kevin.bowen@gmail.com
 #
 # }}} ------------------------------------------------------------------- #
@@ -14,15 +14,18 @@
 import os
 import sys
 import time
-sys.path.append('./')
-from repo_arrays import xfce_panel_plugins_list
 
+currentdir = os.path.dirname(os.path.realpath(__file__))
+parentdir = os.path.dirname(currentdir)
+sys.path.append(parentdir)
 
-os.chdir('../panel-plugins/')
+import repo_arrays
+from repodir import repodir
 
+os.chdir(repodir('panel-plugins'))
 os.environ["PKG_CONFIG_PATH"] = "/usr/lib/pkgconfig:/usr"
 
-for item in xfce_panel_plugins_list:
+for item in repo_arrays.xfce_panel_plugins_list:
     os.chdir(item)
     print('\nRunning autogen.sh for ' + item + '...\n')
     os.system('./autogen.sh --prefix=/usr')

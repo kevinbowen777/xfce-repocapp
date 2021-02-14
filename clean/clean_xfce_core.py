@@ -5,8 +5,8 @@
 # Name: clean_xfce_core.py
 # Purpose: Clean local Xfce core repository directories
 #
-# version: 0.1
-# updated: 20210201
+# version: 0.2
+# updated: 20210213
 # @author: kevin.bowen@gmail.com
 #
 # }}} ------------------------------------------------------------------- #
@@ -14,13 +14,17 @@
 import os
 import sys
 import time
-sys.path.append('./')
 
-from repo_arrays import xfce_core_list
+currentdir = os.path.dirname(os.path.realpath(__file__))
+parentdir = os.path.dirname(currentdir)
+sys.path.append(parentdir)
 
-os.chdir('../core/')
+import repo_arrays
+from repodir import repodir
 
-for item in xfce_core_list:
+os.chdir(repodir('core'))
+
+for item in repo_arrays.xfce_core_list:
     os.chdir(item)
     print('\nCleaning ' + item + ' directory...\n')
     time.sleep(1.5)

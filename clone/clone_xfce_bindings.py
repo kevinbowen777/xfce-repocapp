@@ -6,20 +6,26 @@
 # Purpose: Clone Xfce bindings repositories pulled from
 #           https://gitlab.xfce.org/bindings
 #
-# version: 0.5
-# updated: 20210131
+# version: 0.6
+# updated: 20210213
 # @author: kevin.bowen@gmail.com
 #
 # }}}} ------------------------------------------------------------------ #
 
 import os
 import sys
-sys.path.append('./')
-from repo_arrays import xfce_bindings_list
 
 
-os.makedirs('../bindings', exist_ok=True)
-os.chdir('../bindings')
+currentdir = os.path.dirname(os.path.realpath(__file__))
+parentdir = os.path.dirname(currentdir)
+sys.path.append(parentdir)
 
-for item in xfce_bindings_list:
+import repo_arrays
+from repodir import repodir
+
+
+os.makedirs(repodir('bindings'), exist_ok=True)
+os.chdir(repodir('bindings'))
+
+for item in repo_arrays.xfce_bindings_list:
     os.system('git clone https://gitlab.xfce.org/bindings/' + item + '.git')

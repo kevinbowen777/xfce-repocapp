@@ -5,8 +5,8 @@
 # Name: clean_xfce_apps.py
 # Purpose: Clean local Xfce apps repository directories
 #
-# version: 0.1
-# updated: 20210201
+# version: 0.2
+# updated: 20210213
 # @author: kevin.bowen@gmail.com
 #
 # }}} ------------------------------------------------------------------- #
@@ -14,13 +14,17 @@
 import os
 import sys
 import time
-sys.path.append('./')
 
-from repo_arrays import xfce_apps_list
+currentdir = os.path.dirname(os.path.realpath(__file__))
+parentdir = os.path.dirname(currentdir)
+sys.path.append(parentdir)
 
-os.chdir('../apps/')
+import repo_arrays
+from repodir import repodir
 
-for item in xfce_apps_list:
+os.chdir(repodir('apps'))
+
+for item in repo_arrays.xfce_apps_list:
     os.chdir(item)
     print('\nCleaning ' + item + ' directory...\n')
     time.sleep(1.5)

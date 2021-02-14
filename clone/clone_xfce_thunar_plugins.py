@@ -6,20 +6,27 @@
 # Purpose: Clones Xfce4 thunar-plugins repositories pulled from
 #           https:/lab.xfce.org/thunar-plugins
 #
-# version: 0.5
-# updated: 20210131
+# version: 0.6
+# updated: 20210213
 # @author: kevin.bowen@gmail.com
 #
 # }}} ------------------------------------------------------------------ #
 
 import os
 import sys
-sys.path.append('./')
-from repo_arrays import xfce_thunar_plugins_list
 
 
-os.makedirs('../thunar-plugins', exist_ok=True)
-os.chdir('../thunar-plugins')
+currentdir = os.path.dirname(os.path.realpath(__file__))
+parentdir = os.path.dirname(currentdir)
+sys.path.append(parentdir)
 
-for item in xfce_thunar_plugins_list:
-    os.system('git clone https://gitlab.xfce.org/thunar-plugins/' + item + '.git')
+import repo_arrays
+from repodir import repodir
+
+
+os.makedirs(repodir('thunar-plugins'), exist_ok=True)
+os.chdir(repodir('thunar-plugins'))
+
+for item in repo_arrays.xfce_thunar_plugins_list:
+    os.system('git clone https://gitlab.xfce.org/thunar-plugins/'
+              + item + '.git')

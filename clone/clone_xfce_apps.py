@@ -6,20 +6,27 @@
 # Purpose: Clones Xfce apps repositories pulled from
 #           https://gitlab.xfce.org/apps
 #
-# version: 0.5
-# updated: 20210131
+# version: 0.6
+# updated: 20210213
 # @author: kevin.bowen@gmail.com
 #
 # }}} ------------------------------------------------------------------ #
 
 import os
 import sys
-sys.path.append('./')
-from repo_arrays import xfce_apps_list
 
 
-os.makedirs('../apps', exist_ok=True)
-os.chdir('../apps')
+currentdir = os.path.dirname(os.path.realpath(__file__))
+parentdir = os.path.dirname(currentdir)
+sys.path.append(parentdir)
 
-for item in xfce_apps_list:
+import repo_arrays
+from repodir import repodir
+
+
+os.makedirs(repodir('apps'), exist_ok=True)
+os.chdir(repodir('apps'))
+
+for item in repo_arrays.xfce_apps_list:
     os.system('git clone https://gitlab.xfce.org/apps/' + item + '.git')
+
