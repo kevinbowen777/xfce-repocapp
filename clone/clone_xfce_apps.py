@@ -14,14 +14,13 @@
 
 import os
 import sys
-
+import repo_arrays
+from repodir import repodir
 
 currentdir = os.path.dirname(os.path.realpath(__file__))
 parentdir = os.path.dirname(currentdir)
 sys.path.append(parentdir)
 
-import repo_arrays
-from repodir import repodir
 
 os.chdir(currentdir)
 os.makedirs(repodir('apps'), exist_ok=True)
@@ -29,4 +28,3 @@ os.chdir(repodir('apps'))
 
 for item in repo_arrays.xfce_apps_list:
     os.system('git clone https://gitlab.xfce.org/apps/' + item + '.git')
-
