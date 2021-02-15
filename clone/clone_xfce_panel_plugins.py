@@ -14,8 +14,8 @@
 
 import os
 import sys
-import repo_arrays
-from repodir import repodir
+from modules import repo_arrays
+from modules.repodir import repodir
 
 currentdir = os.path.dirname(os.path.realpath(__file__))
 parentdir = os.path.dirname(currentdir)

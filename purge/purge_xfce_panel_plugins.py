@@ -15,14 +15,13 @@
 import os
 import sys
 import shutil
-from repo_arrays import xfce_panel_plugins_list
-from query import query_yes_no
-from repodir import repodir
+from modules.repo_arrays import xfce_panel_plugins_list
+from modules.query import query_yes_no
+from modules.repodir import repodir
 
 currentdir = os.path.dirname(os.path.realpath(__file__))
 parentdir = os.path.dirname(currentdir)
 sys.path.append(parentdir)
-
 
 repopath = repodir('panel-plugins')
 os.chdir(currentdir)
