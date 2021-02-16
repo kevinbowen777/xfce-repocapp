@@ -13,15 +13,17 @@
 # }}} ------------------------------------------------------------------ #
 
 import os
-import sys
 import shutil
-from modules.repo_arrays import xfce_bindings_list
-from modules.repodir import repodir
-from modules.query import query_yes_no
+import sys
 
 currentdir = os.path.dirname(os.path.realpath(__file__))
 parentdir = os.path.dirname(currentdir)
 sys.path.append(parentdir)
+
+from packages.repo_arrays import xfce_bindings_list
+from packages.query import query_yes_no
+from packages.repodir import repodir
+
 
 repopath = repodir('bindings')
 os.chdir(currentdir)
