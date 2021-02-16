@@ -30,6 +30,12 @@ Xfce repository structure (https://gitlab.xfce.org).
 
         Run autogen & make against local component repositories
 
+**N.B.: These scripts perform _NO_ checks for missing system libraries or the
+order of component compilation. It is assumed that you know what you are
+doing.**
+
+For additional information on building Xfce see: https://docs.xfce.org/xfce/building
+
  - build_xfce_apps.py
  - build_xfce_bindings.py
  - build_xfce_core.py
