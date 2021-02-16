@@ -29,3 +29,4 @@ os.chdir(repodir('thunar-plugins'))
 for item in repo_arrays.xfce_thunar_plugins_list:
     os.system('git clone https://gitlab.xfce.org/thunar-plugins/'
               + item + '.git')
+    print('========')

@@ -28,3 +28,4 @@ os.chdir(repodir('www'))
 
 for item in repo_arrays.xfce_www_list:
     os.system('git clone https://gitlab.xfce.org/www/' + item + '.git')
+    print('========')

@@ -29,3 +29,4 @@ os.chdir(repodir('panel-plugins'))
 for item in repo_arrays.xfce_panel_plugins_list:
     os.system('git clone https://gitlab.xfce.org/panel-plugins/'
               + item + '.git')
+    print('========')

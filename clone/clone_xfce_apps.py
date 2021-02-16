@@ -28,3 +28,4 @@ os.chdir(repodir('apps'))
 
 for item in repo_arrays.xfce_apps_list:
     os.system('git clone https://gitlab.xfce.org/apps/' + item + '.git')
+    print('========')

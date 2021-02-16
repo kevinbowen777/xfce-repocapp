@@ -28,3 +28,4 @@ os.chdir(repodir('bindings'))
 
 for item in repo_arrays.xfce_bindings_list:
     os.system('git clone https://gitlab.xfce.org/bindings/' + item + '.git')
+    print('========')
