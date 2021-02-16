@@ -30,4 +30,5 @@ for item in repo_arrays.xfce_www_list:
     os.chdir(item)
     print('Updating ' + item + ':')
     os.system('git pull')
+    print('========')
     os.chdir('../')
