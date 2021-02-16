@@ -18,6 +18,7 @@ Xfce repository structure (https://gitlab.xfce.org).
 
         Clone Xfce repositories from https://gitlab.xfce.org
 
+ - clone_xfce_all.py
  - clone_xfce_apps.py
  - clone_xfce_bindings.py
  - clone_xfce_core.py 
@@ -32,10 +33,11 @@ Xfce repository structure (https://gitlab.xfce.org).
 
 **N.B.: These scripts perform _NO_ checks for missing system libraries or the
 order of component compilation. It is assumed that you know what you are
-doing.**
+doing. Use at your own risk. No guarantees.**
 
 For additional information on building Xfce see: https://docs.xfce.org/xfce/building
 
+ - build_xfce_all.py
  - build_xfce_apps.py
  - build_xfce_bindings.py
  - build_xfce_core.py
@@ -48,6 +50,7 @@ For additional information on building Xfce see: https://docs.xfce.org/xfce/buil
 
          Update local component repositories with git pull 
         
+ - pull_xfce_all.py
  - pull_xfce_apps.py
  - pull_xfce_bindings.py
  - pull_xfce_core.py
@@ -60,6 +63,7 @@ For additional information on building Xfce see: https://docs.xfce.org/xfce/buil
 
         Delete local component repositories by category 
 
+ - purge_xfce_all.py
  - purge_xfce_apps.py
  - purge_xfce_core.py
  - purge_xfce_bindings.py
@@ -73,6 +77,7 @@ For additional information on building Xfce see: https://docs.xfce.org/xfce/buil
 
           Install components into local system with sudo make install
 
+ - install_xfce_all.py
  - install_xfce_apps.py
  - install_xfce_bindings.py
  - install_xfce_core.py
@@ -85,6 +90,7 @@ For additional information on building Xfce see: https://docs.xfce.org/xfce/buil
 
           Clean local component directories (make clean)
 
+ - clean_xfce_all.py
  - clean_xfce_apps.py
  - clean_xfce_bindings.py
  - clean_xfce_core.py
