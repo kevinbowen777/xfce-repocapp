@@ -31,4 +31,5 @@ for item in repo_arrays.xfce_thunar_plugins_list:
     time.sleep(1.5)
     os.system('make -s clean')
     print('\nExiting ' + item + ' directory...\n')
+    print('========')
     os.chdir('..')
