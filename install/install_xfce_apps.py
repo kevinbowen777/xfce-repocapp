@@ -26,5 +26,7 @@ os.chdir(repodir('apps'))
 
 for item in repo_arrays.xfce_apps_list:
     os.chdir(item)
+    print('Installing ' + item + '...')
     os.system('sudo make install')
+    print('========')
     os.chdir("..")

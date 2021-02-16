@@ -26,5 +26,6 @@ os.chdir(repodir('thunar-plugins'))
 
 for item in repo_arrays.xfce_thunar_plugins_list:
     os.chdir(item)
+    print('Installing ' + item + '...')
     os.system('sudo make install')
-    os.chdir("..")
+    print('========')

@@ -26,5 +26,6 @@ os.chdir(repodir('panel-plugins'))
 
 for item in repo_arrays.xfce_panel_plugins_list:
     os.chdir(item)
+    print('Installing ' + item + '...')
     os.system('sudo make install')
-    os.chdir("..")
+    print('========')

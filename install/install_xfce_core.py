@@ -26,5 +26,6 @@ os.chdir(repodir('core'))
 
 for item in repo_arrays.xfce_core_list:
     os.chdir(item)
+    print('Installing ' + item + '...')
     os.system('sudo make install')
-    os.chdir("..")
+    print('========')

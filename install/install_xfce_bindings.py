@@ -26,5 +26,6 @@ os.chdir(repodir('bindings'))
 
 for item in repo_arrays.xfce_bindings_list:
     os.chdir(item)
+    print('Installing ' + item + '...')
     os.system('sudo make install')
-    os.chdir("..")
+    print('========')
