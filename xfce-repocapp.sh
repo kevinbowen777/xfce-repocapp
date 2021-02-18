@@ -11,30 +11,52 @@
 #           https://gitlab.xfce.org
 #
 # version: 0.2
-# updated: 20210212
+# updated: 20210217
 # @author: kevin.bowen@gmail.com
 #
 # }}} ------------------------------------------------------------------ #
+clear
+
+# while true
+# do
+# clear
+
+echo "#####################################################"
+echo "# xfce-repocapp: local Xfce repository maintenance #"
+echo "#####################################################"
+echo
+
+
 
 options=("Clone" "Build" "Install" "Clean" "Pull" "Purge" "Quit")
 optionsprompt='Please enter your choice: '
 
-sub1=("Clone apps" "Clone bindings" "Clone core" "Clone panel-plugins" "Clone thunar-plugins" "Clone www" "Clone all repos" "Quit")
+sub1=("Clone apps" "Clone bindings" "Clone core" "Clone panel-plugins"
+      "Clone thunar-plugins" "Clone www" "Clone all repos"
+      "Back to Main Menu" "Quit")
 sub1prompt='Please enter your choice: '
 
-sub2=("Build apps" "Build bindings" "Build core" "Build panel-plugins" "Build thunar-plugins" "Build all repos" "Quit")
+sub2=("Build apps" "Build bindings" "Build core" "Build panel-plugins"
+      "Build thunar-plugins" "Build all repos" "Back to Main Menu" "Quit")
 sub2prompt='Please enter your choice: '
 
-sub3=("Install apps" "Install bindings" "Install core" "Install panel-plugins" "Install thunar-plugins" "Install all repos" "Quit" )
+sub3=("Install apps" "Install bindings" "Install core" "Install panel-plugins"
+      "Install thunar-plugins" "Install all repos" "Back to Main Menu"
+      "Quit" )
 sub3prompt='Please enter your choice: '
 
-sub4=("Clean apps" "Clean bindings" "Clean core" "Clean panel-plugins" "Clean thunar-plugins" "Clean all repos" "Quit" )
+sub4=("Clean apps" "Clean bindings" "Clean core" "Clean panel-plugins"
+      "Clean thunar-plugins" "Clean all repos" "Back to Main Menu" "Quit" )
 sub4prompt='Please enter your choice: '
 
-sub5=("Pull apps" "Pull bindings" "Pull core" "Pull panel-plugins" "Pull thunar-plugins" "Pull www" "Pull all repos" "Quit" )
+sub5=("Pull apps" "Pull bindings" "Pull core" "Pull panel-plugins"
+      "Pull thunar-plugins" "Pull www" "Pull all repos" "Back to Main Menu"
+      "Quit" )
 sub5prompt='Please enter your choice: '
 
-sub6=("Purge apps" "Purge bindings" "Purge core" "Purge panel-plugins" "Purge thunar-plugins" "Purge www" "Purge all repos" "Quit" )
+sub6=("Purge apps" "Purge bindings" "Purge core" "Purge panel-plugins"
+      "Purge thunar-plugins" "Purge www" "Purge all repos"
+      "Back to Main Menu" "Quit" )
 sub6prompt='Please enter your choice: '
 
 PS3=$optionsprompt
@@ -82,9 +104,14 @@ do
                         clone/clone_xfce_all.py
                         exit
                         ;;
+                    "Back to Main Menu")
+                        echo "you chose choice 8"
+                        exec "$0"
+                        ;;
                     "Quit")
                         break
                         ;;
+                    *) echo invalid option;;
                  esac
             done
             ;;
@@ -124,9 +151,14 @@ do
                         build/build_xfce_all.py
                         exit
                         ;;
+                    "Back to Main Menu")
+                        echo "you chose choice 7"
+                        exec "$0"
+                        ;;
                     "Quit")
                         break
                         ;;
+                    *) echo invalid option;;
                  esac
             done
             ;;
@@ -166,9 +198,14 @@ do
                         install/install_xfce_all.py
                         exit
                         ;;
+                    "Back to Main Menu")
+                        echo "you chose choice 7"
+                        exec "$0"
+                        ;;
                     "Quit")
                         break
                         ;;
+                    *) echo invalid option;;
                  esac
             done
             ;;
@@ -208,9 +245,14 @@ do
                         clean/clean_xfce_all.py
                         exit
                         ;;
+                    "Back to Main Menu")
+                        echo "you chose choice 7"
+                        exec "$0"
+                        ;;
                     "Quit")
                         break
                         ;;
+                    *) echo invalid option;;
                  esac
             done
             ;;
@@ -255,9 +297,14 @@ do
                         pull/pull_xfce_all.py
                         exit
                         ;;
+                    "Back to Main Menu")
+                        echo "you chose choice 8"
+                        exec "$0"
+                        ;;
                     "Quit")
                         break
                         ;;
+                    *) echo invalid option;;
                  esac
             done
             ;;
@@ -302,9 +349,14 @@ do
                         purge/purge_xfce_all.py
                         exit
                         ;;
+                    "Back to Main Menu")
+                        echo "you chose choice 8"
+                        exec "$0"
+                        ;;
                     "Quit")
                         break
                         ;;
+                    *) echo invalid option;;
                  esac
             done
             ;;
@@ -314,3 +366,4 @@ do
         *) echo invalid option;;
     esac
 done
+# done
