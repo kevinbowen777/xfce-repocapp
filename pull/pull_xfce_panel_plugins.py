@@ -2,12 +2,12 @@
 
 # {{{ ------------------------------------------------------------------ #
 #
-# Name: update_xfce_panel-plugins.py
+# Name: pull_xfce_panel-plugins.py
 # Purpose: update local Xfce panel-plugin repositories pulled from
 #           https://gitlab.xfce.org/panel-plugins
 #
 # version: 0.6
-# updated: 20210213
+# updated: 20210218
 # @author: kevin.bowen@gmail.com
 #
 # }}} ------------------------------------------------------------------ #

@@ -5,8 +5,8 @@
 # Name: install_xfce_core.py
 # Purpose: install local Xfce core repositories
 #
-# version: 0.2
-# updated: 20210213
+# version: 0.6
+# updated: 20210218
 # @author: kevin.bowen@gmail.com
 #
 # }}} ------------------------------------------------------------------ #

@@ -5,8 +5,8 @@
 # Name: install_xfce_panel_plugins.py
 # Purpose: Install Xfce4 panel-plugins into system
 #
-# version: 0.2
-# updated: 20210213
+# version: 0.6
+# updated: 20210218
 # @author: kevin.bowen@gmail.com
 #
 # }}} ------------------------------------------------------------------ #

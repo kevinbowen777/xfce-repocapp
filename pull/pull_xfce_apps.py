@@ -2,12 +2,12 @@
 
 # {{{ ------------------------------------------------------------------ #
 #
-# Name: update_xfce_apps.py
+# Name: pull_xfce_apps.py
 # Purpose: update local Xfce apps repositories pulled from
 #           https://gitlab.xfce.org/apps
 #
 # version: 0.6
-# updated: 20210213
+# updated: 20210218
 # @author: kevin.bowen@gmail.com
 #
 # }}} ------------------------------------------------------------------ #

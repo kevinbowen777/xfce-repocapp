@@ -7,7 +7,7 @@
 #           https://gitlab.xfce.org/apps
 #
 # version: 0.6
-# updated: 20210212
+# updated: 20210218
 # @author: kevin.bowen@gmail.com
 #
 # }}} ------------------------------------------------------------------ #

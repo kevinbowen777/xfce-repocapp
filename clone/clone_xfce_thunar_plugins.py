@@ -7,7 +7,7 @@
 #           https:/lab.xfce.org/thunar-plugins
 #
 # version: 0.6
-# updated: 20210213
+# updated: 20210218
 # @author: kevin.bowen@gmail.com
 #
 # }}} ------------------------------------------------------------------ #

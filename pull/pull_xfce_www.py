@@ -2,12 +2,12 @@
 
 # {{{ ------------------------------------------------------------------ #
 #
-# Name: update_xfce_www.py
+# Name: pull_xfce_www.py
 # Purpose: update local Xfce www repositories pulled from
 #           https://gitlab.xfce.org/www
 #
 # version: 0.6
-# updated: 20210213
+# updated: 20210218
 # @author: kevin.bowen@gmail.com
 #
 # }}} ------------------------------------------------------------------ #

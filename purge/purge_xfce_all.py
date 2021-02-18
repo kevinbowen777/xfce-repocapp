@@ -6,8 +6,8 @@
 # Purpose: delete oll of the local Xfce repositories pulled from
 #           https://gitlab.xfce.org/
 #
-# version: 0.1
-# updated: 20210215
+# version: 0.6
+# updated: 20210218
 # @author: kevin.bowen@gmail.com
 #
 # }}} ------------------------------------------------------------------ #

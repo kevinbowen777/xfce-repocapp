@@ -2,12 +2,12 @@
 
 # {{{ ------------------------------------------------------------------ #
 #
-# Name: update_xfce_core.py
+# Name: pull_xfce_core.py
 # Purpose: update local Xfce core repositories pulled from
 #           https://gitlab.xfce.org/xfce
 #
 # version: 0.6
-# updated: 20210213
+# updated: 20210218
 # @author: kevin.bowen@gmail.com
 #
 # }}} ------------------------------------------------------------------ #

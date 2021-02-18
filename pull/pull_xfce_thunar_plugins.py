@@ -2,12 +2,12 @@
 
 # {{{ ------------------------------------------------------------------ #
 #
-# Name: update_xfce_thunar_plugins.py
+# Name: pull_xfce_thunar_plugins.py
 # Purpose: update local Xfce thunar-plugin repositories pulled from
 #           https://gitlab.xfce.org/thunar-plugins
 #
 # version: 0.6
-# updated: 20210213
+# updated: 20210218
 # @author: kevin.bowen@gmail.com
 #
 # }}} ------------------------------------------------------------------ #

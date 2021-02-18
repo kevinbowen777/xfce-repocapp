@@ -4,14 +4,18 @@
 
 repocapp - repository (C)lone (A)utogen (P)ull (P)urge
               (This also includes clean & installation scripts)
-              
+
 A collection of scripts to maintain local Xfce repositories.
 
-The purpose of the scripts contained in the xfce-repocapp repository is to 
-facilitate managing your local Xfce repositories in bulk. 
-Cloning, running automake, installing, purging and updating tasks are 
-performed in groups, organized by categories, according to the official 
+The purpose of the scripts contained in the xfce-repocapp repository is to
+facilitate managing your local Xfce repositories in bulk.
+Cloning, running automake, installing, purging and updating tasks are
+performed in groups, organized by categories, according to the official
 Xfce repository structure (https://gitlab.xfce.org).
+
+xfce-repocapp.sh provides a rudimentary menu-driven option to run the scripts.
+    This is entirely optional. All of the scripts can be independently.
+
 
 ----
 ### Clone scripts
@@ -21,7 +25,7 @@ Xfce repository structure (https://gitlab.xfce.org).
  - clone_xfce_all.py
  - clone_xfce_apps.py
  - clone_xfce_bindings.py
- - clone_xfce_core.py 
+ - clone_xfce_core.py
  - clone_xfce_panel_plugins.py
  - clone_xfce_thunar_plugins.py
  - clone_xfce_www.py
@@ -48,8 +52,8 @@ For additional information on building Xfce see: https://docs.xfce.org/xfce/buil
 ----
 ### Pull (Update) scripts
 
-         Update local component repositories with git pull 
-        
+         Update local component repositories with git pull
+
  - pull_xfce_all.py
  - pull_xfce_apps.py
  - pull_xfce_bindings.py
@@ -61,7 +65,7 @@ For additional information on building Xfce see: https://docs.xfce.org/xfce/buil
 ----
 ### Purge scripts
 
-        Delete local component repositories by category 
+        Delete local component repositories by category
 
  - purge_xfce_all.py
  - purge_xfce_apps.py
@@ -107,5 +111,5 @@ For additional information on building Xfce see: https://docs.xfce.org/xfce/buil
 ----
 ### Reporting Bugs
 
-   Visit the [Issues page](https://gitlab.com/kevinbowen/xfce-repocapp/-/issues) 
-     to view currently open bug reports or open a new issue. 
+   Visit the [Issues page](https://gitlab.com/kevinbowen/xfce-repocapp/-/issues)
+     to view currently open bug reports or open a new issue.

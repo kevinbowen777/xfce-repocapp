@@ -2,11 +2,11 @@
 
 # {{{ --------------------------------------------------------------------- #
 #
-# Name: build_make_xfce_thunar_plugins.py
+# Name: build_xfce_thunar_plugins.py
 # Purpose: Build local Xfce4 thunar-plugins repositories
 #
 # version: 0.6
-# updated: 20210213
+# updated: 20210218
 # @author: kevin.bowen@gmail.com
 #
 # }}} --------------------------------------------------------------------- #
