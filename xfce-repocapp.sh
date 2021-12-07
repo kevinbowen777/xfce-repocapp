@@ -23,6 +23,7 @@ clear
 
 echo "#####################################################"
 echo "# xfce-repocapp: local Xfce repository maintenance #"
+echo "##########           DEV VERSION           ##########"
 echo "#####################################################"
 echo
 
@@ -117,7 +118,8 @@ do
                         exec "$0"
                         ;;
                     "Quit")
-                        break
+                        echo "Goodbye..."
+                        exit
                         ;;
                     *) echo invalid option;;
                  esac
@@ -171,7 +173,8 @@ do
                         exec "$0"
                         ;;
                     "Quit")
-                        break
+                        echo "Goodbye..."
+                        exit
                         ;;
                     *) echo invalid option;;
                  esac
@@ -225,7 +228,8 @@ do
                         exec "$0"
                         ;;
                     "Quit")
-                        break
+                        echo "Goodbye..."
+                        exit
                         ;;
                     *) echo invalid option;;
                  esac
@@ -279,7 +283,8 @@ do
                         exec "$0"
                         ;;
                     "Quit")
-                        break
+                        echo "Goodbye..."
+                        exit
                         ;;
                     *) echo invalid option;;
                  esac
@@ -339,7 +344,8 @@ do
                         exec "$0"
                         ;;
                     "Quit")
-                        break
+                        echo "Goodbye..."
+                        exit
                         ;;
                     *) echo invalid option;;
                  esac
@@ -399,7 +405,8 @@ do
                         exec "$0"
                         ;;
                     "Quit")
-                        break
+                        echo "Goodbye..."
+                        exit
                         ;;
                     *) echo invalid option;;
                  esac
