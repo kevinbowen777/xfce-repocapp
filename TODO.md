@@ -3,9 +3,12 @@
 ----
  - add branch indicator to main menu (xfce-repocapp.sh)
  - fix typos in README
- - rewrite main menu in Python
+ - improve main menu (xfce-repocapp.sh)
    - which library?
-   - 
+   - improve menu selection
+     - allow words and first letter of actions
+     - 
+   - rewrite main menu in Python
  - move packages into single file in parent directory
    - clean up path manipulation in individual scripts
      - build
