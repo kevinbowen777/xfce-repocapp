@@ -1,0 +1,25 @@
+# xfce-repocapp - TODO
+
+----
+ - add branch indicator to main menu (xfce-repocapp.sh)
+ - fix typos in README
+ - improve main menu (xfce-repocapp.sh)
+   - which library?
+   - improve menu selection
+     - allow words and first letter of actions
+     - 
+   - rewrite main menu in Python
+ - move packages into single file in parent directory
+   - clean up path manipulation in individual scripts
+     - build
+     - clean
+     - clone
+     - install
+     - pull
+     - purge
+ - write tests
+   - main menu(xfce-repocapp.sh)
+   - 
+ - provide summary of actions upon completion
+ - package for TestPy/PyPi
+ - 
