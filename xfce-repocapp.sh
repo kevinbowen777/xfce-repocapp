@@ -23,7 +23,6 @@ clear
 
 echo "#####################################################"
 echo "# xfce-repocapp: local Xfce repository maintenance #"
-echo "##########           DEV VERSION           ##########"
 echo "#####################################################"
 echo
 
