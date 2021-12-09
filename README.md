@@ -104,8 +104,18 @@ For additional information on building Xfce see: https://docs.xfce.org/xfce/buil
 
 ### Installation of xfce-repocapp project
 
-    Main: git clone https://gitlab.com/kevinbowen/xfce-repocapp.git
+    Master: git clone https://gitlab.com/kevinbowen/xfce-repocapp.git
     Mirror: git clone https://github.com/kevinbowen777/xfce-repocapp.git
+
+    master branch:
+        - no install option. Run as ordinary script
+    dev branch:
+        run in Python virtualenv
+        python -m venv xfce-repo
+            or
+        mkvirtualenv xfce-repo
+    
+        pip install -e .  (note: dot at end is necessary)
 
 ----
 ### Reporting Bugs
