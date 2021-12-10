@@ -297,49 +297,41 @@ do
             do
                 case $sub5opt in
                     "Pull apps")
-                        echo
-                        echo "Pulling apps repositories..."
+                        printf "Pulling apps repositories...\n"
                         pull/pull_apps.py
                         exit
                         ;;
                     "Pull bindings")
-                        echo
-                        echo "Pulling bindings repositories..."
+                        printf "Pulling bindings repositories...\n"
                         pull/pull_bindings.py
                         exit
                         ;;
                     "Pull core")
-                        echo
-                        echo "Pulling core repositories..."
+                        printf "Pulling core repositories...\n"
                         pull/pull_core.py
                         exit
                         ;;
                     "Pull panel-plugins")
-                        echo
-                        echo "Pulling panel-plugin repositories..."
+                        printf "Pulling panel-plugin repositories...\n"
                         pull/pull_panel_plugins.py
                         exit
                         ;;
                     "Pull thunar-plugins")
-                        echo
-                        echo "Pulling thunar-plugin repositories..."
+                        printf "Pulling thunar-plugin repositories...\n"
                         pull/pull_thunar_plugins.py
                         exit
                         ;;
                     "Pull www")
-                        echo
-                        echo "Pulling www repositories..."
+                        printf "Pulling www repositories...\n"
                         pull/pull_www.py
                         exit
                         ;;
                     "Pull all repos")
-                        echo
-                        echo "Pulling all Xfce repositories..."
+                        printf "Pulling all Xfce repositories...\n"
                         pull/pull_all.py
                         exit
                         ;;
                     "Back to Main Menu")
-                        echo
                         echo "Returning to Main Menu..."
                         exec "$0"
                         ;;

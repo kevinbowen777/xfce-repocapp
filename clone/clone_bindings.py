@@ -16,13 +16,15 @@ import os
 import cappdata
 
 component = 'bindings'
+comp_list = cappdata.bindings_list()
+repopath = cappdata.repodir(component)
 success_count = 0
 
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
-os.makedirs(cappdata.repodir(component), exist_ok=True)
-os.chdir(cappdata.repodir(component))
+os.makedirs(repopath, exist_ok=True)
+os.chdir(repopath)
 
-for item in cappdata.bindings_list():
+for item in comp_list:
     if os.path.isdir(item):
         print(f"\nThe '{item}' directory already exists. Skipping...\n")
         print('=' * 16)
@@ -31,6 +33,7 @@ for item in cappdata.bindings_list():
                   + item + '.git')
         success_count += 1
         print('=' * 16)
-        print(f"{success_count}/{len(cappdata.bindings_list())} "
+        print(f"{item} repository cloned successfully")
+        print(f"{success_count}/{len(comp_list)} "
               f"'{component}' repositories cloned successfully.")
         print('=' * 16)

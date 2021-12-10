@@ -16,15 +16,32 @@ import time
 import cappdata
 
 component = 'bindings'
-
-os.chdir(os.path.dirname(os.path.realpath(__file__)))
+comp_list = cappdata.bindings_list()
+repopath = cappdata.repodir(component)
 os.environ["PKG_CONFIG_PATH"] = "/usr/lib/pkgconfig:/usr"
 
-for item in cappdata.bindings_list():
-    os.chdir((cappdata.repodir(component)) + item)
-    print(os.path.dirname(os.path.realpath(__file__)))
-    print('\nRunning autogen.sh for ' + item + '...\n')
-    os.system('./autogen.sh --prefix=/usr')
-    print('\nRunning make for ' + item + '...\n')
-    time.sleep(1.5)
-    os.system('make')
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
+
+if os.path.isdir(repopath):
+    os.chdir(repopath)
+    for item in comp_list:
+        if os.path.isdir(item):
+            os.chdir(item)
+            print('\nRunning autogen.sh for ' + item + '...\n')
+            os.system('./autogen.sh --prefix=/usr')
+            print('\nRunning make for ' + item + '...\n')
+            time.sleep(1.5)
+            os.system('make')
+            print('=' * 16)
+            os.chdir("..")
+        else:
+            print('\nNothing to do...\n')
+            print(f"The '{item}' repo does not exist.\n\n"
+                  "Perhaps you need to clone it first.\n")
+            print('=' * 16)
+
+else:
+    print('Nothing to do...\n')
+    print(f"The '{component}' repositories do not exist.\n\n"
+          "Perhaps you need to clone the directory first.\n")
+    print('=' * 16)

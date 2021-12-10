@@ -15,13 +15,14 @@ import os
 import cappdata
 
 component = 'apps'
-
+comp_list = cappdata.apps_list()
 repopath = cappdata.repodir(component)
+
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 if os.path.isdir(repopath):
-    os.chdir(cappdata.repodir(component))
-    for item in cappdata.apps_list():
+    os.chdir(repopath)
+    for item in comp_list:
         if os.path.isdir(item):
             os.chdir(item)
             confirm = cappdata.query_yes_no(
@@ -38,6 +39,13 @@ if os.path.isdir(repopath):
                 print('=' * 16)
                 os.chdir("..")
         else:
-            print(f"\nThe '{item}' repo does not exist. "
-                  "Perhaps you need to clone & build it first.\n")
+            print('\nNothing to do...\n')
+            print(f"The '{item}' repo does not exist.\n\n"
+                  "Perhaps you need to clone it first.\n")
             print('=' * 16)
+
+else:
+    print('Nothing to do...\n')
+    print(f"The '{component}' repositories do not exist.\n\n"
+          "Perhaps you need to clone the directory first.\n")
+    print('=' * 16)

@@ -2,12 +2,19 @@
 
 ----
 ### as of 20210109
-
+ - change `echo` statements to `printf` for more reliable behavior
+ - fix `FileNotFound` bug with `build` when component dir is missing
+ - ~~fix silent failure bug with `install` doesn't generate an error 
+   ~~when component dir is missing~~
+ - ~~fix silent failure bug with`pull` doesn't generate an error~~
+    ~~when component dir is missing~~
+ - fix silent failure bug with `clean` doesn't generate an error
+    when component dir is missing
  - clean up & standardize path manipulation behavior
  - look into using pathlib to get rid of `repodir()` in `cappdata.py`
- - ~~add installation instructions to~~`README.md`
-   - ~~note difference between master & dev branches(including use of pip)~~
- - fix pull_<xxx>.py update delimiters
+ - ~~add installation instructions to`README.md`
+   ~~note difference between master & dev branches(including use of pip)~~
+ - fix `pull_<xxx>.py` update delimiters
  - ~~fix typos in README~~
  - Update `README.md` with instructions for changing install
     directory
