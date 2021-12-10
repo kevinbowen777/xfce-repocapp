@@ -14,32 +14,26 @@
 
 import os
 import shutil
-import sys
-
 import cappdata
 
 component = 'panel-plugins'
-
-currentdir = os.path.dirname(os.path.realpath(__file__))
-parentdir = os.path.dirname(currentdir)
-sys.path.append(parentdir)
+success_count = 0
 
 repopath = cappdata.repodir(component)
-os.chdir(currentdir)
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 confirm = cappdata.query_yes_no(f"Are you sure you want to remove the "
                                 f"Xfce '{component}' repositories? ")
 if confirm == 'yes':
-    delete_success_count = 0
     for item in cappdata.panel_plugins_list():
         filePath = (repopath + item)
         if os.path.isdir(repopath):
             try:
                 shutil.rmtree(filePath)
-                delete_success_count += 1
-                # print('=' * 16)
+                success_count += 1
+                print('=' * 16)
                 print(f"\nThe '{item}' directory has been deleted.\n")
-                print(f"{delete_success_count}/"
+                print(f"{success_count}/"
                       f"{len(cappdata.panel_plugins_list())} "
                       f"'{component}' repositories deleted successfully.")
                 print('=' * 16)
@@ -54,4 +48,5 @@ if confirm == 'yes':
         print(f"The directory '{component}' does not exist. "
               f"Skipping...")
         print('=' * 16)
+else:
     print("No repositories have been deleted. Have a nice day.")

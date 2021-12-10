@@ -13,31 +13,24 @@
 # }}}} ------------------------------------------------------------------ #
 
 import os
-import sys
-
 import cappdata
 
-currentdir = os.path.dirname(os.path.realpath(__file__))
-parentdir = os.path.dirname(currentdir)
-sys.path.append(parentdir)
-
 component = 'bindings'
+success_count = 0
 
-os.chdir(currentdir)
-os.makedirs(cappdata.repodir('bindings'), exist_ok=True)
-os.chdir(cappdata.repodir('bindings'))
-
-clone_success_count = 0
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
+os.makedirs(cappdata.repodir(component), exist_ok=True)
+os.chdir(cappdata.repodir(component))
 
 for item in cappdata.bindings_list():
-    if os.path.isdir('../' + component + '/' + item):
+    if os.path.isdir(item):
         print(f"\nThe '{item}' directory already exists. Skipping...\n")
         print('=' * 16)
     else:
         os.system('git clone https://gitlab.xfce.org/' + component + '/'
                   + item + '.git')
-        clone_success_count += 1
+        success_count += 1
         print('=' * 16)
-        print(f"{clone_success_count}/{len(cappdata.bindings_list())} "
+        print(f"{success_count}/{len(cappdata.bindings_list())} "
               f"'{component}' repositories cloned successfully.")
         print('=' * 16)

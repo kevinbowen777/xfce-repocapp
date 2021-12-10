@@ -1,24 +1,22 @@
 # xfce-repocapp - TODO
 
 ----
-
 ### as of 20210109
- - fix pull_core.py update delimers
- - fix typos in README
- - add banner to build menu that this assumes that all build
-    requirements have already been handled and is not addressed by
-    this app
- - add banner to install menu indicating that 'build' needs to
-    be run first
- - Update README with instructions for changing install
+
+ - clean up & standardize path manipulation behavior
+ - look into using pathlib to get rid of `repodir()` in `cappdata.py`
+ - ~~add installation instructions to~~`README.md`
+   - ~~note difference between master & dev branches(including use of pip)~~
+ - fix pull_<xxx>.py update delimiters
+ - ~~fix typos in README~~
+ - Update `README.md` with instructions for changing install
     directory
- - Move repo URLs into cappdata.py module?
+ - Move repo URLs into `cappdata.py` module?
  - add final successful count of cloned repos
- - remove __init__.py ??
  - add __init__.main() on individual scripts???
  - add 'performing x action on component' in main() for running standalone scripts
-   - or move from xfce-repocapp.sh into body of script
- - improve main menu (xfce-repocapp.sh)
+   - or move from `xfce-repocapp.sh` into body of script
+ - improve main menu (`xfce-repocapp.sh`)
    - which library?
    - improve menu selection
      - allow words and first letter of actions 
@@ -31,7 +29,7 @@
      - pull
      - purge
  - write tests
-   - main menu(xfce-repocapp.sh)
+   - main menu(`xfce-repocapp.sh`)
    - 
  - provide summary of actions upon completion
  - package for TestPy/PyPi
@@ -51,7 +49,7 @@
  - Move repo URLs into cappdata.py module?
  - add final successful count of cloned repos
  - ~~add count for cloning core, panel-plugins~~
- - remove __init__.py ??
+ - ~~remove __init__.py~~
  - ~~check for directory existence in pull scripts~~
    - ~~add update count for same~~
  - ~~check for directory existence in clean scripts~~

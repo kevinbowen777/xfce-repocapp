@@ -12,15 +12,10 @@
 #
 # }}} ------------------------------------------------------------------ #
 
-
 import os
 import subprocess
-import sys
 
-currentdir = os.path.dirname(os.path.realpath(__file__))
-parentdir = os.path.dirname(currentdir)
-sys.path.append(parentdir)
-os.chdir(currentdir)
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 subprocess.call("install_apps.py", shell=True)
 subprocess.call("install_bindings.py", shell=True)

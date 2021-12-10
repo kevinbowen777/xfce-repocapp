@@ -13,33 +13,26 @@
 # }}} ------------------------------------------------------------------ #
 
 import os
-import sys
-
 import cappdata
 
 component = 'bindings'
-
-currentdir = os.path.dirname(os.path.realpath(__file__))
-parentdir = os.path.dirname(currentdir)
-sys.path.append(parentdir)
+success_count = 0
 
 repopath = cappdata.repodir(component)
-os.chdir(currentdir)
-
-update_success_count = 0
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 if os.path.isdir(repopath):
     os.chdir(cappdata.repodir(component))
     for item in cappdata.bindings_list():
-        if os.path.isdir('../' + component + '/' + item):
+        if os.path.isdir(item):
             os.chdir(item)
             print('Updating ' + item + ':')
             os.system('git pull')
-            update_success_count += 1
-            print(f"{update_success_count}/{len(cappdata.bindings_list())} "
+            success_count += 1
+            print(f"{success_count}/{len(cappdata.bindings_list())} "
                   f"'{component}' repositories updated successfully.")
             print('=' * 16)
-            os.chdir('../')
+            os.chdir('..')
         else:
             print(f"\nThe '{item}' repo does not exist. "
                   "Perhaps you need to clone it first.\n")

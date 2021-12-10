@@ -12,32 +12,25 @@
 # }}} ------------------------------------------------------------------- #
 
 import os
-import sys
 import time
-
 import cappdata
 
 component = 'bindings'
-
-currentdir = os.path.dirname(os.path.realpath(__file__))
-parentdir = os.path.dirname(currentdir)
-sys.path.append(parentdir)
+success_count = 0
 
 repopath = cappdata.repodir(component)
-os.chdir(currentdir)
-
-clean_success_count = 0
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 if os.path.isdir(repopath):
     os.chdir(cappdata.repodir(component))
     for item in cappdata.bindings_list():
-        if os.path.isdir('../' + component + '/' + item):
+        if os.path.isdir(item):
             os.chdir(item)
             print('\nCleaning ' + item + ' directory...\n')
             time.sleep(1.5)
             os.system('make -s clean')
-            clean_success_count += 1
-            print(f"{clean_success_count}/{len(cappdata.bindings_list())} "
+            success_count += 1
+            print(f"{success_count}/{len(cappdata.bindings_list())} "
                   f"'{component}' repositories cleaned.")
             print('\nExiting ' + item + ' directory...\n')
             print('=' * 16)

@@ -12,26 +12,20 @@
 # }}} ------------------------------------------------------------------ #
 
 import os
-import sys
-
 import cappdata
 
 component = 'core'
 
-currentdir = os.path.dirname(os.path.realpath(__file__))
-parentdir = os.path.dirname(currentdir)
-sys.path.append(parentdir)
-
 repopath = cappdata.repodir(component)
-os.chdir(currentdir)
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 if os.path.isdir(repopath):
     os.chdir(cappdata.repodir(component))
     for item in cappdata.core_list():
-        if os.path.isdir('../' + component + '/' + item):
+        if os.path.isdir(item):
             os.chdir(item)
             confirm = cappdata.query_yes_no(
-                f"Do you want to install '{component}' to the system? "
+                f"Do you want to install '{item}' to the system? "
                 f"Answer 'No' to install locally. ")
             if confirm == 'yes':
                 print('Installing ' + item + ' to the system...')

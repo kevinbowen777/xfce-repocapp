@@ -19,11 +19,7 @@ import cappdata
 
 component = 'panel-plugins'
 
-currentdir = os.path.dirname(os.path.realpath(__file__))
-parentdir = os.path.dirname(currentdir)
-sys.path.append(parentdir)
-
-os.chdir(currentdir)
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
 os.chdir(cappdata.repodir(component))
 os.environ["PKG_CONFIG_PATH"] = "/usr/lib/pkgconfig:/usr"
 
