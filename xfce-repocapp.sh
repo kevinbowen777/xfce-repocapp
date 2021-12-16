@@ -10,7 +10,7 @@
 #          These scripts, in turn, manage git repositories pulled from
 #           https://gitlab.xfce.org
 #
-# version: 0.7
+# version: 0.7.1
 # updated: 20210217
 # @author: kevin.bowen@gmail.com
 #
