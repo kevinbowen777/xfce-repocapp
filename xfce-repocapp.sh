@@ -10,7 +10,7 @@
 #          These scripts, in turn, manage git repositories pulled from
 #           https://gitlab.xfce.org
 #
-# version: 0.6
+# version: 0.7
 # updated: 20210217
 # @author: kevin.bowen@gmail.com
 #
@@ -71,44 +71,44 @@ do
                 case $sub1opt in
                     "Clone apps")
                         echo
-                        echo "Cloning Xfce apps repositories..."
-                        clone/clone_xfce_apps.py
+                        echo "Cloning apps repositories..."
+                        clone/clone_apps.py
                         exit
                         ;;
                     "Clone bindings")
                         echo
-                        echo "Cloning Xfce bindings repositories..."
-                        clone/clone_xfce_bindings.py
+                        echo "Cloning bindings repositories..."
+                        clone/clone_bindings.py
                         exit
                         ;;
                     "Clone core")
                         echo
-                        echo "Cloning Xfce core repositories..."
-                        clone/clone_xfce_core.py
+                        echo "Cloning core repositories..."
+                        clone/clone_core.py
                         exit
                         ;;
                     "Clone panel-plugins")
                         echo
-                        echo "Cloning Xfce panel-plugin repositories..."
-                        clone/clone_xfce_panel_plugins.py
+                        echo "Cloning panel-plugin repositories..."
+                        clone/clone_panel_plugins.py
                         exit
                         ;;
                     "Clone thunar-plugins")
                         echo
-                        echo "Cloning Xfce thunar-plugin repositories..."
-                        clone/clone_xfce_thunar_plugins.py
+                        echo "Cloning thunar-plugin repositories..."
+                        clone/clone_thunar_plugins.py
                         exit
                         ;;
                     "Clone www")
                         echo
-                        echo "Cloning Xfce www repositories..."
-                        clone/clone_xfce_www.py
+                        echo "Cloning www repositories..."
+                        clone/clone_www.py
                         exit
                         ;;
                     "Clone all repos")
                         echo
                         echo "Cloning all Xfce repositories..."
-                        clone/clone_xfce_all.py
+                        clone/clone_all.py
                         exit
                         ;;
                     "Back to Main Menu")
@@ -132,38 +132,38 @@ do
                 case $sub2opt in
                     "Build apps")
                         echo
-                        echo "Building Xfce apps repositories..."
-                        build/build_xfce_apps.py
+                        echo "Building apps repositories..."
+                        build/build_apps.py
                         exit
                         ;;
                     "Build bindings")
                         echo
-                        echo "Building Xfce bindings repositories..."
-                        build/build_xfce_bindings.py
+                        echo "Building bindings repositories..."
+                        build/build_bindings.py
                         exit
                         ;;
                     "Build core")
                         echo
-                        echo "Building Xfce core repositories..."
-                        build/build_xfce_core.py
+                        echo "Building core repositories..."
+                        build/build_core.py
                         exit
                         ;;
                     "Build panel-plugins")
                         echo
-                        echo "Building Xfce panel-plugin repositories..."
-                        build/build_xfce_panel_plugins.py
+                        echo "Building panel-plugin repositories..."
+                        build/build_panel_plugins.py
                         exit
                         ;;
                     "Build thunar-plugins")
                         echo
-                        echo "Building Xfce thunar-plugin repositories..."
-                        build/build_xfce_thunar_plugins.py
+                        echo "Building thunar-plugin repositories..."
+                        build/build_thunar_plugins.py
                         exit
                         ;;
                     "Build all repos")
                         echo
                         echo "Building all Xfce repositories..."
-                        build/build_xfce_all.py
+                        build/build_all.py
                         exit
                         ;;
                     "Back to Main Menu")
@@ -187,38 +187,38 @@ do
                 case $sub3opt in
                     "Install apps")
                         echo
-                        echo "Cleaning Xfce apps repositories..."
-                        install/install_xfce_apps.py
+                        echo "Installing apps repositories..."
+                        install/install_apps.py
                         exit
                         ;;
                     "Install bindings")
                         echo
-                        echo "Cleaning Xfce bindings repositories..."
-                        install/install_xfce_bindings.py
+                        echo "Installing bindings repositories..."
+                        install/install_bindings.py
                         exit
                         ;;
                     "Install core")
                         echo
-                        echo "Cleaning Xfce core repositories..."
-                        install/install_xfce_core.py
+                        echo "Installing core repositories..."
+                        install/install_core.py
                         exit
                         ;;
                     "Install panel-plugins")
                         echo
-                        echo "Cleaning Xfce panel-plugin repositories..."
-                        install/install_xfce_panel_plugins.py
+                        echo "Installing panel-plugin repositories..."
+                        install/install_panel_plugins.py
                         exit
                         ;;
                     "Install thunar-plugins")
                         echo
-                        echo "Cleaning Xfce thunar-plugin repositories..."
-                        install/install_xfce_thunar_plugins.py
+                        echo "Installing thunar-plugin repositories..."
+                        install/install_thunar_plugins.py
                         exit
                         ;;
                     "Install all repos")
                         echo
                         echo "Installing all Xfce repositories..."
-                        install/install_xfce_all.py
+                        install/install_all.py
                         exit
                         ;;
                     "Back to Main Menu")
@@ -242,38 +242,38 @@ do
                 case $sub4opt in
                     "Clean apps")
                         echo
-                        echo "Cleaning Xfce apps repositories..."
-                        clean/clean_xfce_apps.py
+                        echo "Cleaning apps repositories..."
+                        clean/clean_apps.py
                         exit
                         ;;
                     "Clean bindings")
                         echo
-                        echo "Cleaning Xfce bindings repositories..."
-                        clean/clean_xfce_bindings.py
+                        echo "Cleaning bindings repositories..."
+                        clean/clean_bindings.py
                         exit
                         ;;
                     "Clean core")
                         echo
-                        echo "Cleaning Xfce core repositories..."
-                        clean/clean_xfce_core.py
+                        echo "Cleaning core repositories..."
+                        clean/clean_core.py
                         exit
                         ;;
                     "Clean panel-plugins")
                         echo
-                        echo "Cleaning Xfce panel-plugin repositories..."
-                        clean/clean_xfce_panel_plugins.py
+                        echo "Cleaning panel-plugin repositories..."
+                        clean/clean_panel_plugins.py
                         exit
                         ;;
                     "Clean thunar-plugins")
                         echo
-                        echo "Cleaning Xfce thunar-plugin repositories..."
-                        clean/clean_xfce_thunar_plugins.py
+                        echo "Cleaning thunar-plugin repositories..."
+                        clean/clean_thunar_plugins.py
                         exit
                         ;;
                     "Clean all repos")
                         echo
                         echo "Cleaning all Xfce repositories..."
-                        clean/clean_xfce_all.py
+                        clean/clean_all.py
                         exit
                         ;;
                     "Back to Main Menu")
@@ -296,49 +296,41 @@ do
             do
                 case $sub5opt in
                     "Pull apps")
-                        echo
-                        echo "Pulling Xfce apps repositories..."
-                        pull/pull_xfce_apps.py
+                        printf "Pulling apps repositories...\n"
+                        pull/pull_apps.py
                         exit
                         ;;
                     "Pull bindings")
-                        echo
-                        echo "Pulling Xfce bindings repositories..."
-                        pull/pull_xfce_bindings.py
+                        printf "Pulling bindings repositories...\n"
+                        pull/pull_bindings.py
                         exit
                         ;;
                     "Pull core")
-                        echo
-                        echo "Pulling Xfce core repositories..."
-                        pull/pull_xfce_core.py
+                        printf "Pulling core repositories...\n"
+                        pull/pull_core.py
                         exit
                         ;;
                     "Pull panel-plugins")
-                        echo
-                        echo "Pulling Xfce panel-plugin repositories..."
-                        pull/pull_xfce_panel_plugins.py
+                        printf "Pulling panel-plugin repositories...\n"
+                        pull/pull_panel_plugins.py
                         exit
                         ;;
                     "Pull thunar-plugins")
-                        echo
-                        echo "Pulling Xfce thunar-plugin repositories..."
-                        pull/pull_xfce_thunar_plugins.py
+                        printf "Pulling thunar-plugin repositories...\n"
+                        pull/pull_thunar_plugins.py
                         exit
                         ;;
                     "Pull www")
-                        echo
-                        echo "Pulling Xfce www repositories..."
-                        pull/pull_xfce_www.py
+                        printf "Pulling www repositories...\n"
+                        pull/pull_www.py
                         exit
                         ;;
                     "Pull all repos")
-                        echo
-                        echo "Pulling all Xfce repositories..."
-                        pull/pull_xfce_all.py
+                        printf "Pulling all Xfce repositories...\n"
+                        pull/pull_all.py
                         exit
                         ;;
                     "Back to Main Menu")
-                        echo
                         echo "Returning to Main Menu..."
                         exec "$0"
                         ;;
@@ -358,44 +350,44 @@ do
                 case $sub6opt in
                     "Purge apps")
                         echo
-                        echo "Purging Xfce apps repositories..."
-                        purge/purge_xfce_apps.py
+                        echo "Purging apps repositories..."
+                        purge/purge_apps.py
                         exit
                         ;;
                     "Purge bindings")
                         echo
-                        echo "Purging Xfce bindings repositories..."
-                        purge/purge_xfce_bindings.py
+                        echo "Purging bindings repositories..."
+                        purge/purge_bindings.py
                         exit
                         ;;
                     "Purge core")
                         echo
-                        echo "Purging Xfce core repositories..."
-                        purge/purge_xfce_core.py
+                        echo "Purging core repositories..."
+                        purge/purge_core.py
                         exit
                         ;;
                     "Purge panel-plugins")
                         echo
-                        echo "Purging Xfce panel-plugin repositories..."
-                        purge/purge_xfce_panel_plugins.py
+                        echo "Purging panel-plugin repositories..."
+                        purge/purge_panel_plugins.py
                         exit
                         ;;
                     "Purge thunar-plugins")
                         echo
-                        echo "Purging Xfce thunar-plugin repositories..."
-                        purge/purge_xfce_thunar_plugins.py
+                        echo "Purging thunar-plugin repositories..."
+                        purge/purge_thunar_plugins.py
                         exit
                         ;;
                     "Purge www")
                         echo
-                        echo "Purging Xfce www repositories..."
-                        purge/purge_xfce_www.py
+                        echo "Purging www repositories..."
+                        purge/purge_www.py
                         exit
                         ;;
                     "Purge all repos")
                         echo
                         echo "Purging all Xfce repositories..."
-                        purge/purge_xfce_all.py
+                        purge/purge_all.py
                         exit
                         ;;
                     "Back to Main Menu")
