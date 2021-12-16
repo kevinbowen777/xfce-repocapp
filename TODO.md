@@ -1,5 +1,6 @@
 # xfce-repocapp - TODO
 
+<<<<<<< HEAD
 ### as of 20211215
  - merge current dev branch with master
  - tag 0.7 release
@@ -117,6 +118,18 @@
 
    - rewrite main menu in Python
  - ~~move packages into single file in parent directory~~
+=======
+----
+ - add branch indicator to main menu (xfce-repocapp.sh)
+ - fix typos in README
+ - improve main menu (xfce-repocapp.sh)
+   - which library?
+   - improve menu selection
+     - allow words and first letter of actions
+     - 
+   - rewrite main menu in Python
+ - move packages into single file in parent directory
+>>>>>>> master
    - clean up path manipulation in individual scripts
      - build
      - clean
@@ -129,3 +142,7 @@
    - 
  - provide summary of actions upon completion
  - package for TestPy/PyPi
+<<<<<<< HEAD
+=======
+ - 
+>>>>>>> master
