@@ -6,8 +6,8 @@
 # Purpose: install oll of the local Xfce repositories pulled from
 #           https://gitlab.xfce.org/
 #
-# version: 0.7
-# updated: 20211207
+# version: 0.7.1
+# updated: 20211215
 # @author: kevin.bowen@gmail.com
 #
 # }}} ------------------------------------------------------------------ #

@@ -3,7 +3,7 @@
 <<<<<<< HEAD
 ### as of 20211215
  - merge current dev branch with master
- - tag 0.7 release
+ - tag 0.7.1 release
  - add CHANGELOG to master?
  - build dev branch for preparation for upload to PyTest
     - create toml

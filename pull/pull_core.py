@@ -6,7 +6,7 @@
 # Purpose: update local Xfce core repositories pulled from
 #           https://gitlab.xfce.org/xfce
 #
-# version: 0.7
+# version: 0.7.1
 # updated: 20211207
 # @author: kevin.bowen@gmail.com
 #

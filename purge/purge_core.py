@@ -6,7 +6,7 @@
 # Purpose: delete the local Xfce4 core repositories originally pulled from
 #           https://gitlab.xfce.org/xfce
 #
-# version: 0.7
+# version: 0.7.1
 # updated: 20211207
 # @author: kevin.bowen@gmail.com
 #

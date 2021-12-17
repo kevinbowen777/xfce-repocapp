@@ -5,7 +5,7 @@
 # Name: clean_apps.py
 # Purpose: Clean local Xfce apps repository directories
 #
-# version: 0.7
+# version: 0.7.1
 # updated: 20211207
 # @author: kevin.bowen@gmail.com
 #
