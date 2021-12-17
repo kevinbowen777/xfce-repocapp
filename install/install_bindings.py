@@ -5,8 +5,8 @@
 # Name: install_bindings.py
 # Purpose: Install Xfce bindings into system
 #
-# version: 0.7
-# updated: 20211207
+# version: 0.7.1
+# updated: 20211215
 # @author: kevin.bowen@gmail.com
 #
 # }}} ------------------------------------------------------------------ #

@@ -6,7 +6,7 @@
 # Purpose: delete the local Xfce panel-plugins repositories pulled from
 #           https://gitlab.xfce.org/panel-plugins
 #
-# version: 0.7
+# version: 0.7.1
 # updated: 20211207
 # @author: kevin.bowen@gmail.com
 #
