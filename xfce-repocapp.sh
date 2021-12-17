@@ -65,43 +65,43 @@ do
             do
                 case $sub1opt in
                     "Clone apps")
-                        printf "Cloning apps repositories..."
+                        printf "Cloning apps repositories...\n"
                         clone/clone_apps.py
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Clone bindings")
-                        printf "Cloning bindings repositories..."
+                        printf "Cloning bindings repositories...\n"
                         clone/clone_bindings.py
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Clone core")
-                        printf "Cloning core repositories..."
+                        printf "Cloning core repositories...\n"
                         clone/clone_core.py
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Clone panel-plugins")
-                        printf "Cloning panel-plugin repositories..."
+                        printf "Cloning panel-plugin repositories...\n"
                         clone/clone_panel_plugins.py
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Clone thunar-plugins")
-                        printf "Cloning thunar-plugin repositories..."
+                        printf "Cloning thunar-plugin repositories...\n"
                         clone/clone_thunar_plugins.py
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Clone www")
-                        printf "Cloning www repositories..."
+                        printf "Cloning www repositories...\n"
                         clone/clone_www.py
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Clone all repos")
-                        printf "Cloning all Xfce repositories..."
+                        printf "Cloning all Xfce repositories...\n"
                         clone/clone_all.py
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
@@ -342,43 +342,43 @@ do
             do
                 case $sub6opt in
                     "Purge apps")
-                        printf "Purging apps repositories..."
+                        printf "Purging apps repositories...\n"
                         purge/purge_apps.py
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Purge bindings")
-                        printf "Purging bindings repositories..."
+                        printf "Purging bindings repositories...\n"
                         purge/purge_bindings.py
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Purge core")
-                        printf "Purging core repositories..."
+                        printf "Purging core repositories...\n"
                         purge/purge_core.py
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Purge panel-plugins")
-                        printf "Purging panel-plugin repositories..."
+                        printf "Purging panel-plugin repositories...\n"
                         purge/purge_panel_plugins.py
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Purge thunar-plugins")
-                        printf "Purging thunar-plugin repositories..."
+                        printf "Purging thunar-plugin repositories...\n"
                         purge/purge_thunar_plugins.py
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Purge www")
-                        printf "Purging www repositories..."
+                        printf "Purging www repositories...\n"
                         purge/purge_www.py
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Purge all repos")
-                        printf "Purging all Xfce repositories..."
+                        printf "Purging all Xfce repositories...\n"
                         purge/purge_all.py
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
