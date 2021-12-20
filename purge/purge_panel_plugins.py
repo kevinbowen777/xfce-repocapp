@@ -19,7 +19,7 @@ import cappdata
 component = 'panel-plugins'
 comp_list = cappdata.panel_plugins_list()
 success_count = 0
-repopath = cappdata.repodir(component)
+repopath = cappdata.get_path(component)
 
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 confirm = cappdata.query_yes_no(f"Are you sure you want to remove the "

@@ -66,43 +66,57 @@ do
                 case $sub1opt in
                     "Clone apps")
                         printf "Cloning apps repositories...\n"
-                        clone/clone_apps.py
+                        cd clone || { echo "Failure"; exit 1; }
+                        clone_apps.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Clone bindings")
                         printf "Cloning bindings repositories...\n"
-                        clone/clone_bindings.py
+                        cd clone || { echo "Failure"; exit 1; }
+                        clone_bindings.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Clone core")
                         printf "Cloning core repositories...\n"
-                        clone/clone_core.py
+                        cd clone || { echo "Failure"; exit 1; }
+                        clone_core.py
                         read -p "Press any key to continue... " -r -n1 -s
+                        cd .. || { echo "Failure"; exit 1; }
                         exec "$0"
                         ;;
                     "Clone panel-plugins")
                         printf "Cloning panel-plugin repositories...\n"
-                        clone/clone_panel_plugins.py
+                        cd clone || { echo "Failure"; exit 1; }
+                        clone_panel_plugins.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Clone thunar-plugins")
                         printf "Cloning thunar-plugin repositories...\n"
-                        clone/clone_thunar_plugins.py
+                        cd clone || { echo "Failure"; exit 1; }
+                        clone_thunar_plugins.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Clone www")
                         printf "Cloning www repositories...\n"
-                        clone/clone_www.py
+                        cd clone || { echo "Failure"; exit 1; }
+                        clone_www.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Clone all repos")
                         printf "Cloning all Xfce repositories...\n"
-                        clone/clone_all.py
+                        cd clone || { echo "Failure"; exit 1; }
+                        clone_all.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
@@ -125,37 +139,49 @@ do
                 case $sub2opt in
                     "Build apps")
                         printf "Building apps repositories..."
-                        build/build_apps.py
+                        cd build || { echo "Failure"; exit 1; }
+                        build_apps.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Build bindings")
                         printf "Building bindings repositories..."
-                        build/build_bindings.py
+                        cd build || { echo "Failure"; exit 1; }
+                        build_bindings.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Build core")
                         printf "Building core repositories..."
-                        build/build_core.py
+                        cd build || { echo "Failure"; exit 1; }
+                        build_core.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Build panel-plugins")
                         printf "Building panel-plugin repositories..."
-                        build/build_panel_plugins.py
+                        cd build || { echo "Failure"; exit 1; }
+                        build_panel_plugins.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Build thunar-plugins")
                         printf "Building thunar-plugin repositories..."
-                        build/build_thunar_plugins.py
+                        cd build || { echo "Failure"; exit 1; }
+                        build_thunar_plugins.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Build all repos")
                         printf "Building all Xfce repositories..."
-                        build/build_all.py
+                        cd build || { echo "Failure"; exit 1; }
+                        build_all.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
@@ -178,37 +204,49 @@ do
                 case $sub3opt in
                     "Install apps")
                         printf "Installing apps repositories...\n"
-                        install/install_apps.py
+                        cd install || { echo "Failure"; exit 1; }
+                        install_apps.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Install bindings")
                         printf "Installing bindings repositories...\n"
-                        install/install_bindings.py
+                        cd install || { echo "Failure"; exit 1; }
+                        install_bindings.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Install core")
                         printf "Installing core repositories...\n"
-                        install/install_core.py
+                        cd install || { echo "Failure"; exit 1; }
+                        install_core.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Install panel-plugins")
                         printf "Installing panel-plugin repositories...\n"
-                        install/install_panel_plugins.py
+                        cd install || { echo "Failure"; exit 1; }
+                        install_panel_plugins.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Install thunar-plugins")
                         printf "Installing thunar-plugin repositories...\n"
-                        install/install_thunar_plugins.py
+                        cd install || { echo "Failure"; exit 1; }
+                        install_thunar_plugins.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Install all repos")
                         printf "Installing all Xfce repositories...\n"
-                        install/install_all.py
+                        cd install || { echo "Failure"; exit 1; }
+                        install_all.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
@@ -231,37 +269,49 @@ do
                 case $sub4opt in
                     "Clean apps")
                         printf "Cleaning apps repositories..."
-                        clean/clean_apps.py
+                        cd clean || { echo "Failure"; exit 1; }
+                        clean_apps.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Clean bindings")
                         printf "Cleaning bindings repositories..."
-                        clean/clean_bindings.py
+                        cd clean || { echo "Failure"; exit 1; }
+                        clean_bindings.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Clean core")
                         printf "Cleaning core repositories..."
-                        clean/clean_core.py
+                        cd clean || { echo "Failure"; exit 1; }
+                        clean_core.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Clean panel-plugins")
                         printf "Cleaning panel-plugin repositories..."
-                        clean/clean_panel_plugins.py
+                        cd clean || { echo "Failure"; exit 1; }
+                        clean_panel_plugins.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Clean thunar-plugins")
                         printf "Cleaning thunar-plugin repositories..."
-                        clean/clean_thunar_plugins.py
+                        cd clean || { echo "Failure"; exit 1; }
+                        clean_thunar_plugins.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Clean all repos")
                         printf "Cleaning all Xfce repositories..."
-                        clean/clean_all.py
+                        cd clean || { echo "Failure"; exit 1; }
+                        clean_all.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
@@ -284,43 +334,57 @@ do
                 case $sub5opt in
                     "Pull apps")
                         printf "Pulling apps repositories...\n"
-                        pull/pull_apps.py
+                        cd pull || { echo "Failure"; exit 1; }
+                        pull_apps.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Pull bindings")
                         printf "Pulling bindings repositories...\n"
-                        pull/pull_bindings.py
+                        cd pull || { echo "Failure"; exit 1; }
+                        pull_bindings.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Pull core")
                         printf "Pulling core repositories...\n"
-                        pull/pull_core.py
+                        cd pull || { echo "Failure"; exit 1; }
+                        pull_core.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Pull panel-plugins")
                         printf "Pulling panel-plugin repositories...\n"
-                        pull/pull_panel_plugins.py
+                        cd pull || { echo "Failure"; exit 1; }
+                        pull_panel_plugins.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Pull thunar-plugins")
                         printf "Pulling thunar-plugin repositories...\n"
-                        pull/pull_thunar_plugins.py
+                        cd pull || { echo "Failure"; exit 1; }
+                        pull_thunar_plugins.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Pull www")
                         printf "Pulling www repositories...\n"
-                        pull/pull_www.py
+                        cd pull || { echo "Failure"; exit 1; }
+                        pull_www.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Pull all repos")
                         printf "Pulling all Xfce repositories...\n"
-                        pull/pull_all.py
+                        cd pull || { echo "Failure"; exit 1; }
+                        pull_all.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
@@ -343,43 +407,57 @@ do
                 case $sub6opt in
                     "Purge apps")
                         printf "Purging apps repositories...\n"
-                        purge/purge_apps.py
+                        cd purge || { echo "Failure"; exit 1; }
+                        purge_apps.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Purge bindings")
                         printf "Purging bindings repositories...\n"
-                        purge/purge_bindings.py
+                        cd purge || { echo "Failure"; exit 1; }
+                        purge_bindings.py
+                        cd ..
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Purge core")
                         printf "Purging core repositories...\n"
-                        purge/purge_core.py
+                        cd purge || { echo "Failure"; exit 1; }
+                        purge_core.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Purge panel-plugins")
                         printf "Purging panel-plugin repositories...\n"
-                        purge/purge_panel_plugins.py
+                        cd purge || { echo "Failure"; exit 1; }
+                        purge_panel_plugins.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Purge thunar-plugins")
                         printf "Purging thunar-plugin repositories...\n"
-                        purge/purge_thunar_plugins.py
+                        cd purge || { echo "Failure"; exit 1; }
+                        purge_thunar_plugins.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Purge www")
                         printf "Purging www repositories...\n"
-                        purge/purge_www.py
+                        cd purge || { echo "Failure"; exit 1; }
+                        purge_www.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Purge all repos")
                         printf "Purging all Xfce repositories...\n"
-                        purge/purge_all.py
+                        cd purge || { echo "Failure"; exit 1; }
+                        purge_all.py
+                        cd .. || { echo "Failure"; exit 1; }
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
