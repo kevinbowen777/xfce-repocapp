@@ -17,7 +17,7 @@ import cappdata
 
 component = 'core'
 comp_list = cappdata.core_list()
-repopath = cappdata.repodir(component)
+repopath = cappdata.get_path(component)
 success_count = 0
 
 os.chdir(os.path.dirname(os.path.realpath(__file__)))

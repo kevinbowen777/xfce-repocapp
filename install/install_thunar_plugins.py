@@ -16,7 +16,7 @@ import cappdata
 
 component = 'thunar-plugins'
 comp_list = cappdata.thunar_plugins_list()
-repopath = cappdata.repodir(component)
+repopath = cappdata.get_path(component)
 
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
