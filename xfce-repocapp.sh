@@ -11,15 +11,11 @@
 #           https://gitlab.xfce.org
 #
 # version: 0.7.1
-# updated: 20210217
+# updated: 20211216
 # @author: kevin.bowen@gmail.com
 #
 # }}} ------------------------------------------------------------------ #
 clear
-
-# while true
-# do
-# clear
 
 echo "#####################################################"
 echo "# xfce-repocapp: local Xfce repository maintenance #"
@@ -64,60 +60,72 @@ select opt in "${options[@]}"
 do
     case $opt in
         "Clone")
-            echo "you chose choice 1"
             PS3=$sub1prompt
             select sub1opt in "${sub1[@]}"
             do
                 case $sub1opt in
                     "Clone apps")
-                        echo
-                        echo "Cloning apps repositories..."
-                        clone/clone_apps.py
-                        exit
+                        printf "Cloning apps repositories...\n"
+                        cd clone || { echo "Failure"; exit 1; }
+                        clone_apps.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Clone bindings")
-                        echo
-                        echo "Cloning bindings repositories..."
-                        clone/clone_bindings.py
-                        exit
+                        printf "Cloning bindings repositories...\n"
+                        cd clone || { echo "Failure"; exit 1; }
+                        clone_bindings.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Clone core")
-                        echo
-                        echo "Cloning core repositories..."
-                        clone/clone_core.py
-                        exit
+                        printf "Cloning core repositories...\n"
+                        cd clone || { echo "Failure"; exit 1; }
+                        clone_core.py
+                        read -p "Press any key to continue... " -r -n1 -s
+                        cd .. || { echo "Failure"; exit 1; }
+                        exec "$0"
                         ;;
                     "Clone panel-plugins")
-                        echo
-                        echo "Cloning panel-plugin repositories..."
-                        clone/clone_panel_plugins.py
-                        exit
+                        printf "Cloning panel-plugin repositories...\n"
+                        cd clone || { echo "Failure"; exit 1; }
+                        clone_panel_plugins.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Clone thunar-plugins")
-                        echo
-                        echo "Cloning thunar-plugin repositories..."
-                        clone/clone_thunar_plugins.py
-                        exit
+                        printf "Cloning thunar-plugin repositories...\n"
+                        cd clone || { echo "Failure"; exit 1; }
+                        clone_thunar_plugins.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Clone www")
-                        echo
-                        echo "Cloning www repositories..."
-                        clone/clone_www.py
-                        exit
+                        printf "Cloning www repositories...\n"
+                        cd clone || { echo "Failure"; exit 1; }
+                        clone_www.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Clone all repos")
-                        echo
-                        echo "Cloning all Xfce repositories..."
-                        clone/clone_all.py
-                        exit
+                        printf "Cloning all Xfce repositories...\n"
+                        cd clone || { echo "Failure"; exit 1; }
+                        clone_all.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Back to Main Menu")
-                        echo
-                        echo "Returning to Main Menu..."
+                        printf "Returning to Main Menu..."
                         exec "$0"
                         ;;
                     "Quit")
-                        echo "Goodbye..."
+                        printf "Goodbye..."
                         exit
                         ;;
                     *) echo invalid option;;
@@ -125,54 +133,64 @@ do
             done
             ;;
         "Build")
-            echo "you chose choice 2"
             PS3=$sub2prompt
             select sub2opt in "${sub2[@]}"
             do
                 case $sub2opt in
                     "Build apps")
-                        echo
-                        echo "Building apps repositories..."
-                        build/build_apps.py
-                        exit
+                        printf "Building apps repositories..."
+                        cd build || { echo "Failure"; exit 1; }
+                        build_apps.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Build bindings")
-                        echo
-                        echo "Building bindings repositories..."
-                        build/build_bindings.py
-                        exit
+                        printf "Building bindings repositories..."
+                        cd build || { echo "Failure"; exit 1; }
+                        build_bindings.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Build core")
-                        echo
-                        echo "Building core repositories..."
-                        build/build_core.py
-                        exit
+                        printf "Building core repositories..."
+                        cd build || { echo "Failure"; exit 1; }
+                        build_core.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Build panel-plugins")
-                        echo
-                        echo "Building panel-plugin repositories..."
-                        build/build_panel_plugins.py
-                        exit
+                        printf "Building panel-plugin repositories..."
+                        cd build || { echo "Failure"; exit 1; }
+                        build_panel_plugins.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Build thunar-plugins")
-                        echo
-                        echo "Building thunar-plugin repositories..."
-                        build/build_thunar_plugins.py
-                        exit
+                        printf "Building thunar-plugin repositories..."
+                        cd build || { echo "Failure"; exit 1; }
+                        build_thunar_plugins.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Build all repos")
-                        echo
-                        echo "Building all Xfce repositories..."
-                        build/build_all.py
-                        exit
+                        printf "Building all Xfce repositories..."
+                        cd build || { echo "Failure"; exit 1; }
+                        build_all.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Back to Main Menu")
-                        echo
-                        echo "Returning to Main Menu..."
+                        printf "Returning to Main Menu..."
                         exec "$0"
                         ;;
                     "Quit")
-                        echo "Goodbye..."
+                        printf "Goodbye..."
                         exit
                         ;;
                     *) echo invalid option;;
@@ -180,54 +198,64 @@ do
             done
             ;;
         "Install")
-            echo "you chose choice 3"
             PS3=$sub3prompt
             select sub3opt in "${sub3[@]}"
             do
                 case $sub3opt in
                     "Install apps")
-                        echo
-                        echo "Installing apps repositories..."
-                        install/install_apps.py
-                        exit
+                        printf "Installing apps repositories...\n"
+                        cd install || { echo "Failure"; exit 1; }
+                        install_apps.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Install bindings")
-                        echo
-                        echo "Installing bindings repositories..."
-                        install/install_bindings.py
-                        exit
+                        printf "Installing bindings repositories...\n"
+                        cd install || { echo "Failure"; exit 1; }
+                        install_bindings.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Install core")
-                        echo
-                        echo "Installing core repositories..."
-                        install/install_core.py
-                        exit
+                        printf "Installing core repositories...\n"
+                        cd install || { echo "Failure"; exit 1; }
+                        install_core.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Install panel-plugins")
-                        echo
-                        echo "Installing panel-plugin repositories..."
-                        install/install_panel_plugins.py
-                        exit
+                        printf "Installing panel-plugin repositories...\n"
+                        cd install || { echo "Failure"; exit 1; }
+                        install_panel_plugins.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Install thunar-plugins")
-                        echo
-                        echo "Installing thunar-plugin repositories..."
-                        install/install_thunar_plugins.py
-                        exit
+                        printf "Installing thunar-plugin repositories...\n"
+                        cd install || { echo "Failure"; exit 1; }
+                        install_thunar_plugins.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Install all repos")
-                        echo
-                        echo "Installing all Xfce repositories..."
-                        install/install_all.py
-                        exit
+                        printf "Installing all Xfce repositories...\n"
+                        cd install || { echo "Failure"; exit 1; }
+                        install_all.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Back to Main Menu")
-                        echo
-                        echo "Returning to Main Menu..."
+                        printf "Returning to Main Menu..."
                         exec "$0"
                         ;;
                     "Quit")
-                        echo "Goodbye..."
+                        printf "Goodbye..."
                         exit
                         ;;
                     *) echo invalid option;;
@@ -235,54 +263,64 @@ do
             done
             ;;
         "Clean")
-            echo "you chose choice 4"
             PS3=$sub4prompt
             select sub4opt in "${sub4[@]}"
             do
                 case $sub4opt in
                     "Clean apps")
-                        echo
-                        echo "Cleaning apps repositories..."
-                        clean/clean_apps.py
-                        exit
+                        printf "Cleaning apps repositories..."
+                        cd clean || { echo "Failure"; exit 1; }
+                        clean_apps.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Clean bindings")
-                        echo
-                        echo "Cleaning bindings repositories..."
-                        clean/clean_bindings.py
-                        exit
+                        printf "Cleaning bindings repositories..."
+                        cd clean || { echo "Failure"; exit 1; }
+                        clean_bindings.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Clean core")
-                        echo
-                        echo "Cleaning core repositories..."
-                        clean/clean_core.py
-                        exit
+                        printf "Cleaning core repositories..."
+                        cd clean || { echo "Failure"; exit 1; }
+                        clean_core.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Clean panel-plugins")
-                        echo
-                        echo "Cleaning panel-plugin repositories..."
-                        clean/clean_panel_plugins.py
-                        exit
+                        printf "Cleaning panel-plugin repositories..."
+                        cd clean || { echo "Failure"; exit 1; }
+                        clean_panel_plugins.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Clean thunar-plugins")
-                        echo
-                        echo "Cleaning thunar-plugin repositories..."
-                        clean/clean_thunar_plugins.py
-                        exit
+                        printf "Cleaning thunar-plugin repositories..."
+                        cd clean || { echo "Failure"; exit 1; }
+                        clean_thunar_plugins.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Clean all repos")
-                        echo
-                        echo "Cleaning all Xfce repositories..."
-                        clean/clean_all.py
-                        exit
+                        printf "Cleaning all Xfce repositories..."
+                        cd clean || { echo "Failure"; exit 1; }
+                        clean_all.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Back to Main Menu")
-                        echo
-                        echo "Returning to Main Menu..."
+                        printf "Returning to Main Menu..."
                         exec "$0"
                         ;;
                     "Quit")
-                        echo "Goodbye..."
+                        printf "Goodbye..."
                         exit
                         ;;
                     *) echo invalid option;;
@@ -290,52 +328,72 @@ do
             done
             ;;
         "Pull")
-            echo "you chose choice 5"
             PS3=$sub5prompt
             select sub5opt in "${sub5[@]}"
             do
                 case $sub5opt in
                     "Pull apps")
                         printf "Pulling apps repositories...\n"
-                        pull/pull_apps.py
-                        exit
+                        cd pull || { echo "Failure"; exit 1; }
+                        pull_apps.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Pull bindings")
                         printf "Pulling bindings repositories...\n"
-                        pull/pull_bindings.py
-                        exit
+                        cd pull || { echo "Failure"; exit 1; }
+                        pull_bindings.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Pull core")
                         printf "Pulling core repositories...\n"
-                        pull/pull_core.py
-                        exit
+                        cd pull || { echo "Failure"; exit 1; }
+                        pull_core.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Pull panel-plugins")
                         printf "Pulling panel-plugin repositories...\n"
-                        pull/pull_panel_plugins.py
-                        exit
+                        cd pull || { echo "Failure"; exit 1; }
+                        pull_panel_plugins.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Pull thunar-plugins")
                         printf "Pulling thunar-plugin repositories...\n"
-                        pull/pull_thunar_plugins.py
-                        exit
+                        cd pull || { echo "Failure"; exit 1; }
+                        pull_thunar_plugins.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Pull www")
                         printf "Pulling www repositories...\n"
-                        pull/pull_www.py
-                        exit
+                        cd pull || { echo "Failure"; exit 1; }
+                        pull_www.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Pull all repos")
                         printf "Pulling all Xfce repositories...\n"
-                        pull/pull_all.py
-                        exit
+                        cd pull || { echo "Failure"; exit 1; }
+                        pull_all.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Back to Main Menu")
-                        echo "Returning to Main Menu..."
+                        printf "Returning to Main Menu..."
                         exec "$0"
                         ;;
                     "Quit")
-                        echo "Goodbye..."
+                        printf "Goodbye..."
                         exit
                         ;;
                     *) echo invalid option;;
@@ -343,60 +401,72 @@ do
             done
             ;;
         "Purge")
-            echo "you chose choice 6"
             PS3=$sub6prompt
             select sub6opt in "${sub6[@]}"
             do
                 case $sub6opt in
                     "Purge apps")
-                        echo
-                        echo "Purging apps repositories..."
-                        purge/purge_apps.py
-                        exit
+                        printf "Purging apps repositories...\n"
+                        cd purge || { echo "Failure"; exit 1; }
+                        purge_apps.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Purge bindings")
-                        echo
-                        echo "Purging bindings repositories..."
-                        purge/purge_bindings.py
-                        exit
+                        printf "Purging bindings repositories...\n"
+                        cd purge || { echo "Failure"; exit 1; }
+                        purge_bindings.py
+                        cd ..
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Purge core")
-                        echo
-                        echo "Purging core repositories..."
-                        purge/purge_core.py
-                        exit
+                        printf "Purging core repositories...\n"
+                        cd purge || { echo "Failure"; exit 1; }
+                        purge_core.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Purge panel-plugins")
-                        echo
-                        echo "Purging panel-plugin repositories..."
-                        purge/purge_panel_plugins.py
-                        exit
+                        printf "Purging panel-plugin repositories...\n"
+                        cd purge || { echo "Failure"; exit 1; }
+                        purge_panel_plugins.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Purge thunar-plugins")
-                        echo
-                        echo "Purging thunar-plugin repositories..."
-                        purge/purge_thunar_plugins.py
-                        exit
+                        printf "Purging thunar-plugin repositories...\n"
+                        cd purge || { echo "Failure"; exit 1; }
+                        purge_thunar_plugins.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Purge www")
-                        echo
-                        echo "Purging www repositories..."
-                        purge/purge_www.py
-                        exit
+                        printf "Purging www repositories...\n"
+                        cd purge || { echo "Failure"; exit 1; }
+                        purge_www.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Purge all repos")
-                        echo
-                        echo "Purging all Xfce repositories..."
-                        purge/purge_all.py
-                        exit
+                        printf "Purging all Xfce repositories...\n"
+                        cd purge || { echo "Failure"; exit 1; }
+                        purge_all.py
+                        cd .. || { echo "Failure"; exit 1; }
+                        read -p "Press any key to continue... " -r -n1 -s
+                        exec "$0"
                         ;;
                     "Back to Main Menu")
-                        echo
-                        echo "Returning to Main Menu..."
+                        printf "Returning to Main Menu..."
                         exec "$0"
                         ;;
                     "Quit")
-                        echo "Goodbye..."
+                        printf "Goodbye..."
                         exit
                         ;;
                     *) echo invalid option;;
