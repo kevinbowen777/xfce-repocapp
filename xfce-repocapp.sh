@@ -6,12 +6,12 @@
 #
 # Purpose: Provide a basic menu-driven system that will run scripts from
 #           https://gitlab.com/kevinbowen/xfce-repocapp.git
-#
 #          These scripts, in turn, manage git repositories pulled from
 #           https://gitlab.xfce.org
 #
-# version: 0.7.1
-# updated: 20211216
+# source: https://gitlab.com/kevinbowen/xfce-repocapp
+# version: 0.8.1
+# updated: 20211222
 # @author: kevin.bowen@gmail.com
 #
 # }}} ------------------------------------------------------------------ #
@@ -65,44 +65,38 @@ do
             do
                 case $sub1opt in
                     "Clone apps")
-                        printf "Cloning apps repositories...\n"
-                        python -c"import cappdata; cappdata.clone_xfce(component='apps', comp_list=cappdata.apps_list())"
+                        clone_xfce.py -c apps
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Clone bindings")
-                        printf "Cloning bindings repositories...\n"
-                        python -c"import cappdata; cappdata.clone_xfce(component='bindings', comp_list=cappdata.bindings_list())"
+                        clone_xfce.py -c bindings
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Clone core")
-                        printf "Cloning core repositories...\n"
-                        python -c"import cappdata; cappdata.clone_xfce(component='xfce', comp_list=cappdata.core_list())"
+                        clone_xfce.py -c xfce
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Clone panel-plugins")
-                        printf "Cloning panel-plugin repositories...\n"
-                        python -c"import cappdata; cappdata.clone_xfce(component='panel-plugins', comp_list=cappdata.panel_plugins_list())"
+                        clone_xfce.py -c panel-plugins
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Clone thunar-plugins")
-                        printf "Cloning thunar-plugin repositories...\n"
-                        python -c"import cappdata; cappdata.clone_xfce(component='thunar-plugins', comp_list=cappdata.thunar_plugins_list())"
+                        clone_xfce.py -c thunar-plugins
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Clone www")
-                        printf "Cloning www repositories...\n"
-                        python -c"import cappdata; cappdata.clone_xfce(component='www', comp_list=cappdata.www_list())"
+                        clone_xfce.py -c www
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Clone all repos")
                         printf "Cloning all Xfce repositories...\n"
-                        clone_all.py
+                        clone_xfce.py -c all
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
@@ -124,39 +118,33 @@ do
             do
                 case $sub2opt in
                     "Build apps")
-                        printf "Building apps repositories..."
-                        python -c"import cappdata; cappdata.build_xfce(component='apps', comp_list=cappdata.apps_list())"
+                        build_xfce.py -c apps
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Build bindings")
-                        printf "Building bindings repositories..."
-                        python -c"import cappdata; cappdata.build_xfce(component='bindings', comp_list=cappdata.bindings_list())"
+                        build_xfce.py -c bindings
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Build core")
-                        printf "Building core repositories..."
-                        python -c"import cappdata; cappdata.build_xfce(component='xfce', comp_list=cappdata.core_list())"
+                        build_xfce.py -c xfce
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Build panel-plugins")
-                        printf "Building panel-plugin repositories..."
-                        python -c"import cappdata; cappdata.build_xfce(component='panel-plugins', comp_list=cappdata.panel_plugins_list())"
+                        build_xfce.py -c panel-plugins
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Build thunar-plugins")
-                        printf "Building thunar-plugin repositories..."
-
-                        python -c"import cappdata; cappdata.build_xfce(component='thunar-plugins', comp_list=cappdata.thunar_plugins_list())"
+                        build_xfce.py -c thunar-plugins
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Build all repos")
-                        printf "Building all Xfce repositories..."
-                        build_all.py
+                        printf "Building all Xfce repositories...\n"
+                        build_xfce.py -c all
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
@@ -178,38 +166,33 @@ do
             do
                 case $sub3opt in
                     "Install apps")
-                        printf "Installing apps repositories...\n"
-                        python -c"import cappdata; cappdata.install_xfce(component='apps', comp_list=cappdata.apps_list())"
+                        install_xfce.py -c apps
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Install bindings")
-                        printf "Installing bindings repositories...\n"
-                        python -c"import cappdata; cappdata.install_xfce(component='bindings', comp_list=cappdata.bindings_list())"
+                        install_xfce.py -c bindings
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Install core")
-                        printf "Installing core repositories...\n"
-                        python -c"import cappdata; cappdata.install_xfce(component='xfce', comp_list=cappdata.core_list())"
+                        install_xfce.py -c xfce
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Install panel-plugins")
-                        printf "Installing panel-plugin repositories...\n"
-                        python -c"import cappdata; cappdata.install_xfce(component='panel-plugins', comp_list=cappdata.panel_plugins_list())"
+                        install_xfce.py -c panel-plugins
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Install thunar-plugins")
-                        printf "Installing thunar-plugin repositories...\n"
-                        python -c"import cappdata; cappdata.install_xfce(component='thunar-plugins', comp_list=cappdata.thunar_plugins_list())"
+                        install_xfce.py -c thunar-plugins
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Install all repos")
                         printf "Installing all Xfce repositories...\n"
-                        install_all.py
+                        install_xfce.py -c all
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
@@ -231,38 +214,33 @@ do
             do
                 case $sub4opt in
                     "Clean apps")
-                        printf "Cleaning apps repositories..."
-                        python -c"import cappdata; cappdata.clean_xfce(component='apps', comp_list=cappdata.apps_list())"
+                        clean_xfce.py -c apps
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Clean bindings")
-                        printf "Cleaning bindings repositories..."
-                        python -c"import cappdata; cappdata.clean_xfce(component='bindings', comp_list=cappdata.bindings_list())"
+                        clean_xfce.py -c bindings
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Clean core")
-                        printf "Cleaning core repositories..."
-                        python -c"import cappdata; cappdata.clean_xfce(component='xfce', comp_list=cappdata.core_list())"
+                        clean_xfce.py -c xfce
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Clean panel-plugins")
-                        printf "Cleaning panel-plugin repositories..."
-                        python -c"import cappdata; cappdata.clean_xfce(component='panel-plugins', comp_list=cappdata.panel_plugins_list())"
+                        clean_xfce.py -c panel-plugins
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Clean thunar-plugins")
-                        printf "Cleaning thunar-plugin repositories..."
-                        python -c"import cappdata; cappdata.clean_xfce(component='thunar-plugins', comp_list=cappdata.thunar_plugins_list())"
+                        clean_xfce.py -c thunar-plugins
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Clean all repos")
-                        printf "Cleaning all Xfce repositories..."
-                        clean_all.py
+                        printf "Cleaning all Xfce repositories...\n"
+                        clean_xfce.py -c all
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
@@ -284,44 +262,38 @@ do
             do
                 case $sub5opt in
                     "Pull apps")
-                        printf "Pulling apps repositories...\n"
-                        python -c"import cappdata; cappdata.pull_xfce(component='apps', comp_list=cappdata.apps_list())"
+                        pull_xfce.py -c apps
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Pull bindings")
-                        printf "Pulling bindings repositories...\n"
-                        python -c"import cappdata; cappdata.pull_xfce(component='bindings', comp_list=cappdata.bindings_list())"
+                        pull_xfce.py -c bindings
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Pull core")
-                        printf "Pulling core repositories...\n"
-                        python -c"import cappdata; cappdata.pull_xfce(component='xfce', comp_list=cappdata.core_list())"
+                        pull_xfce.py -c xfce
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Pull panel-plugins")
-                        printf "Pulling panel-plugin repositories...\n"
-                        python -c"import cappdata; cappdata.pull_xfce(component='panel-plugins', comp_list=cappdata.panel_plugins_list())"
+                        pull_xfce.py -c panel-plugins
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Pull thunar-plugins")
-                        printf "Pulling thunar-plugin repositories...\n"
-                        python -c"import cappdata; cappdata.pull_xfce(component='thunar-plugins', comp_list=cappdata.thunar_plugins_list())"
+                        pull_xfce.py -c thunar-plugins
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Pull www")
-                        printf "Pulling www repositories...\n"
-                        python -c"import cappdata; cappdata.pull_xfce(component='www', comp_list=cappdata.www_list())"
+                        pull_xfce.py -c www
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Pull all repos")
                         printf "Pulling all Xfce repositories...\n"
-                        pull_all.py
+                        pull_xfce.py -c all
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
@@ -343,44 +315,38 @@ do
             do
                 case $sub6opt in
                     "Purge apps")
-                        printf "Purging apps repositories...\n"
-                        python -c"import cappdata; cappdata.purge_xfce(component='apps', comp_list=cappdata.apps_list())"
+                        purge_xfce.py -c apps
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Purge bindings")
-                        printf "Purging bindings repositories...\n"
-                        python -c"import cappdata; cappdata.purge_xfce(component='bindings', comp_list=cappdata.bindings_list())"
+                        purge_xfce.py -c bindings
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Purge core")
-                        printf "Purging core repositories...\n"
-                        python -c"import cappdata; cappdata.purge_xfce(component='xfce', comp_list=cappdata.core_list())"
+                        purge_xfce.py -c xfce
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Purge panel-plugins")
-                        printf "Purging panel-plugin repositories...\n"
-                        python -c"import cappdata; cappdata.purge_xfce(component='panel-plugins', comp_list=cappdata.panel_plugins_list())"
+                        purge_xfce.py -c panel-plugins
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Purge thunar-plugins")
-                        printf "Purging thunar-plugin repositories...\n"
-                        python -c"import cappdata; cappdata.purge_xfce(component='thunar-plugins', comp_list=cappdata.thunar_plugins_list())"
+                        purge_xfce.py -c thunar-plugins
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Purge www")
-                        printf "Purging www repositories...\n"
-                        python -c"import cappdata; cappdata.purge_xfce(component='www', comp_list=cappdata.www_list())"
+                        purge_xfce.py -c www
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;
                     "Purge all repos")
                         printf "Purging all Xfce repositories...\n"
-                        purge_all.py
+                        purge_xfce.py -c all
                         read -p "Press any key to continue... " -r -n1 -s
                         exec "$0"
                         ;;

@@ -1,207 +1,17 @@
-import os
-import time
-import shutil
+#!/usr/bin/env python3
 
-
-def get_path(component):
-    repopath = os.path.abspath(os.path.join(os.getcwd(),
-                                            os.pardir,
-                                            component))
-    return repopath
-
-
-def build_xfce(component, comp_list):
-    repopath = get_path(component)
-    os.environ["PKG_CONFIG_PATH"] = "/usr/lib/pkgconfig:/usr"
-
-    os.chdir(os.path.dirname(os.path.realpath(__file__)))
-
-    if os.path.isdir(repopath):
-        os.chdir(repopath)
-        for item in comp_list:
-            if os.path.isdir(item):
-                os.chdir(item)
-                print('\nRunning autogen.sh for ' + item + '...\n')
-                os.system('./autogen.sh --prefix=/usr')
-                print('\nRunning make for ' + item + '...\n')
-                time.sleep(1.5)
-                os.system('make')
-                print('=' * 16)
-                os.chdir("..")
-            else:
-                print('\nNothing to do...\n')
-                print(f"The '{item}' repo does not exist.\n\n"
-                      "Perhaps you need to clone it first.\n")
-                print('=' * 16)
-
-    else:
-        print('Nothing to do...\n')
-        print(f"The '{component}' repositories do not exist.\n\n"
-              "Perhaps you need to clone the directory first.\n")
-        print('=' * 16)
-
-
-def clean_xfce(component, comp_list):
-    repopath = get_path(component)
-    success_count = 0
-
-    os.chdir(os.path.dirname(os.path.realpath(__file__)))
-
-    if os.path.isdir(repopath):
-        os.chdir(repopath)
-        for item in comp_list:
-            if os.path.isdir(item):
-                os.chdir(item)
-                print('\nCleaning ' + item + ' directory...\n')
-                time.sleep(1.5)
-                os.system('make -s clean')
-                success_count += 1
-                print(f"{success_count}/{len(comp_list)} "
-                      f"'{component}' repositories cleaned.")
-                print('\nExiting ' + item + ' directory...\n')
-                print('=' * 16)
-                os.chdir('..')
-            else:
-                print('\nNothing to do...\n')
-                print(f"The '{item}' repo does not exist.\n\n"
-                      "Perhaps you need to clone it first.\n")
-                print('=' * 16)
-
-    else:
-        print('Nothing to do...\n')
-        print(f"The '{component}' repositories do not exist.\n\n"
-              "Perhaps you need to clone the directory first.\n")
-        print('=' * 16)
-
-
-def clone_xfce(component, comp_list):
-    repopath = get_path(component)
-    success_count = 0
-
-    os.chdir(os.path.dirname(os.path.realpath(__file__)))
-    os.makedirs(repopath, exist_ok=True)
-    os.chdir(repopath)
-
-    for item in comp_list:
-        if os.path.isdir(item):
-            print(f"\nThe '{item}' directory already exists. Skipping...\n")
-            print('=' * 16)
-        else:
-            os.system('git clone https://gitlab.xfce.org/' + component + '/'
-                      + item + '.git')
-            success_count += 1
-            print('=' * 16)
-            print(f"{item} repository cloned successfully")
-            print(f"{success_count}/{len(comp_list)} "
-                  f"'{component}' repositories cloned successfully.")
-            print('=' * 16)
-
-
-def install_xfce(component, comp_list):
-    repopath = get_path(component)
-
-    os.chdir(os.path.dirname(os.path.realpath(__file__)))
-
-    if os.path.isdir(repopath):
-        os.chdir(repopath)
-        for item in comp_list:
-            if os.path.isdir(item):
-                os.chdir(item)
-                confirm = query_yes_no(
-                    f"Do you want to install '{item}' to the system? "
-                    f"Answer 'No' to install locally. ")
-                if confirm == 'yes':
-                    print('Installing ' + item + ' to the system...')
-                    os.system('sudo make install')
-                    print('=' * 16)
-                    os.chdir("..")
-                else:
-                    print('Installing ' + item + ' locally...')
-                    os.system('make install')
-                    print('=' * 16)
-                    os.chdir("..")
-            else:
-                print('\nNothing to do...\n')
-                print(f"The '{item}' repo does not exist.\n\n"
-                      "Perhaps you need to clone it first.\n")
-                print('=' * 16)
-
-    else:
-        print('Nothing to do...\n')
-        print(f"The '{component}' repositories do not exist.\n\n"
-              "Perhaps you need to clone the directory first.\n")
-        print('=' * 16)
-
-
-def pull_xfce(component, comp_list):
-    repopath = get_path(component)
-    success_count = 0
-
-    os.chdir(os.path.dirname(os.path.realpath(__file__)))
-
-    if os.path.isdir(repopath):
-        os.chdir(repopath)
-        for item in comp_list:
-            if os.path.isdir(item):
-                os.chdir(item)
-                print('Updating ' + item + '...')
-                os.system('git pull')
-                success_count += 1
-                print(f"\n{success_count}/{len(comp_list)} "
-                      f"'{component}' repositories updated successfully.")
-                print('=' * 16)
-                os.chdir('..')
-            else:
-                print('\nNothing to do...\n')
-                print(f"The '{item}' repo does not exist.\n\n"
-                      "Perhaps you need to clone it first.\n")
-                print('=' * 16)
-
-    else:
-        print('Nothing to do...\n')
-        print(f"The '{component}' repositories do not exist.\n\n"
-              "Perhaps you need to clone the directory first.\n")
-        print('=' * 16)
-
-
-def purge_xfce(component, comp_list):
-    repopath = get_path(component)
-    success_count = 0
-
-    os.chdir(os.path.dirname(os.path.realpath(__file__)))
-    confirm = query_yes_no(f"Are you sure you want to remove the "
-                           f"Xfce '{component}' repositories? ")
-
-    if confirm == 'yes':
-        if os.path.isdir(repopath):
-            os.chdir(repopath)
-            for item in comp_list:
-                if os.path.isdir(item):
-                    try:
-                        shutil.rmtree(item)
-                        success_count += 1
-                        print(f"\nThe '{item}' directory has been deleted.\n")
-                        print(f"{success_count}/{len(comp_list)} "
-                              f"'{component}' repositories deleted "
-                              f"successfully.")
-                        print('=' * 16)
-                    except FileNotFoundError:
-                        print(f"The directory '{item}' does not exist. "
-                              f"Skipping...")
-                        print('=' * 16)
-            os.chdir('..')
-            shutil.rmtree(component)
-            print(f"\nThe directory '{component}' has been deleted.\n")
-            print('=' * 16)
-        else:
-            print('Nothing to do...\n')
-            print(f"The '{component}' repositories do not exist.\n\n"
-                  "Perhaps you need to clone the directory first.\n")
-            print('=' * 16)
-
-    else:
-        print("No repositories have been deleted. Have a nice day.")
-
+# {{{ ------------------------------------------------------------------ #
+#
+# Name: cappdata.py
+# Purpose: component lists and query function for use with
+#           xfce-repocapp.py and associated scripts
+#
+# source: https://gitlab.com/kevinbowen/xfce-repocapp
+# version: 0.8.1
+# updated: 20211222
+# @author: kevin.bowen@gmail.com
+#
+# }}} ------------------------------------------------------------------ #
 
 def apps_list():
     apps = ['catfish', 'gigolo', 'mousepad', 'parole', 'ristretto',
@@ -290,3 +100,7 @@ def query_yes_no(question, default="yes"):
         else:
             sys.stdout.write("Please respond with 'yes' or 'no' "
                              "(or 'y' or 'n').\n")
+
+
+if __name__ == '__main__':
+    pass
