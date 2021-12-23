@@ -1,11 +1,17 @@
-def get_path(component):
-    import os
-    repopath = os.path.abspath(os.path.join(os.getcwd(),
-                                            os.pardir,
-                                            os.pardir,
-                                            component))
-    return repopath
+#!/usr/bin/env python3
 
+# {{{ ------------------------------------------------------------------ #
+#
+# Name: cappdata.py
+# Purpose: component lists and query function for use with
+#           xfce-repocapp.py and associated scripts
+#
+# source: https://gitlab.com/kevinbowen/xfce-repocapp
+# version: 0.8.1
+# updated: 20211222
+# @author: kevin.bowen@gmail.com
+#
+# }}} ------------------------------------------------------------------ #
 
 def apps_list():
     apps = ['catfish', 'gigolo', 'mousepad', 'parole', 'ristretto',
@@ -94,3 +100,7 @@ def query_yes_no(question, default="yes"):
         else:
             sys.stdout.write("Please respond with 'yes' or 'no' "
                              "(or 'y' or 'n').\n")
+
+
+if __name__ == '__main__':
+    pass
