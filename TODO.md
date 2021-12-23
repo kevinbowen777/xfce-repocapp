@@ -1,30 +1,47 @@
-# xfce-repocapp - TODO
+>>>>># xfce-repocapp - TODO
 
-<<<<<<< HEAD
+### Current TODO list
+ - tag 0.8.1
+ - update README
+ - add CHANGELOG to master
+ - rewrite main menu in Python
+ - write tests
+ - improve main menu (`xfce-repocapp.sh`)
+   - rewrite in python  
+ - add final successful count of actions when using `all`
+
+----
+
+### as of 20211220
+ - tag 0.8.1
+ - update README
+ - add CHANGELOG to master
+ - rewrite main menu in Python
+ - write tests
+ - improve main menu (`xfce-repocapp.sh`)
+   - rewrite in python  
+ - add final successful count of actions when using `all`**
+
 ### as of 20211215
- - merge current dev branch with master
- - tag 0.7.1 release
- - add CHANGELOG to master?
- - build dev branch for preparation for upload to PyTest
-    - create toml
-    - change setup.py to setup.cfg
-        - impact?
- - FEATURE improvement: return to main menu after a 'non-all' command?
-   - dependent on moving `xfce-repocapp.sh` to `.py` file.?
- - change `echo` statements to `printf` for more reliable behavior
+ - ~~merge current dev branch with master~~
+ - ~~tag 0.7.1 release~~
+
+ - ~~build dev branch for preparation for upload to PyTest~~
+    - ~~create toml~~
+    - ~~change setup.py to setup.cfg~~
+ - ~~FEATURE improvement: return to main menu after a 'non-all' command?~~
+ - ~~change `echo` statements to `printf` for more reliable behavior~~
  - ~~fix `FileNotFound` bug with `build` when component dir is missing~~
  - ~~fix silent failure bug with `clean` doesn't generate an error
     when component dir is missing~~
  - ~~clean up & standardize path manipulation behavior~~
- - look into using pathlib to get rid of `repodir()` in `cappdata.py`
- - fix `pull_<xxx>.py` update delimiters - What does this mean??
- - Update `README.md` with instructions for changing install
-    directory
- - Move repo URLs into `cappdata.py` module?
+ - ~~fix `pull_<xxx>.py` update delimiters~~
+ - ~~Update `README.md` with instructions for changing install
+    directory~~
  - add final successful count of cloned repos
- - add __init__.main() on individual scripts???
- - add 'performing x action on component' in main() for running standalone scripts
-   - or move from `xfce-repocapp.sh` into body of script
+ - ~~add __init__.main() on individual scripts~~
+ - ~~add 'performing x action on component' in main() for running standalone scripts~~
+   - ~~or move from `xfce-repocapp.sh` into body of script~~
  - improve main menu (`xfce-repocapp.sh`)
    - which library? (argparse/Click?)
      - convert .sh file to .py
@@ -47,13 +64,13 @@
 ----
 ### as of 20211209
  - change `echo` statements to `printf` for more reliable behavior
- - fix `FileNotFound` bug with `build` when component dir is missing
+ - ~~fix `FileNotFound` bug with `build` when component dir is missing~~
  - ~~fix silent failure bug with `install` doesn't generate an error 
    ~~when component dir is missing~~
  - ~~fix silent failure bug with`pull` doesn't generate an error~~
     ~~when component dir is missing~~
- - fix silent failure bug with `clean` doesn't generate an error
-    when component dir is missing
+ - ~~fix silent failure bug with `clean` doesn't generate an error~~
+    ~~when component dir is missing~~
  - clean up & standardize path manipulation behavior
  - look into using pathlib to get rid of `repodir()` in `cappdata.py`
  - ~~add installation instructions to`README.md`
@@ -129,7 +146,6 @@
      - 
    - rewrite main menu in Python
  - move packages into single file in parent directory
->>>>>>> master
    - clean up path manipulation in individual scripts
      - build
      - clean
@@ -142,7 +158,4 @@
    - 
  - provide summary of actions upon completion
  - package for TestPy/PyPi
-<<<<<<< HEAD
-=======
- - 
->>>>>>> master
+
