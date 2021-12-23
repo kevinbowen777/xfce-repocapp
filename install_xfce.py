@@ -86,8 +86,6 @@ def main():
     elif args.component == 'thunar-plugins':
         install_xfce(component='thunar-plugins',
                      comp_list=cappdata.thunar_plugins_list())
-    elif args.component == 'www':
-        install_xfce(component='www', comp_list=cappdata.www_list())
     elif args.component == 'all':
         install_xfce(component='apps',
                      comp_list=cappdata.apps_list())
@@ -99,7 +97,6 @@ def main():
                      comp_list=cappdata.panel_plugins_list())
         install_xfce(component='thunar-plugins',
                      comp_list=cappdata.thunar_plugins_list())
-        install_xfce(component='www', comp_list=cappdata.www_list())
     else:
         install_xfce(component='apps', comp_list=cappdata.apps_list())
 
