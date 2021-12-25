@@ -15,14 +15,20 @@ Xfce repository structure (https://gitlab.xfce.org).
 
 ----
 ### List of scripts
-
+#### Menu scripts
 `xfce-repocapp.sh` - provides a rudimentary menu-driven option to run the scripts.
-    This is entirely optional. All of these scripts can be run independently.
-        
+  This is entirely optional. All of these scripts can be run independently.
+
+OR
+
+`xfce-repocapp.py` - same menu script re-written in Python
+
+----
+#### Individual action scripts 
 
  - `clone_xfce.py` - Clone Xfce repositories from https://gitlab.xfce.org
  - `build_xfce.py` - Run autogen & make against local component repositories
-
+ 
 **N.B.: These scripts perform _ABSOLUTELY NO CHECKS_ for missing system libraries or the
 order of component compilation. It is assumed that you know what you are
 doing. Use at your own risk. No guarantees.**

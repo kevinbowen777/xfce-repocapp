@@ -18,7 +18,7 @@
 clear
 
 echo "#####################################################"
-echo "# xfce-repocapp: local Xfce repository maintenance #"
+echo "# xfce-repocapp: local Xfce repository maintenance  #"
 echo "#####################################################"
 echo
 
