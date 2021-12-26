@@ -1,6 +1,17 @@
+
+[tool.poetry]
+name = "xfce_repocapp"
+version = "0.8.1"
+description = "A collection of scripts to maintain local Xfce repositories"
+authors = ["Kevin Bowen <kevin.bowen@gmail.com>"]
+license = "GPL-2.0-only"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.5"
+
 [build-system]
-requires = [
-    "setuptools>=42",
-    "wheel"
-]
-build-backend = "setuptools.build_meta"
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
