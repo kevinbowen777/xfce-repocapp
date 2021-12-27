@@ -6,8 +6,8 @@
 # Purpose: Build local Xfce repositories
 #
 # source: https://gitlab.com/kevinbowen/xfce-repocapp
-# version: 0.8.1
-# updated: 20211222
+# version: 0.8.2
+# updated: 20211226
 # @author: kevin.bowen@gmail.com
 #
 # }}} ------------------------------------------------------------------- #

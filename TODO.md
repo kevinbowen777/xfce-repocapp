@@ -1,16 +1,23 @@
 >>>>># xfce-repocapp - TODO
 
 ### Current TODO list
- - tag 0.8.1
- - update README
- - add CHANGELOG to master
- - rewrite main menu in Python
- - write tests
- - improve main menu (`xfce-repocapp.sh`)
-   - rewrite in python  
- - add final successful count of actions when using `all`
+ - bump version to 0.8.2
+ - add starting testing files
+ - sync pyproject.toml with setup.py and setup.cfg
+ - integrate poetry framework
+ - understand use of __init__.py files
+ - add open issues to gitlab.com
 
 ----
+### as of 20211226
+ - ~~tag 0.8.2~~
+ - ~~update README~~
+ - add CHANGELOG to master
+ - ~~rewrite main menu in Python~~
+ - write tests
+ - ~~improve main menu (`xfce-repocapp.sh`)~~
+   - ~~rewrite in python~~  
+ - add final successful count of actions when using `all`
 
 ### as of 20211220
  - tag 0.8.1

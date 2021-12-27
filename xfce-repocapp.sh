@@ -10,15 +10,15 @@
 #           https://gitlab.xfce.org
 #
 # source: https://gitlab.com/kevinbowen/xfce-repocapp
-# version: 0.8.1
-# updated: 20211222
+# version: 0.8.2
+# updated: 20211226
 # @author: kevin.bowen@gmail.com
 #
 # }}} ------------------------------------------------------------------ #
 clear
 
 echo "#####################################################"
-echo "# xfce-repocapp: local Xfce repository maintenance #"
+echo "# xfce-repocapp: local Xfce repository maintenance  #"
 echo "#####################################################"
 echo
 
