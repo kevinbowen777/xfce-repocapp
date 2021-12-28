@@ -45,10 +45,18 @@ def main_menu():
     for x, y in zip(selection, main_list):
         print(f"{x}. {y.title()}")
     question = f"Please enter your choice[1-{len(menus)}]: "
-    choice = int(input(question))
+    try:
+        choice = int(input(question))
+    except ValueError:
+        print("Invalid input. Try again.")
+        main_menu()
     while choice not in selection:
         print("Enter the correct value, please.")
-        choice = int(input(question))
+        try:
+            choice = int(input(question))
+        except ValueError:
+            print("Invalid input. Try again.")
+            main_menu()
     else:
         if choice == selection[-1]:
             print("Goodbye!")
@@ -71,10 +79,18 @@ def sub_menus(action):
     print(f"{selection[-2]}. Return to Main Menu")
     print(f"{selection[-1]}. Quit")
     question = f"Please enter your choice[1-{len(selection)}]: "
-    answer = int(input(question))
+    try:
+        answer = int(input(question))
+    except ValueError:
+        print("Invalid input. Try again.")
+        sub_menus(action)
     while answer not in selection:
         print("Enter the correct value, please.")
-        answer = int(input(question))
+        try:
+            answer = int(input(question))
+        except ValueError:
+            print("Invalid input. Try again.")
+            sub_menus(action)
     else:
         if answer == selection[-1]:
             print("Goodbye!")
