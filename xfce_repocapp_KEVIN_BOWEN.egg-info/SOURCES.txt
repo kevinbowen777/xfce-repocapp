@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+tests/__init__.py
+tests/test_xfce_repocapp.py
+xfce_repocapp_KEVIN_BOWEN.egg-info/PKG-INFO
+xfce_repocapp_KEVIN_BOWEN.egg-info/SOURCES.txt
+xfce_repocapp_KEVIN_BOWEN.egg-info/dependency_links.txt
+xfce_repocapp_KEVIN_BOWEN.egg-info/top_level.txt
