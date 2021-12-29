@@ -7,4 +7,4 @@ def test_author():
 
 
 def test_version():
-    assert __version__ == '0.8.2'
+    assert __version__ == '0.8.3'

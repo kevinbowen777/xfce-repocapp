@@ -7,8 +7,8 @@
 #           xfce-repocapp.py and associated scripts
 #
 # source: https://gitlab.com/kevinbowen/xfce-repocapp
-# version: 0.8.2
-# updated: 20211226
+# version: 0.8.3
+# updated: 20211228
 # @author: kevin.bowen@gmail.com
 #
 # }}} ------------------------------------------------------------------ #
