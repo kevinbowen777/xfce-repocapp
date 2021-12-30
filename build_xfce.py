@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
 
-# {{{ ------------------------------------------------------------------- #
-#
-# Name: build_xfce.py
-# Purpose: Build local Xfce repositories
-#
-# source: https://gitlab.com/kevinbowen/xfce-repocapp
-# version: 0.8.3
-# updated: 20211228
-# @author: kevin.bowen@gmail.com
-#
-# }}} ------------------------------------------------------------------- #
+"""
+Name: build_xfce.py
+Purpose: Build local Xfce repositories
+
+source: https://gitlab.com/kevinbowen/xfce-repocapp
+version: 0.8.3
+updated: 20211228
+@author: kevin.bowen@gmail.com
+"""
 
 import argparse
 import os
@@ -28,6 +26,7 @@ args = parser.parse_args()
 
 
 def build_xfce(component, comp_list):
+    """ Run autogen.sh and make on selected components. """
     print(f"Building the Xfce {component} group...")
     os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
@@ -67,6 +66,7 @@ def build_xfce(component, comp_list):
 
 
 def main():
+    """ Calls to cappdata for component lists. """
     if args.component == 'apps':
         build_xfce(component='apps',
                    comp_list=cappdata.apps_list())

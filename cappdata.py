@@ -1,19 +1,21 @@
 #!/usr/bin/env python3
 
-# {{{ ------------------------------------------------------------------ #
-#
-# Name: cappdata.py
-# Purpose: component lists and query function for use with
-#           xfce-repocapp.py and associated scripts
-#
-# source: https://gitlab.com/kevinbowen/xfce-repocapp
-# version: 0.8.3
-# updated: 20211228
-# @author: kevin.bowen@gmail.com
-#
-# }}} ------------------------------------------------------------------ #
+"""
+Name: cappdata.py
+Purpose: component lists and query function for use with
+           xfce-repocapp.py and associated scripts
+
+source: https://gitlab.com/kevinbowen/xfce-repocapp
+version: 0.8.3
+updated: 20211228
+@author: kevin.bowen@gmail.com
+"""
+
+import sys
+
 
 def apps_list():
+    """ https://gitlab.xfce.org/apps """
     apps = ['catfish', 'gigolo', 'mousepad', 'parole', 'ristretto',
             'xfburn', 'xfce4-dict', 'xfce4-mixer', 'xfce4-notifyd',
             'xfce4-panel-profiles', 'xfce4-screensaver',
@@ -23,11 +25,13 @@ def apps_list():
 
 
 def bindings_list():
+    """ https://gitlab.xfce.org/bindings """
     bindings = ['thunarx-python', 'xfce4-vala']
     return bindings
 
 
 def core_list():
+    """ https://gitlab.xfce.org/xfce """
     core = ['exo', 'garcon', 'libxfce4ui', 'libxfce4util',
             'thunar', 'thunar-volman', 'tumbler', 'xfce4-appfinder',
             'xfce4-dev-tools', 'xfce4-panel', 'xfce4-power-manager',
@@ -36,6 +40,7 @@ def core_list():
 
 
 def panel_plugins_list():
+    """ https://gitlab.xfce.org/panel-plugins """
     panel_plugins = ['xfce4-battery-plugin', 'xfce4-calculator-plugin',
                      'xfce4-clipman-plugin', 'xfce4-cpufreq-plugin',
                      'xfce4-cpugraph-plugin', 'xfce4-datetime-plugin',
@@ -57,20 +62,22 @@ def panel_plugins_list():
 
 
 def thunar_plugins_list():
+    """ https://gitlab.xfce.org/thunar-plugins """
     thunar_plugins = ['thunar-archive-plugin', 'thunar-media-tags-plugin',
                       'thunar-shares-plugin', 'thunar-vcs-plugin']
     return thunar_plugins
 
 
 def www_list():
+    """ https://gitlab.xfce.org/www """
     www = ['archive.xfce.org', 'blog.xfce.org', 'cdn.xfce.org',
            'forum.xfce.org', 'moka', 'wiki.xfce.org', 'www.xfce.org']
     return www
 
 
 def query_yes_no(question, default="yes"):
-    import sys
-    """Ask a yes/no question via input() and return their answer.
+    """ Handles confirmation prompts. """
+    """ Ask a yes/no question via input() and return their answer.
 
     "question" is a string that is presented to the user.
     "default" is the presumed answer if the user just hits <Enter>.
@@ -88,7 +95,7 @@ def query_yes_no(question, default="yes"):
     elif default == "no":
         prompt = " [y/N] "
     else:
-        raise ValueError("invalid default answer: '%s'" % default)
+        raise ValueError(f"invalid default answer: {default}")
 
     while True:
         sys.stdout.write(question + prompt)

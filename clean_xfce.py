@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
 
-# {{{ ------------------------------------------------------------------- #
-#
-# Name: clean_xfce.py
-# Purpose: Clean local Xfce repository directories
-#
-# source: https://gitlab.com/kevinbowen/xfce-repocapp
-# version: 0.8.3
-# updated: 20211228
-# @author: kevin.bowen@gmail.com
-#
-# }}} ------------------------------------------------------------------- #
+"""
+Name: clean_xfce.py
+Purpose: Clean local Xfce repository directories
+
+source: https://gitlab.com/kevinbowen/xfce-repocapp
+version: 0.8.3
+updated: 20211228
+@author: kevin.bowen@gmail.com
+"""
 
 import argparse
 import os
@@ -28,6 +26,7 @@ args = parser.parse_args()
 
 
 def clean_xfce(component, comp_list):
+    """ Run make clean on component directories. """
     print(f"Cleaning the Xfce {component} group...")
     os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
@@ -69,6 +68,7 @@ def clean_xfce(component, comp_list):
 
 
 def main():
+    """ Calls to cappdata for component lists. """
     if args.component == 'apps':
         clean_xfce(component='apps',
                    comp_list=cappdata.apps_list())

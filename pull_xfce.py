@@ -1,17 +1,15 @@
 #!/usr/bin/env python3
 
-# {{{ ------------------------------------------------------------------ #
-#
-# Name: pull_xfce.py
-# Purpose: update local Xfce repositories pulled from
-#           https://gitlab.xfce.org
-#
-# source: https://gitlab.com/kevinbowen/xfce-repocapp
-# version: 0.8.3
-# updated: 20211228
-# @author: kevin.bowen@gmail.com
-#
-# }}} ------------------------------------------------------------------ #
+"""
+Name: pull_xfce.py
+Purpose: update local Xfce repositories pulled from
+           https://gitlab.xfce.org
+
+source: https://gitlab.com/kevinbowen/xfce-repocapp
+version: 0.8.3
+updated: 20211228
+@author: kevin.bowen@gmail.com
+"""
 
 import argparse
 import os
@@ -28,6 +26,7 @@ args = parser.parse_args()
 
 
 def pull_xfce(component, comp_list):
+    """ Run 'git pull' on selected components to update repositories. """
     print(f"Updating the Xfce {component} group...")
     os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
@@ -67,6 +66,7 @@ def pull_xfce(component, comp_list):
 
 
 def main():
+    """ Calls to cappdata for component lists. """
     if args.component == 'apps':
         pull_xfce(component='apps',
                   comp_list=cappdata.apps_list())

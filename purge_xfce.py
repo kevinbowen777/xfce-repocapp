@@ -1,17 +1,15 @@
 #!/usr/bin/env python3
 
-# {{{ ------------------------------------------------------------------ #
-#
-# Name: purge_xfce.py
-# Purpose: delete the local Xfce repositories originally pulled from
-#           https://gitlab.xfce.org
-#
-# source: https://gitlab.com/kevinbowen/xfce-repocapp
-# version: 0.8.3
-# updated: 20211228
-# @author: kevin.bowen@gmail.com
-#
-# }}} ------------------------------------------------------------------ #
+"""
+Name: purge_xfce.py
+Purpose: delete the local Xfce repositories originally pulled from
+           https://gitlab.xfce.org
+
+source: https://gitlab.com/kevinbowen/xfce-repocapp
+version: 0.8.3
+updated: 20211228
+@author: kevin.bowen@gmail.com
+"""
 
 import argparse
 import shutil
@@ -29,6 +27,7 @@ args = parser.parse_args()
 
 
 def purge_xfce(component, comp_list):
+    """ Delete files and directories of selected componenets. """
     print(f"Purging the Xfce {component} group...")
     os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
@@ -77,6 +76,7 @@ def purge_xfce(component, comp_list):
 
 
 def main():
+    """ Calls to cappdata for component lists. """
     if args.component == 'apps':
         purge_xfce(component='apps',
                    comp_list=cappdata.apps_list())
