@@ -1,16 +1,14 @@
 #!/usr/bin/env python3
 
-# {{{ ------------------------------------------------------------------ #
-#
-# Name: install_xfce.py
-# Purpose: Install Xfce components into system
-#
-# source: https://gitlab.com/kevinbowen/xfce-repocapp
-# version: 0.8.3
-# updated: 20211228
-# @author: kevin.bowen@gmail.com
-#
-# }}} ------------------------------------------------------------------ #
+"""
+Name: install_xfce.py
+Purpose: Install Xfce components into system
+
+source: https://gitlab.com/kevinbowen/xfce-repocapp
+version: 0.8.3
+updated: 20211228
+@author: kevin.bowen@gmail.com
+"""
 
 import argparse
 import os
@@ -27,6 +25,7 @@ args = parser.parse_args()
 
 
 def install_xfce(component, comp_list):
+    """ Run 'make install' or 'sudo make install' on selected components. """
     print(f"Installing the Xfce {component} group...")
     os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
@@ -71,6 +70,7 @@ def install_xfce(component, comp_list):
 
 
 def main():
+    """ Calls to cappdata for component lists. """
     if args.component == 'apps':
         install_xfce(component='apps',
                      comp_list=cappdata.apps_list())

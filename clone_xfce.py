@@ -1,17 +1,15 @@
 #!/usr/bin/env python3
 
-# {{{ ------------------------------------------------------------------ #
-#
-# Name: clone_xfce.py
-# Purpose: Clones Xfce repositories pulled from
-#           https://gitlab.xfce.org/
-#
-# source: https://gitlab.com/kevinbowen/xfce-repocapp
-# version: 0.8.3
-# updated: 20211228
-# @author: kevin.bowen@gmail.com
-#
-# }}} ------------------------------------------------------------------ #
+"""
+Name: clone_xfce.py
+Purpose: Clones Xfce repositories pulled from
+           https://gitlab.xfce.org/
+
+source: https://gitlab.com/kevinbowen/xfce-repocapp
+version: 0.8.3
+updated: 20211228
+@author: kevin.bowen@gmail.com
+"""
 
 import argparse
 import os
@@ -28,6 +26,7 @@ args = parser.parse_args()
 
 
 def clone_xfce(component, comp_list):
+    """ Run 'git clone' for selected components. """
     print(f"Cloning the Xfce {component} group...")
     os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
@@ -60,6 +59,7 @@ def clone_xfce(component, comp_list):
 
 
 def main():
+    """ Calls to cappdata for component lists. """
     if args.component == 'apps':
         clone_xfce(component='apps',
                    comp_list=cappdata.apps_list())
