@@ -50,19 +50,19 @@ def build_xfce(component, comp_list):
                 print('\nRunning make for ' + item + '...\n')
                 time.sleep(1.5)
                 os.system('make')
-                print('=' * 16)
+                print(u'\u2248' * 16)
                 os.chdir("..")
             else:
                 print('\nNothing to do...\n')
                 print(f"The '{item}' repo does not exist.\n\n"
                       "Perhaps you need to clone it first.\n")
-                print('=' * 16)
+                print(u'\u2248' * 16)
 
     else:
         print('Nothing to do...\n')
         print(f"The '{component}' repositories do not exist.\n\n"
               "Perhaps you need to clone the directory first.\n")
-        print('=' * 16)
+        print(u'\u2248' * 16)
 
 
 def main():

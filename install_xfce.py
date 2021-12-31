@@ -49,24 +49,24 @@ def install_xfce(component, comp_list):
                 if confirm == 'yes':
                     print('Installing ' + item + ' to the system...')
                     os.system('sudo make install')
-                    print('=' * 16)
+                    print(u'\u2248' * 16)
                     os.chdir("..")
                 else:
                     print('Installing ' + item + ' locally...')
                     os.system('make install')
-                    print('=' * 16)
+                    print(u'\u2248' * 16)
                     os.chdir("..")
             else:
                 print('\nNothing to do...\n')
                 print(f"The '{item}' repo does not exist.\n\n"
                       "Perhaps you need to clone it first.\n")
-                print('=' * 16)
+                print(u'\u2248' * 16)
 
     else:
         print('Nothing to do...\n')
         print(f"The '{component}' repositories do not exist.\n\n"
               "Perhaps you need to clone the directory first.\n")
-        print('=' * 16)
+        print(u'\u2248' * 16)
 
 
 def main():

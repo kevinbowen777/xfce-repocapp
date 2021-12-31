@@ -56,20 +56,20 @@ def purge_xfce(component, comp_list):
                         print(f"{success_count}/{len(comp_list)} "
                               f"'{component}' repositories deleted "
                               f"successfully.")
-                        print('=' * 16)
+                        print(u'\u2248' * 16)
                     except FileNotFoundError:
                         print(f"The directory '{item}' does not exist. "
                               f"Skipping...")
-                        print('=' * 16)
+                        print(u'\u2248' * 16)
             os.chdir('..')
             shutil.rmtree(component)
             print(f"\nThe directory '{component}' has been deleted.\n")
-            print('=' * 16)
+            print(u'\u2248' * 16)
         else:
             print('Nothing to do...\n')
             print(f"The '{component}' repositories do not exist.\n\n"
                   "Perhaps you need to clone the directory first.\n")
-            print('=' * 16)
+            print(u'\u2248' * 16)
 
     else:
         print("No repositories have been deleted. Have a nice day.")
