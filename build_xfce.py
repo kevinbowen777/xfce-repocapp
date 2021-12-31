@@ -5,8 +5,8 @@ Name: build_xfce.py
 Purpose: Build local Xfce repositories
 
 source: https://gitlab.com/kevinbowen/xfce-repocapp
-version: 0.8.3
-updated: 20211228
+version: 0.8.4
+updated: 20211231
 @author: kevin.bowen@gmail.com
 """
 

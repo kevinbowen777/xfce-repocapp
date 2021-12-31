@@ -1,13 +1,18 @@
 >>>>># xfce-repocapp - TODO
 
 ### Current TODO list
- - merge bugfix for [Bug in menu selection input](https://gitlab.com/kevinbowen/xfce-repocapp/-/issues/16)
+ - Happy New Year!
+
+----
+### as of 20211231
+ - ~~bump to 0.8.4 and release~~
+ - ~~merge bugfix for [Bug in menu selection input~~]~~(https://gitlab.com/kevinbowen/xfce-repocapp/-/issues/16)~~
  - run, build, test initial wheel files
- - [Create a more aesthetically pleasing ASCII banner for menus](https://gitlab.com/kevinbowen/xfce-repocapp/-/issues/12)
+ - [~~Create a more aesthetically pleasing ASCII banner for menus~~]~~(https://gitlab.com/kevinbowen/xfce-repocapp/-/issues/12)~~
  - [Allow user specified installation directory](https://gitlab.com/kevinbowen/xfce-repocapp/-/issues/13)
  - [add help and usage options for xfce-repocapp.py](https://gitlab.com/kevinbowen/xfce-repocapp/-/issues/15)
  - [Feature Request: Create a better "press any key option" for xfce-repocapp.sh](https://gitlab.com/kevinbowen/xfce-repocapp/-/issues/9)
- - [Deprecate xfce-repocapp.sh in favor of xfce-repocapp.py](https://gitlab.com/kevinbowen/xfce-repocapp/-/issues/10) - Tentatively planned for 20211231
+ - [~~Deprecate xfce-repocapp.sh in favor of xfce-repocapp.py~~]~~(https://gitlab.com/kevinbowen/xfce-repocapp/-/issues/10)~~
  - [Add logging to activities](https://gitlab.com/kevinbowen/xfce-repocapp/-/issues/11)
  - [add final successful count of actions when using "all" option on the menus](https://gitlab.com/kevinbowen/xfce-repocapp/-/issues/14)
 ----
