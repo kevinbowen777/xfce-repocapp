@@ -47,23 +47,23 @@ def main_menu():
     question = f"Please enter your choice[1-{len(menus)}]: "
     try:
         choice = int(input(question))
-    except ValueError:
-        print("Invalid input. Try again.")
-        main_menu()
-    while choice not in selection:
-        print("Enter the correct value, please.")
-        try:
-            choice = int(input(question))
-        except ValueError:
+        if choice not in selection:
+            # print("Enter the correct value, please.")
+            # try:
+            #    choice = int(input(question))
+            # except ValueError:
             print("Invalid input. Try again.")
             main_menu()
-    else:
-        if choice == selection[-1]:
-            print("Goodbye!")
-            sys.exit()
         else:
-            action = main_list[choice - 1]
-            sub_menus(action)
+            if choice == selection[-1]:
+                print("Goodbye!")
+                sys.exit()
+            else:
+                action = main_list[choice - 1]
+                sub_menus(action)
+    except (ValueError, EOFError):
+        print("Invalid input. Try again.")
+        main_menu()
 
 
 def sub_menus(action):
@@ -82,30 +82,30 @@ def sub_menus(action):
     question = f"Please enter your choice[1-{len(selection)}]: "
     try:
         answer = int(input(question))
-    except ValueError:
-        print("Invalid input. Try again.")
-        sub_menus(action)
-    while answer not in selection:
-        print("Enter the correct value, please.")
-        try:
-            answer = int(input(question))
-        except ValueError:
+        if answer not in selection:
+            # print("Enter the correct value, please.")
+            # try:
+            #     answer = int(input(question))
+            # except ValueError:
             print("Invalid input. Try again.")
             sub_menus(action)
-    else:
-        if answer == selection[-1]:
-            print("Goodbye!")
-            sys.exit()
-        elif answer == selection[-2]:
-            main_menu()
         else:
-            component_list = list(menus[action])
-            component = component_list[answer - 1]
-            script = action + '_xfce.py'
-            command = f"{currentdir}/{script} -c {component}"
-            subprocess.run([command], shell=True)
-            input("Press Enter to continue...")
-            main_menu()
+            if answer == selection[-1]:
+                print("Goodbye!")
+                sys.exit()
+            elif answer == selection[-2]:
+                main_menu()
+            else:
+                component_list = list(menus[action])
+                component = component_list[answer - 1]
+                script = action + '_xfce.py'
+                command = f"{currentdir}/{script} -c {component}"
+                subprocess.run([command], shell=True)
+                input("Press Enter to continue...")
+                main_menu()
+    except (ValueError, EOFError):
+        print("Invalid input. Try again.")
+        sub_menus(action)
 
 
 if __name__ == '__main__':
