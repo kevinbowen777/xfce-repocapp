@@ -37,13 +37,15 @@ os.chdir(currentdir)
 def main_menu():
     """ Display selection of available actions to take with repositories. """
     os.system('clear')
-    main_banner = "# xfce-repocapp: local Xfce repository maintenance  #"
-    border = "#" * len(main_banner)
+    main_banner = "\u2248: xfce-repocapp: local" \
+                  "Xfce repository maintenance :\u2248"
+    border = u'\u2248' * len(main_banner)
     print(f"{border}\n{main_banner}\n{border}")
     main_list = list(menus.keys())
     selection = range(1, len(main_list) + 1)
     for select, m_list in zip(selection, main_list):
         print(f"{select}. {m_list.title()}")
+    print(f"{border}")
     question = f"Please enter your choice[1-{len(menus)}]: "
     try:
         choice = int(input(question))
@@ -69,8 +71,9 @@ def main_menu():
 def sub_menus(action):
     """ Display actions to take upon a specific repository. """
     os.system('clear')
-    banner = f"# xfce-repocapp: {action} local Xfce repositories #"
-    border = "#" * len(banner)
+    banner = f"\u2248: xfce-repocapp: {action}" \
+             f"local Xfce repositories :\u2248"
+    border = u'\u2248' * len(banner)
     print(f"{border}\n{banner}\n{border}")
     selection = list(range(1, len(menus[action]) + 1))
     for select, component in zip(selection, menus[action]):
@@ -79,6 +82,7 @@ def sub_menus(action):
     selection.append(selection[-1] + 1)
     print(f"{selection[-2]}. Return to Main Menu")
     print(f"{selection[-1]}. Quit")
+    print(f"{border}")
     question = f"Please enter your choice[1-{len(selection)}]: "
     try:
         answer = int(input(question))

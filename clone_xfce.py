@@ -46,16 +46,16 @@ def clone_xfce(component, comp_list):
     for item in comp_list:
         if os.path.isdir(item):
             print(f"\nThe '{item}' directory already exists. Skipping...\n")
-            print('=' * 16)
+            print(u'\u2248' * 16)
         else:
             os.system('git clone https://gitlab.xfce.org/' + component + '/'
                       + item + '.git')
             success_count += 1
-            print('=' * 16)
+            print(u'\u2248' * 16)
             print(f"{item} repository cloned successfully.")
             print(f"{success_count}/{len(comp_list)} "
                   f"'{component}' repositories cloned successfully.")
-            print('=' * 16)
+            print(u'\u2248' * 16)
 
 
 def main():
