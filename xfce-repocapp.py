@@ -78,6 +78,7 @@ def sub_menus(action):
     selection = list(range(1, len(menus[action]) + 1))
     for select, component in zip(selection, menus[action]):
         print(f"{select}. {action.title()} {component}")
+    # Add numbers to selection list for menu options not in action list.
     selection.append(selection[-1] + 1)
     selection.append(selection[-1] + 1)
     print(f"{selection[-2]}. Return to Main Menu")
@@ -87,11 +88,6 @@ def sub_menus(action):
     try:
         answer = int(input(question))
         if answer not in selection:
-            # print("Enter the correct value, please.")
-            # try:
-            #     answer = int(input(question))
-            # except ValueError:
-            print("Invalid input. Try again.")
             sub_menus(action)
         else:
             if answer == selection[-1]:
