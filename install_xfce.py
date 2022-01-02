@@ -6,12 +6,13 @@ Purpose: Install Xfce components into system
 
 source: https://gitlab.com/kevinbowen/xfce-repocapp
 version: 0.8.4
-updated: 20211231
+updated: 20220101
 @author: kevin.bowen@gmail.com
 """
 
 import argparse
 import os
+import sys
 import cappdata
 
 parser = argparse.ArgumentParser(
@@ -20,7 +21,7 @@ parser.add_argument("-c", "--component", action='store',
                     choices=['apps', 'bindings', 'xfce', 'panel-plugins',
                              'thunar-plugins', 'all'],
                     help="specify a component group to install")
-parser.add_argument('--version', action='version', version='%(prog)s 0.8.0')
+parser.add_argument('--version', action='version', version='%(prog)s 0.8.4')
 args = parser.parse_args()
 
 
@@ -49,24 +50,24 @@ def install_xfce(component, comp_list):
                 if confirm == 'yes':
                     print('Installing ' + item + ' to the system...')
                     os.system('sudo make install')
-                    print(u'\u2248' * 16)
+                    print('\u2248' * 16)
                     os.chdir("..")
                 else:
                     print('Installing ' + item + ' locally...')
                     os.system('make install')
-                    print(u'\u2248' * 16)
+                    print('\u2248' * 16)
                     os.chdir("..")
             else:
                 print('\nNothing to do...\n')
                 print(f"The '{item}' repo does not exist.\n\n"
                       "Perhaps you need to clone it first.\n")
-                print(u'\u2248' * 16)
+                print('\u2248' * 16)
 
     else:
         print('Nothing to do...\n')
         print(f"The '{component}' repositories do not exist.\n\n"
               "Perhaps you need to clone the directory first.\n")
-        print(u'\u2248' * 16)
+        print('\u2248' * 16)
 
 
 def main():
@@ -102,4 +103,9 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print()
+        print('Stopped xfce-repocapp. Exiting...')
+        sys.exit()

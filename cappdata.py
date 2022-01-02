@@ -7,7 +7,7 @@ Purpose: component lists and query function for use with
 
 source: https://gitlab.com/kevinbowen/xfce-repocapp
 version: 0.8.4
-updated: 20211231
+updated: 20220101
 @author: kevin.bowen@gmail.com
 """
 

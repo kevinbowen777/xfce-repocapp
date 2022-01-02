@@ -7,13 +7,14 @@ Purpose: delete the local Xfce repositories originally pulled from
 
 source: https://gitlab.com/kevinbowen/xfce-repocapp
 version: 0.8.4
-updated: 20211231
+updated: 20220101
 @author: kevin.bowen@gmail.com
 """
 
 import argparse
-import shutil
 import os
+import shutil
+import sys
 import cappdata
 
 parser = argparse.ArgumentParser(
@@ -22,12 +23,12 @@ parser.add_argument("-c", "--component", action='store',
                     choices=['apps', 'bindings', 'xfce', 'panel-plugins',
                              'thunar-plugins', 'www', 'all'],
                     help="specify a component group to delete")
-parser.add_argument('--version', action='version', version='%(prog)s 0.8.0')
+parser.add_argument('--version', action='version', version='%(prog)s 0.8.4')
 args = parser.parse_args()
 
 
 def purge_xfce(component, comp_list):
-    """ Delete files and directories of selected componenets. """
+    """ Delete files and directories of selected components. """
     print(f"Purging the Xfce {component} group...")
     os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
@@ -56,20 +57,20 @@ def purge_xfce(component, comp_list):
                         print(f"{success_count}/{len(comp_list)} "
                               f"'{component}' repositories deleted "
                               f"successfully.")
-                        print(u'\u2248' * 16)
+                        print('\u2248' * 16)
                     except FileNotFoundError:
                         print(f"The directory '{item}' does not exist. "
                               f"Skipping...")
-                        print(u'\u2248' * 16)
+                        print('\u2248' * 16)
             os.chdir('..')
             shutil.rmtree(component)
             print(f"\nThe directory '{component}' has been deleted.\n")
-            print(u'\u2248' * 16)
+            print('\u2248' * 16)
         else:
             print('Nothing to do...\n')
             print(f"The '{component}' repositories do not exist.\n\n"
                   "Perhaps you need to clone the directory first.\n")
-            print(u'\u2248' * 16)
+            print('\u2248' * 16)
 
     else:
         print("No repositories have been deleted. Have a nice day.")
@@ -111,4 +112,9 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print()
+        print('Stopped xfce-repocapp. Exiting...')
+        sys.exit()
