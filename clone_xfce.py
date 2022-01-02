@@ -7,12 +7,13 @@ Purpose: Clones Xfce repositories pulled from
 
 source: https://gitlab.com/kevinbowen/xfce-repocapp
 version: 0.8.4
-updated: 20211231
+updated: 20220101
 @author: kevin.bowen@gmail.com
 """
 
 import argparse
 import os
+import sys
 import cappdata
 
 parser = argparse.ArgumentParser(
@@ -21,7 +22,7 @@ parser.add_argument("-c", "--component", action='store',
                     choices=['apps', 'bindings', 'xfce', 'panel-plugins',
                              'thunar-plugins', 'www', 'all'],
                     help="specify a component group to clone")
-parser.add_argument('--version', action='version', version='%(prog)s 0.8.0')
+parser.add_argument('--version', action='version', version='%(prog)s 0.8.4')
 args = parser.parse_args()
 
 
@@ -46,16 +47,16 @@ def clone_xfce(component, comp_list):
     for item in comp_list:
         if os.path.isdir(item):
             print(f"\nThe '{item}' directory already exists. Skipping...\n")
-            print(u'\u2248' * 16)
+            print('\u2248' * 16)
         else:
             os.system('git clone https://gitlab.xfce.org/' + component + '/'
                       + item + '.git')
             success_count += 1
-            print(u'\u2248' * 16)
+            print('\u2248' * 16)
             print(f"{item} repository cloned successfully.")
             print(f"{success_count}/{len(comp_list)} "
                   f"'{component}' repositories cloned successfully.")
-            print(u'\u2248' * 16)
+            print('\u2248' * 16)
 
 
 def main():
@@ -94,4 +95,9 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print()
+        print('Stopped xfce-repocapp. Exiting...')
+        sys.exit()

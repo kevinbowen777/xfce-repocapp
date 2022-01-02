@@ -1,7 +1,9 @@
 >>>>># xfce-repocapp - TODO
 
 ### Current TODO list
- - Happy New Year!
+ - Add handling of KeyboardInterrupt to gracefully exit
+ - clean up unicode handling of banner
+ - update version in --help output
 
 ----
 ### as of 20211231

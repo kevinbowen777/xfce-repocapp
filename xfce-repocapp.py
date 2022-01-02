@@ -7,7 +7,7 @@ Purpose: Clones Xfce repositories pulled from
 
 source: https://gitlab.com/kevinbowen/xfce-repocapp
 version: 0.8.4
-updated: 20211231
+updated: 20220101
 @author: kevin.bowen@gmail.com
 """
 
@@ -39,7 +39,7 @@ def main_menu():
     os.system('clear')
     main_banner = "\u2248: xfce-repocapp: local" \
                   "Xfce repository maintenance :\u2248"
-    border = u'\u2248' * len(main_banner)
+    border = '\u2248' * len(main_banner)
     print(f"{border}\n{main_banner}\n{border}")
     main_list = list(menus.keys())
     selection = range(1, len(main_list) + 1)
@@ -73,7 +73,7 @@ def sub_menus(action):
     os.system('clear')
     banner = f"\u2248: xfce-repocapp: {action}" \
              f"local Xfce repositories :\u2248"
-    border = u'\u2248' * len(banner)
+    border = '\u2248' * len(banner)
     print(f"{border}\n{banner}\n{border}")
     selection = list(range(1, len(menus[action]) + 1))
     for select, component in zip(selection, menus[action]):
@@ -113,4 +113,9 @@ def sub_menus(action):
 
 
 if __name__ == '__main__':
-    main_menu()
+    try:
+        main_menu()
+    except KeyboardInterrupt:
+        print()
+        print('Stopped xfce-repocapp. Exiting...')
+        sys.exit()
