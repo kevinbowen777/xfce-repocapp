@@ -37,7 +37,7 @@ os.chdir(currentdir)
 def main_menu():
     """ Display selection of available actions to take with repositories. """
     os.system('clear')
-    main_banner = "\u2248: xfce-repocapp: local" \
+    main_banner = "\u2248: xfce-repocapp: local " \
                   "Xfce repository maintenance :\u2248"
     border = '\u2248' * len(main_banner)
     print(f"{border}\n{main_banner}\n{border}")
@@ -71,7 +71,7 @@ def main_menu():
 def sub_menus(action):
     """ Display actions to take upon a specific repository. """
     os.system('clear')
-    banner = f"\u2248: xfce-repocapp: {action}" \
+    banner = f"\u2248: xfce-repocapp: {action} " \
              f"local Xfce repositories :\u2248"
     border = '\u2248' * len(banner)
     print(f"{border}\n{banner}\n{border}")
