@@ -15,7 +15,7 @@ import os
 import subprocess
 import sys
 
-from cappdata import get_any_key
+from cappdata import press_any_key
 
 menus = {'clone': ['apps', 'bindings', 'xfce', 'panel-plugins',
                    'thunar-plugins', 'www', 'all'],
@@ -103,7 +103,6 @@ def sub_menus(action):
                 script = action + '_xfce.py'
                 command = f"{currentdir}/{script} -c {component}"
                 subprocess.run([command], shell=True)
-                print("Press any to continue...")
                 press_any_key()
                 main_menu()
     except (ValueError, EOFError):

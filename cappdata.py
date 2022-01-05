@@ -79,17 +79,21 @@ def www_list():
 
 def press_any_key():
     """ Doesn't work for shift/control keys."""
-    fd = sys.stdin.fileno()
-    old = termios.tcgetattr(fd)
+    file_descriptor = sys.stdin.fileno()
+    tty_attributes = termios.tcgetattr(file_descriptor)
     try:
-        tty.setraw(fd)
+        print("Press any to continue...")
+        tty.setraw(file_descriptor)
         return sys.stdin.read(1)
     finally:
-        termios.tcsetattr(fd, termios.TCSADRAIN, old)
+        termios.tcsetattr(file_descriptor, termios.TCSADRAIN, tty_attributes)
 
 
 def query_yes_no(question, default="yes"):
-    """ Handles confirmation prompts. """
+    """
+    Handles confirmation prompts. Used in install_xfce.py
+    and purge_xfce.py
+    """
     valid = {'yes': 'yes', 'y': 'yes', 'ye': 'yes',
              'no': 'no', 'n': 'no'}
     if default is None:
