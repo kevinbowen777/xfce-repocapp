@@ -89,30 +89,24 @@ def press_any_key():
         termios.tcsetattr(file_descriptor, termios.TCSADRAIN, tty_attributes)
 
 
-def query_yes_no(question, default="yes"):
+def query_yes_no(question, answer='no'):
     """
     Handles confirmation prompts. Used in install_xfce.py
     and purge_xfce.py
     """
-    valid = {'yes': 'yes', 'y': 'yes', 'ye': 'yes',
+    valid = {'yes': 'yes', 'y': 'yes',
              'no': 'no', 'n': 'no'}
-    if default is None:
-        prompt = ' [(Y)es/(N)o] '
-    elif default == 'yes':
-        prompt = ' ([Y]es/[N]o) '
-    elif default == 'no':
-        prompt = ' [y/N] '
-    else:
-        raise ValueError(f"invalid default answer: {default}")
+    prompt = ' [(Y)es/(N)o/Default: No] '
 
     while True:
         sys.stdout.write(question + prompt)
         choice = input().lower()
-        if default is not None and choice == '':
-            return default
-        elif choice in valid.keys():
-            return valid[choice]
-        else:
+        try:
+            if answer is not None and choice == '':
+                return answer
+            elif answer in valid:
+                return valid[choice]
+        except KeyError:
             sys.stdout.write("Please respond with 'yes' or 'no' "
                              "(or 'y' or 'n').\n")
 
