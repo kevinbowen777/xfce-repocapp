@@ -12,6 +12,8 @@ updated: 20220101
 """
 
 import sys
+import tty
+import termios
 
 
 def apps_list():
@@ -75,25 +77,27 @@ def www_list():
     return www
 
 
+def press_any_key():
+    """ Doesn't work for shift/control keys."""
+    fd = sys.stdin.fileno()
+    old = termios.tcgetattr(fd)
+    try:
+        tty.setraw(fd)
+        return sys.stdin.read(1)
+    finally:
+        termios.tcsetattr(fd, termios.TCSADRAIN, old)
+
+
 def query_yes_no(question, default="yes"):
     """ Handles confirmation prompts. """
-    """ Ask a yes/no question via input() and return their answer.
-
-    "question" is a string that is presented to the user.
-    "default" is the presumed answer if the user just hits <Enter>.
-        It must be "yes" (the default), "no" or None (meaning
-        an answer is required of the user).
-
-    The "answer" return value is one of "yes" or "no".
-    """
-    valid = {"yes": "yes", "y": "yes", "ye": "yes",
-             "no": "no", "n": "no"}
+    valid = {'yes': 'yes', 'y': 'yes', 'ye': 'yes',
+             'no': 'no', 'n': 'no'}
     if default is None:
-        prompt = " [(Y)es/(N)o] "
-    elif default == "yes":
-        prompt = " ([Y]es/[N]o) "
-    elif default == "no":
-        prompt = " [y/N] "
+        prompt = ' [(Y)es/(N)o] '
+    elif default == 'yes':
+        prompt = ' ([Y]es/[N]o) '
+    elif default == 'no':
+        prompt = ' [y/N] '
     else:
         raise ValueError(f"invalid default answer: {default}")
 

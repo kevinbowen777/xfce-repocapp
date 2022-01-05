@@ -15,6 +15,8 @@ import os
 import subprocess
 import sys
 
+from cappdata import get_any_key
+
 menus = {'clone': ['apps', 'bindings', 'xfce', 'panel-plugins',
                    'thunar-plugins', 'www', 'all'],
          'build': ['apps', 'bindings', 'xfce', 'panel-plugins',
@@ -101,7 +103,8 @@ def sub_menus(action):
                 script = action + '_xfce.py'
                 command = f"{currentdir}/{script} -c {component}"
                 subprocess.run([command], shell=True)
-                input("Press Enter to continue...")
+                print("Press any to continue...")
+                press_any_key()
                 main_menu()
     except (ValueError, EOFError):
         print("Invalid input. Try again.")
