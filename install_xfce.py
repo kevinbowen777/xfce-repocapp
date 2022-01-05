@@ -59,7 +59,7 @@ def install_xfce(component, comp_list):
                     os.chdir("..")
             else:
                 print('\nNothing to do...\n')
-                print(f"The '{item}' repo does not exist.\n\n"
+                print(f"The '{item}' repository does not exist.\n\n"
                       "Perhaps you need to clone it first.\n")
                 print('\u2248' * 16)
 
