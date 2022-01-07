@@ -6,23 +6,28 @@ Purpose: Install Xfce components into system
 
 source: https://gitlab.com/kevinbowen/xfce-repocapp
 version: 0.8.4
-updated: 20220101
+updated: 20220106
 @author: kevin.bowen@gmail.com
 """
 
 import argparse
 import os
 import sys
-import cappdata
+
+from cappdata import component_list
+from cappdata import query_yes_no
 
 parser = argparse.ArgumentParser(
     description="install groups of Xfce components")
 parser.add_argument("-c", "--component", action='store',
                     choices=['apps', 'bindings', 'xfce', 'panel-plugins',
-                             'thunar-plugins', 'all'],
+                             'thunar-plugins', 'all_components'],
                     help="specify a component group to install")
 parser.add_argument('--version', action='version', version='%(prog)s 0.8.4')
 args = parser.parse_args()
+if args.component is None:
+    print("No component was specified. Defaulting to 'apps'.")
+    args.component = 'apps'
 
 
 def install_xfce(component, comp_list):
@@ -41,10 +46,10 @@ def install_xfce(component, comp_list):
 
     if os.path.isdir(repopath):
         os.chdir(repopath)
-        for item in comp_list:
+        for item in component_list(comp_list):
             if os.path.isdir(item):
                 os.chdir(item)
-                confirm = cappdata.query_yes_no(
+                confirm = query_yes_no(
                     f"Do you want to install '{item}' to the system? "
                     f"Answer 'No' to install locally. ")
                 if confirm == 'yes':
@@ -70,41 +75,27 @@ def install_xfce(component, comp_list):
         print('\u2248' * 16)
 
 
-def main():
-    """ Calls to cappdata for component lists. """
-    if args.component == 'apps':
-        install_xfce(component='apps',
-                     comp_list=cappdata.apps_list())
-    elif args.component == 'bindings':
-        install_xfce(component='bindings',
-                     comp_list=cappdata.bindings_list())
-    elif args.component == 'xfce':
-        install_xfce(component='xfce',
-                     comp_list=cappdata.core_list())
-    elif args.component == 'panel-plugins':
-        install_xfce(component='panel-plugins',
-                     comp_list=cappdata.panel_plugins_list())
-    elif args.component == 'thunar-plugins':
-        install_xfce(component='thunar-plugins',
-                     comp_list=cappdata.thunar_plugins_list())
-    elif args.component == 'all':
-        install_xfce(component='apps',
-                     comp_list=cappdata.apps_list())
-        install_xfce(component='bindings',
-                     comp_list=cappdata.bindings_list())
-        install_xfce(component='xfce',
-                     comp_list=cappdata.core_list())
-        install_xfce(component='panel-plugins',
-                     comp_list=cappdata.panel_plugins_list())
-        install_xfce(component='thunar-plugins',
-                     comp_list=cappdata.thunar_plugins_list())
+def main(component_group_name):
+    """ Build arguments to pass to install_xfce() with a call to
+    cappdata for component name list.
+    command format:
+            install_xfce(component='apps',
+                         comp_list='apps')
+    """
+    cgroup_listname = component_list(component_group_name)
+    # All cgroup_listnames will return a string, except 'all'
+    if isinstance(cgroup_listname, dict):
+        for comp, cglist in cgroup_listname.items():
+            install_xfce(component=comp, comp_list=cglist)
     else:
-        install_xfce(component='apps', comp_list=cappdata.apps_list())
+        install_xfce(component=component_group_name,
+                     comp_list=component_group_name)
 
 
 if __name__ == '__main__':
     try:
-        main()
+        component_group = args.component
+        main(component_group)
     except KeyboardInterrupt:
         print()
         print('Stopped xfce-repocapp. Exiting...')

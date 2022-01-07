@@ -7,23 +7,27 @@ Purpose: update local Xfce repositories pulled from
 
 source: https://gitlab.com/kevinbowen/xfce-repocapp
 version: 0.8.4
-updated: 20220101
+updated: 20220106
 @author: kevin.bowen@gmail.com
 """
 
 import argparse
 import os
 import sys
-import cappdata
+
+from cappdata import component_list
 
 parser = argparse.ArgumentParser(
     description="pull/update groups of Xfce components")
 parser.add_argument('-c', '--component', action='store',
                     choices=['apps', 'bindings', 'xfce', 'panel-plugins',
-                             'thunar-plugins', 'www', 'all'],
+                             'thunar-plugins', 'www', 'all_components'],
                     help='specify a component group to pull/update')
 parser.add_argument('--version', action='version', version='%(prog)s 0.8.4')
 args = parser.parse_args()
+if args.component is None:
+    print("No component was specified. Defaulting to 'apps'.")
+    args.component = 'apps'
 
 
 def pull_xfce(component, comp_list):
@@ -43,13 +47,13 @@ def pull_xfce(component, comp_list):
 
     if os.path.isdir(repopath):
         os.chdir(repopath)
-        for item in comp_list:
+        for item in component_list(comp_list):
             if os.path.isdir(item):
                 os.chdir(item)
                 print('Updating ' + item + '...')
                 os.system('git pull')
                 success_count += 1
-                print(f"\n{success_count}/{len(comp_list)} "
+                print(f"\n{success_count}/{len(component_list(comp_list))} "
                       f"'{component}' repositories updated successfully.")
                 print('\u2248' * 16)
                 os.chdir('..')
@@ -66,44 +70,27 @@ def pull_xfce(component, comp_list):
         print('\u2248' * 16)
 
 
-def main():
-    """ Calls to cappdata for component lists. """
-    if args.component == 'apps':
-        pull_xfce(component='apps',
-                  comp_list=cappdata.apps_list())
-    elif args.component == 'bindings':
-        pull_xfce(component='bindings',
-                  comp_list=cappdata.bindings_list())
-    elif args.component == 'xfce':
-        pull_xfce(component='xfce',
-                  comp_list=cappdata.core_list())
-    elif args.component == 'panel-plugins':
-        pull_xfce(component='panel-plugins',
-                  comp_list=cappdata.panel_plugins_list())
-    elif args.component == 'thunar-plugins':
-        pull_xfce(component='thunar-plugins',
-                  comp_list=cappdata.thunar_plugins_list())
-    elif args.component == 'www':
-        pull_xfce(component='www', comp_list=cappdata.www_list())
-    elif args.component == 'all':
-        pull_xfce(component='apps',
-                  comp_list=cappdata.apps_list())
-        pull_xfce(component='bindings',
-                  comp_list=cappdata.bindings_list())
-        pull_xfce(component='xfce',
-                  comp_list=cappdata.core_list())
-        pull_xfce(component='panel-plugins',
-                  comp_list=cappdata.panel_plugins_list())
-        pull_xfce(component='thunar-plugins',
-                  comp_list=cappdata.thunar_plugins_list())
-        pull_xfce(component='www', comp_list=cappdata.www_list())
+def main(component_group_name):
+    """ Build arguments to pass to pull_xfce() with a call to
+    cappdata for component name list.
+    command format:
+            pull_xfce(component='apps',
+                      comp_list='apps')
+    """
+    cgroup_listname = component_list(component_group_name)
+    # All cgroup_listnames will return a string, except 'all'
+    if isinstance(cgroup_listname, dict):
+        for comp, cglist in cgroup_listname.items():
+            pull_xfce(component=comp, comp_list=cglist)
     else:
-        pull_xfce(component='apps', comp_list=cappdata.apps_list())
+        pull_xfce(component=component_group_name,
+                  comp_list=component_group_name)
 
 
 if __name__ == '__main__':
     try:
-        main()
+        component_group = args.component
+        main(component_group)
     except KeyboardInterrupt:
         print()
         print('Stopped xfce-repocapp. Exiting...')
