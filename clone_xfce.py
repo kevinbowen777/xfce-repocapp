@@ -7,23 +7,27 @@ Purpose: Clones Xfce repositories pulled from
 
 source: https://gitlab.com/kevinbowen/xfce-repocapp
 version: 0.8.4
-updated: 20220101
+updated: 20220106
 @author: kevin.bowen@gmail.com
 """
 
 import argparse
 import os
 import sys
-import cappdata
+
+from cappdata import component_list
 
 parser = argparse.ArgumentParser(
     description="clone groups of Xfce components")
 parser.add_argument("-c", "--component", action='store',
                     choices=['apps', 'bindings', 'xfce', 'panel-plugins',
-                             'thunar-plugins', 'www', 'all'],
+                             'thunar-plugins', 'www', 'all_components'],
                     help="specify a component group to clone")
 parser.add_argument('--version', action='version', version='%(prog)s 0.8.4')
 args = parser.parse_args()
+if args.component is None:
+    print("No component was specified. Defaulting to 'apps'.")
+    args.component = 'apps'
 
 
 def clone_xfce(component, comp_list):
@@ -44,7 +48,7 @@ def clone_xfce(component, comp_list):
     os.makedirs(repopath, exist_ok=True)
     os.chdir(repopath)
 
-    for item in comp_list:
+    for item in component_list(comp_list):
         if os.path.isdir(item):
             print(f"\nThe '{item}' directory already exists. Skipping...\n")
             print('\u2248' * 16)
@@ -54,49 +58,32 @@ def clone_xfce(component, comp_list):
             success_count += 1
             print('\u2248' * 16)
             print(f"{item} repository cloned successfully.")
-            print(f"{success_count}/{len(comp_list)} "
+            print(f"{success_count}/{len(component_list(comp_list))} "
                   f"'{component}' repositories cloned successfully.")
             print('\u2248' * 16)
 
 
-def main():
-    """ Calls to cappdata for component lists. """
-    if args.component == 'apps':
-        clone_xfce(component='apps',
-                   comp_list=cappdata.apps_list())
-    elif args.component == 'bindings':
-        clone_xfce(component='bindings',
-                   comp_list=cappdata.bindings_list())
-    elif args.component == 'xfce':
-        clone_xfce(component='xfce',
-                   comp_list=cappdata.core_list())
-    elif args.component == 'panel-plugins':
-        clone_xfce(component='panel-plugins',
-                   comp_list=cappdata.panel_plugins_list())
-    elif args.component == 'thunar-plugins':
-        clone_xfce(component='thunar-plugins',
-                   comp_list=cappdata.thunar_plugins_list())
-    elif args.component == 'www':
-        clone_xfce(component='www', comp_list=cappdata.www_list())
-    elif args.component == 'all':
-        clone_xfce(component='apps',
-                   comp_list=cappdata.apps_list())
-        clone_xfce(component='bindings',
-                   comp_list=cappdata.bindings_list())
-        clone_xfce(component='xfce',
-                   comp_list=cappdata.core_list())
-        clone_xfce(component='panel-plugins',
-                   comp_list=cappdata.panel_plugins_list())
-        clone_xfce(component='thunar-plugins',
-                   comp_list=cappdata.thunar_plugins_list())
-        clone_xfce(component='www', comp_list=cappdata.www_list())
+def main(component_group_name):
+    """ Build arguments to pass to clone_xfce() with a call to
+    cappdata for component name list.
+    command format:
+            clone_xfce(component='apps',
+                       comp_list='apps')
+    """
+    cgroup_listname = component_list(component_group_name)
+    # All cgroup_listnames will return a string, except 'all'
+    if isinstance(cgroup_listname, dict):
+        for comp, cglist in cgroup_listname.items():
+            clone_xfce(component=comp, comp_list=cglist)
     else:
-        clone_xfce(component='apps', comp_list=cappdata.apps_list())
+        clone_xfce(component=component_group_name,
+                   comp_list=component_group_name)
 
 
 if __name__ == '__main__':
     try:
-        main()
+        component_group = args.component
+        main(component_group)
     except KeyboardInterrupt:
         print()
         print('Stopped xfce-repocapp. Exiting...')

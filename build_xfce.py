@@ -6,7 +6,7 @@ Purpose: Build local Xfce repositories
 
 source: https://gitlab.com/kevinbowen/xfce-repocapp
 version: 0.8.4
-updated: 20220101
+updated: 20220106
 @author: kevin.bowen@gmail.com
 """
 
@@ -14,16 +14,20 @@ import argparse
 import os
 import sys
 import time
-import cappdata
+
+from cappdata import component_list
 
 parser = argparse.ArgumentParser(
     description="build groups of Xfce components")
 parser.add_argument("-c", "--component", action='store',
                     choices=['apps', 'bindings', 'xfce', 'panel-plugins',
-                             'thunar-plugins', 'all'],
+                             'thunar-plugins', 'all_components'],
                     help="specify a component group to build")
 parser.add_argument('--version', action='version', version='%(prog)s 0.8.4')
 args = parser.parse_args()
+if args.component is None:
+    print("No component was specified. Defaulting to 'apps'.")
+    args.component = 'apps'
 
 
 def build_xfce(component, comp_list):
@@ -43,7 +47,7 @@ def build_xfce(component, comp_list):
 
     if os.path.isdir(repopath):
         os.chdir(repopath)
-        for item in comp_list:
+        for item in component_list(comp_list):
             if os.path.isdir(item):
                 os.chdir(item)
                 print('\nRunning autogen.sh for ' + item + '...\n')
@@ -66,41 +70,27 @@ def build_xfce(component, comp_list):
         print('\u2248' * 16)
 
 
-def main():
-    """ Calls to cappdata for component lists. """
-    if args.component == 'apps':
-        build_xfce(component='apps',
-                   comp_list=cappdata.apps_list())
-    elif args.component == 'bindings':
-        build_xfce(component='bindings',
-                   comp_list=cappdata.bindings_list())
-    elif args.component == 'xfce':
-        build_xfce(component='xfce',
-                   comp_list=cappdata.core_list())
-    elif args.component == 'panel-plugins':
-        build_xfce(component='panel-plugins',
-                   comp_list=cappdata.panel_plugins_list())
-    elif args.component == 'thunar-plugins':
-        build_xfce(component='thunar-plugins',
-                   comp_list=cappdata.thunar_plugins_list())
-    elif args.component == 'all':
-        build_xfce(component='apps',
-                   comp_list=cappdata.apps_list())
-        build_xfce(component='bindings',
-                   comp_list=cappdata.bindings_list())
-        build_xfce(component='xfce',
-                   comp_list=cappdata.core_list())
-        build_xfce(component='panel-plugins',
-                   comp_list=cappdata.panel_plugins_list())
-        build_xfce(component='thunar-plugins',
-                   comp_list=cappdata.thunar_plugins_list())
+def main(component_group_name):
+    """ Build arguments to pass to build_xfce() with a call to
+    cappdata for component name list.
+    command format:
+            build_xfce(component='apps',
+                       comp_list='apps')
+    """
+    cgroup_listname = component_list(component_group_name)
+    # All cgroup_listnames will return a string, except 'all'
+    if isinstance(cgroup_listname, dict):
+        for comp, cglist in cgroup_listname.items():
+            build_xfce(component=comp, comp_list=cglist)
     else:
-        build_xfce(component='apps', comp_list=cappdata.apps_list())
+        build_xfce(component=component_group_name,
+                   comp_list=component_group_name)
 
 
 if __name__ == '__main__':
     try:
-        main()
+        component_group = args.component
+        main(component_group)
     except KeyboardInterrupt:
         print()
         print('Stopped xfce-repocapp. Exiting...')

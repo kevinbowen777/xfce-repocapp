@@ -99,7 +99,10 @@ def sub_menus(action):
                 main_menu()
             else:
                 component_list = list(menus[action])
-                component = component_list[answer - 1]
+                if component_list[answer - 1] == 'all':
+                    component = 'all_components'
+                else:
+                    component = component_list[answer - 1]
                 script = action + '_xfce.py'
                 command = f"{currentdir}/{script} -c {component}"
                 subprocess.run([command], shell=True)
