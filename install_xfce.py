@@ -18,15 +18,26 @@ from cappdata import component_list
 from cappdata import query_yes_no
 
 parser = argparse.ArgumentParser(
-    description="install groups of Xfce components")
-parser.add_argument("-c", "--component", action='store',
-                    choices=['apps', 'bindings', 'xfce', 'panel-plugins',
-                             'thunar-plugins', 'all_components'],
-                    help="specify a component group to install")
-parser.add_argument('--version', action='version', version='%(prog)s 0.8.4')
+    description='Install groups of Xfce components'
+                ' either locally or system-wide.')
+parser.add_argument('-c', '--component',
+                    action='store',
+                    choices=['apps',
+                             'bindings',
+                             'xfce',
+                             'panel-plugins',
+                             'thunar-plugins',
+                             'www',
+                             'all_components'],
+                    help='specify an Xfce component group to install'
+                         ' either locally or system-wide.')
+parser.add_argument('--version',
+                    action='version',
+                    version='%(prog)s 0.8.4')
 args = parser.parse_args()
 if args.component is None:
-    print("No component was specified. Defaulting to 'apps'.")
+    print("No component was specified. Default to installation of"
+          " the 'apps' components....")
     args.component = 'apps'
 
 
