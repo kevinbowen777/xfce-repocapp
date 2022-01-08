@@ -38,6 +38,7 @@ if args.component is None:
           " the 'apps' components locally....")
     args.component = 'apps'
 
+
 def build_xfce(component, comp_list):
     """ Run autogen.sh and make on selected components. """
     print(f"Building the Xfce {component} group...")
@@ -58,9 +59,9 @@ def build_xfce(component, comp_list):
         for item in component_list(comp_list):
             if os.path.isdir(item):
                 os.chdir(item)
-                print('\nRunning autogen.sh for ' + item + '...\n')
+                print(f"\nRunning autogen.sh for {item} ...\n")
                 os.system('./autogen.sh --prefix=/usr')
-                print('\nRunning make for ' + item + '...\n')
+                print(f"\nRunning make for {item} ...\n")
                 time.sleep(1.5)
                 os.system('make')
                 print('\u2248' * 16)

@@ -64,12 +64,12 @@ def install_xfce(component, comp_list):
                     f"Do you want to install '{item}' to the system? "
                     f"Answer 'No' to install locally. ")
                 if confirm == 'yes':
-                    print('Installing ' + item + ' to the system...')
+                    print(f"Installing {item} to the system...")
                     os.system('sudo make install')
                     print('\u2248' * 16)
                     os.chdir("..")
                 else:
-                    print('Installing ' + item + ' locally...')
+                    print(f"Installing {item} locally...")
                     os.system('make install')
                     print('\u2248' * 16)
                     os.chdir("..")
