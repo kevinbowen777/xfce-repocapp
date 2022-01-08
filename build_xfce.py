@@ -18,17 +18,25 @@ import time
 from cappdata import component_list
 
 parser = argparse.ArgumentParser(
-    description="build groups of Xfce components")
-parser.add_argument("-c", "--component", action='store',
-                    choices=['apps', 'bindings', 'xfce', 'panel-plugins',
-                             'thunar-plugins', 'all_components'],
-                    help="specify a component group to build")
-parser.add_argument('--version', action='version', version='%(prog)s 0.8.4')
+    description='Build groups of Xfce components locally.')
+parser.add_argument('-c', '--component',
+                    action='store',
+                    choices=['apps',
+                             'bindings',
+                             'xfce',
+                             'panel-plugins',
+                             'thunar-plugins',
+                             'www',
+                             'all_components'],
+                    help='Specify an Xfce component group to build locally.')
+parser.add_argument('--version',
+                    action='version',
+                    version='%(prog)s 0.8.4')
 args = parser.parse_args()
 if args.component is None:
-    print("No component was specified. Defaulting to 'apps'.")
+    print("No component was specified. Default to building"
+          " the 'apps' components locally....")
     args.component = 'apps'
-
 
 def build_xfce(component, comp_list):
     """ Run autogen.sh and make on selected components. """

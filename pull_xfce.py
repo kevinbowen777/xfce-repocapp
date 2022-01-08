@@ -18,15 +18,26 @@ import sys
 from cappdata import component_list
 
 parser = argparse.ArgumentParser(
-    description="pull/update groups of Xfce components")
-parser.add_argument('-c', '--component', action='store',
-                    choices=['apps', 'bindings', 'xfce', 'panel-plugins',
-                             'thunar-plugins', 'www', 'all_components'],
-                    help='specify a component group to pull/update')
-parser.add_argument('--version', action='version', version='%(prog)s 0.8.4')
+    description='Pull/update groups of Xfce components'
+                ' from https://gitlab.xfce.org repositories.')
+parser.add_argument('-c', '--component',
+                    action='store',
+                    choices=['apps',
+                             'bindings',
+                             'xfce',
+                             'panel-plugins',
+                             'thunar-plugins',
+                             'www',
+                             'all_components'],
+                    help='specify an Xfce component group to pull/update'
+                         ' from https://gitlab.xfce.org.')
+parser.add_argument('--version',
+                    action='version',
+                    version='%(prog)s 0.8.4')
 args = parser.parse_args()
 if args.component is None:
-    print("No component was specified. Defaulting to 'apps'.")
+    print("No component was specified. Defaulting to pulling/updating"
+          " the 'apps' component repositories.")
     args.component = 'apps'
 
 

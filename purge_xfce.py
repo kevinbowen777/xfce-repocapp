@@ -20,16 +20,25 @@ from cappdata import component_list
 from cappdata import query_yes_no
 
 parser = argparse.ArgumentParser(
-    description="purge group directories of Xfce components")
-parser.add_argument("-c", "--component", action='store',
-                    choices=['apps', 'bindings', 'xfce', 'panel-plugins',
-                             'thunar-plugins', 'www', 'all_components'],
-                    help="specify a component group to delete")
-parser.add_argument('--version', action='version', version='%(prog)s 0.8.4')
+    description='Purge(Delete) groups of local Xfce component directories.')
+parser.add_argument('-c', '--component',
+                    action='store',
+                    choices=['apps',
+                             'bindings',
+                             'xfce',
+                             'panel-plugins',
+                             'thunar-plugins',
+                             'www',
+                             'all_components'],
+                    help='Specify an Xfce component group to delete.')
+parser.add_argument('--version',
+                    action='version',
+                    version='%(prog)s 0.8.4')
 args = parser.parse_args()
 if args.component is None:
-    print("No component was specified. Defaulting to 'apps'.")
-    args.component = 'apps'
+    print("No component was specified.\nPlease specify a component group'"
+          " to delete with the '-c' option.")
+    sys.exit()
 
 
 def purge_xfce(component, comp_list):
