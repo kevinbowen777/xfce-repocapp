@@ -52,10 +52,6 @@ def main_menu():
     try:
         choice = int(input(question))
         if choice not in selection:
-            # print("Enter the correct value, please.")
-            # try:
-            #    choice = int(input(question))
-            # except ValueError:
             print("Invalid input. Try again.")
             main_menu()
         else:

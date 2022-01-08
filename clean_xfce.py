@@ -60,13 +60,13 @@ def clean_xfce(component, comp_list):
         for item in component_list(comp_list):
             if os.path.isdir(item):
                 os.chdir(item)
-                print('\nCleaning ' + item + ' directory...\n')
+                print(f"\nCleaning {item} directory...\n")
                 time.sleep(1.5)
                 os.system('make -s clean')
                 success_count += 1
+                print(f"\nExiting {item} directory...\n")
                 print(f"{success_count}/{len(component_list(comp_list))} "
                       f"'{component}' repositories cleaned.")
-                print('\nExiting ' + item + ' directory...\n')
                 print('\u2248' * 16)
                 os.chdir('..')
             else:

@@ -61,7 +61,7 @@ def pull_xfce(component, comp_list):
         for item in component_list(comp_list):
             if os.path.isdir(item):
                 os.chdir(item)
-                print('Updating ' + item + '...')
+                print(f"Updating {item}...")
                 os.system('git pull')
                 success_count += 1
                 print(f"\n{success_count}/{len(component_list(comp_list))} "
