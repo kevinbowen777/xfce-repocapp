@@ -6,7 +6,7 @@ Purpose: Clones Xfce repositories pulled from
            https://gitlab.xfce.org/
 
 source: https://gitlab.com/kevinbowen/xfce-repocapp
-version: 0.8.4
+version: 0.8.5
 updated: 20220101
 @author: kevin.bowen@gmail.com
 """

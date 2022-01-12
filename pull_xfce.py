@@ -6,8 +6,8 @@ Purpose: update local Xfce repositories pulled from
            https://gitlab.xfce.org
 
 source: https://gitlab.com/kevinbowen/xfce-repocapp
-version: 0.8.4
-updated: 20220106
+version: 0.8.5
+updated: 20220111
 @author: kevin.bowen@gmail.com
 """
 
@@ -33,7 +33,7 @@ parser.add_argument('-c', '--component',
                          ' from https://gitlab.xfce.org.')
 parser.add_argument('--version',
                     action='version',
-                    version='%(prog)s 0.8.4')
+                    version='%(prog)s 0.8.5')
 args = parser.parse_args()
 if args.component is None:
     print("No component was specified. Defaulting to pulling/updating"

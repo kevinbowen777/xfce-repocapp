@@ -5,8 +5,8 @@ Name: build_xfce.py
 Purpose: Build local Xfce repositories
 
 source: https://gitlab.com/kevinbowen/xfce-repocapp
-version: 0.8.4
-updated: 20220106
+version: 0.8.5
+updated: 20220111
 @author: kevin.bowen@gmail.com
 """
 
@@ -31,7 +31,7 @@ parser.add_argument('-c', '--component',
                     help='Specify an Xfce component group to build locally.')
 parser.add_argument('--version',
                     action='version',
-                    version='%(prog)s 0.8.4')
+                    version='%(prog)s 0.8.5')
 args = parser.parse_args()
 if args.component is None:
     print("No component was specified. Default to building"

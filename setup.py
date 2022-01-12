@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="xfce-repocapp-KEVIN-BOWEN",
-    version="0.8.4",
+    version="0.8.5",
     author="Kevin Bowen",
     author_email="kevin.bowen@gmail.com",
     description="Build scripts for managing Xfce repositories",
