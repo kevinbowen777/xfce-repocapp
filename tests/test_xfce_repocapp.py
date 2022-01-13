@@ -1,3 +1,5 @@
+import unittest
+
 from xfce_repocapp import __version__
 from xfce_repocapp import __author__
 
