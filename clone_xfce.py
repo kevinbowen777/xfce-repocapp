@@ -7,12 +7,13 @@ Purpose: Clones Xfce repositories pulled from
 
 source: https://gitlab.com/kevinbowen/xfce-repocapp
 version: 0.8.5
-updated: 20220111
+updated: 20220113
 @author: kevin.bowen@gmail.com
 """
 
 import argparse
 import os
+import subprocess
 import sys
 
 from cappdata import component_list
@@ -60,15 +61,23 @@ def clone_xfce(component, comp_list):
     os.chdir(repopath)
 
     for item in component_list(comp_list):
-        url = f"https://gitlab.xfce.org/{component}/{item}.git"
         if os.path.isdir(item):
             print(f"\nThe '{item}' directory already exists. Skipping...\n")
             print('\u2248' * 16)
         else:
-            os.system(f"git clone {url}")
-            success_count += 1
-            print('\u2248' * 16)
-            print(f"{item} repository cloned successfully.")
+            try:
+                url = f"https://gitlab.xfce.org/{component}/{item}.git"
+                print(subprocess.check_output(['git', 'clone', url],
+                      stderr=subprocess.STDOUT,
+                      text=True))
+                success_count += 1
+                print('\u2248' * 16)
+                print(f"{item} repository cloned successfully.")
+            except subprocess.CalledProcessError:
+                # On error, returns a non-zero exit status 128.
+                print('\u2248' * 16)
+                print(f"Failed to clone {item} repository.")
+
             print(f"{success_count}/{len(component_list(comp_list))} "
                   f"'{component}' repositories cloned successfully.")
             print('\u2248' * 16)
