@@ -5,6 +5,7 @@ __pycache__/
 
 .coverage
 .idea/
+.pylintrc
 # Distribution / packaging
 .Python
 develop-eggs/

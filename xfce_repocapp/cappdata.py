@@ -27,11 +27,11 @@ def component_list(component_group_list):
                 ]
         return apps
 
-    if component_group_list == 'bindings':
+    elif component_group_list == 'bindings':
         bindings = ['thunarx-python', 'xfce4-vala']
         return bindings
 
-    if component_group_list == 'xfce':
+    elif component_group_list == 'xfce':
         xfce = ['exo', 'garcon', 'libxfce4ui', 'libxfce4util',
                 'thunar', 'thunar-volman', 'tumbler', 'xfce4-appfinder',
                 'xfce4-dev-tools', 'xfce4-panel', 'xfce4-power-manager',
@@ -40,7 +40,7 @@ def component_list(component_group_list):
                 ]
         return xfce
 
-    if component_group_list == 'panel-plugins':
+    elif component_group_list == 'panel-plugins':
         panel_plugins = ['xfce4-battery-plugin', 'xfce4-calculator-plugin',
                          'xfce4-clipman-plugin', 'xfce4-cpufreq-plugin',
                          'xfce4-cpugraph-plugin', 'xfce4-datetime-plugin',
@@ -62,19 +62,19 @@ def component_list(component_group_list):
                          ]
         return panel_plugins
 
-    if component_group_list == 'thunar-plugins':
+    elif component_group_list == 'thunar-plugins':
         thunar_plugins = ['thunar-archive-plugin', 'thunar-media-tags-plugin',
                           'thunar-shares-plugin', 'thunar-vcs-plugin',
                           ]
         return thunar_plugins
 
-    if component_group_list == 'www':
+    elif component_group_list == 'www':
         www = ['archive.xfce.org', 'blog.xfce.org', 'cdn.xfce.org',
                'forum.xfce.org', 'moka', 'wiki.xfce.org', 'www.xfce.org',
                ]
         return www
 
-    if component_group_list == 'all_components':
+    elif component_group_list == 'all_components':
         all_components = {'apps': 'apps',
                           'bindings': 'bindings',
                           'xfce': 'xfce',
@@ -83,6 +83,9 @@ def component_list(component_group_list):
                           'www': 'www',
                           }
         return all_components
+
+    else:
+        return None
 
 
 def press_any_key():

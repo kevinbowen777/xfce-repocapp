@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Name: xfce-repocapp.py
+Name: repocapp.py
 Purpose: Clones Xfce repositories pulled from
            https://gitlab.xfce.org/
 
