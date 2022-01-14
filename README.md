@@ -16,7 +16,7 @@ Xfce repository structure (https://gitlab.xfce.org).
 ----
 ### List of scripts
 #### Menu scripts
-`xfce-repocapp.py` - provides a rudimentary menu-driven option to run the scripts.
+`repocapp.py` - provides a rudimentary menu-driven option to run the scripts.
   This is entirely optional. All of these scripts can be run independently.
 
 ----

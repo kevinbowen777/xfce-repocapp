@@ -1,11 +1,25 @@
 >>>>># xfce-repocapp - TODO
 
 ### Current TODO list
- - Add handling of KeyboardInterrupt to gracefully exit
- - clean up unicode handling of banner
- - update version in --help output
+ - [Add logging to activities](https://gitlab.com/kevinbowen/xfce-repocapp/-/issues/11)
+ - [Allow user specified installation directory](https://gitlab.com/kevinbowen/xfce-repocapp/-/issues/13)
+ - [Add tests using unittest](https://gitlab.com/kevinbowen/xfce-repocapp/-/issues/22)
+ - ['Press any key' function does not work for shift/control keys](https://gitlab.com/kevinbowen/xfce-repocapp/-/issues/21)
+ - [add help and usage options for repocapp.py](https://gitlab.com/kevinbowen/xfce-repocapp/-/issues/15)
+ - [Add logging to activities](https://gitlab.com/kevinbowen/xfce-repocapp/-/issues/11)
+ - [add final successful count of actions when using "all" option on the menus](https://gitlab.com/kevinbowen/xfce-repocapp/-/issues/14)
 
-----
+---
+### as of 20220112
+ - ~~bump version to 0.8.6~~
+ - ~~move all scripts into separate xfce_repocapp subdirectory~~
+ - [~~Replace large if/else blocks in main()~~]~~(https://gitlab.com/kevinbowen/xfce-repocapp/-/issues/20)~~
+ - [~~clone_xfce.py does not handle network unavailable errors gracefully~~]~~(https://gitlab.com/kevinbowen/xfce-repocapp/-/issues/23)~~
+ - ~~rename main script from xfce-repocapp.py to repocapp.py~~
+ - ~~Add handling of KeyboardInterrupt to gracefully exit~~
+ - ~~clean up unicode handling of banner~~
+ - ~~update version in --help output~~
+---
 ### as of 20211231
  - ~~bump to 0.8.4 and release~~
  - ~~merge bugfix for [Bug in menu selection input~~]~~(https://gitlab.com/kevinbowen/xfce-repocapp/-/issues/16)~~
@@ -13,7 +27,7 @@
  - [~~Create a more aesthetically pleasing ASCII banner for menus~~]~~(https://gitlab.com/kevinbowen/xfce-repocapp/-/issues/12)~~
  - [Allow user specified installation directory](https://gitlab.com/kevinbowen/xfce-repocapp/-/issues/13)
  - [add help and usage options for xfce-repocapp.py](https://gitlab.com/kevinbowen/xfce-repocapp/-/issues/15)
- - [Feature Request: Create a better "press any key option" for xfce-repocapp.sh](https://gitlab.com/kevinbowen/xfce-repocapp/-/issues/9)
+ - [~~Feature Request: Create a better "press any key option" for xfce-repocapp.sh~~]~~(https://gitlab.com/kevinbowen/xfce-repocapp/-/issues/9)~~
  - [~~Deprecate xfce-repocapp.sh in favor of xfce-repocapp.py~~]~~(https://gitlab.com/kevinbowen/xfce-repocapp/-/issues/10)~~
  - [Add logging to activities](https://gitlab.com/kevinbowen/xfce-repocapp/-/issues/11)
  - [add final successful count of actions when using "all" option on the menus](https://gitlab.com/kevinbowen/xfce-repocapp/-/issues/14)
