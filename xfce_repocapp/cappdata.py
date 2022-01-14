@@ -6,8 +6,8 @@ Purpose: component lists and query function for use with
            xfce-repocapp.py and associated scripts
 
 source: https://gitlab.com/kevinbowen/xfce-repocapp
-version: 0.8.5
-updated: 20220111
+version: 0.8.6
+updated: 20220113
 @author: kevin.bowen@gmail.com
 """
 

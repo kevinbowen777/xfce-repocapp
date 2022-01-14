@@ -6,8 +6,8 @@ Purpose: delete the local Xfce repositories originally pulled from
            https://gitlab.xfce.org
 
 source: https://gitlab.com/kevinbowen/xfce-repocapp
-version: 0.8.5
-updated: 20220111
+version: 0.8.6
+updated: 20220113
 @author: kevin.bowen@gmail.com
 """
 
@@ -33,7 +33,7 @@ parser.add_argument('-c', '--component',
                     help='Specify an Xfce component group to delete.')
 parser.add_argument('--version',
                     action='version',
-                    version='%(prog)s 0.8.5')
+                    version='%(prog)s 0.8.6')
 args = parser.parse_args()
 if args.component is None:
     print("No component was specified.\nPlease specify a component group'"
@@ -47,7 +47,9 @@ def purge_xfce(component, comp_list):
     os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
     def get_path(comp_group):
+        # grandparent directory (../../) relative to script.
         installpath = os.path.abspath(os.path.join(os.getcwd(),
+                                                   os.pardir,
                                                    os.pardir,
                                                    comp_group))
 

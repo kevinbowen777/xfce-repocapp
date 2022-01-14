@@ -1,18 +1,25 @@
+#!/usr/bin/env python3
+
+"""
+Name: test_clone_xfce.py
+Purpose: test clone_xfce.py script
+
+source: https://gitlab.com/kevinbowen/xfce-repocapp
+version: 0.8.6
+updated: 20220113
+@author: kevin.bowen@gmail.com
+"""
+
 import unittest
 
-from xfce_repocapp import __version__
-from xfce_repocapp import __author__
+from xfce_repocapp.clone_xfce import clone_xfce
+from xfce_repocapp.clone_xfce import main
 
 
-def test_author():
-    assert __author__ == 'Kevin Bowen <kevin.bowen@gmail.com>'
+args = 'bindings'
 
 
-def test_version():
-    assert __version__ == '0.8.6'
-
-
-class TestMainMenu(unittest.TestCase):
+class TestCloneXfce(unittest.TestCase):
     """Test the clone_xfce() function of clone_xfce.py."""
 
     def setUp(self):
@@ -26,13 +33,13 @@ class TestMainMenu(unittest.TestCase):
         print('tearDown\n')
         pass
 
-    def test_xfce_repocapp(self):
+    def test_clone_xfce(self):
         """testing clone_xfce() function"""
         self.assertIsNotNone(clone_xfce(component=bindings,
                                         comp_list=bindings))
 
 
-class TestSubMenus(unittest.TestCase):
+class TestMain(unittest.TestCase):
     """Test the main() function of clone_xfce.py."""
 
     def setUp(self):
