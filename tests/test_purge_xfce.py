@@ -5,15 +5,12 @@ Name: test_purge_xfce.py
 Purpose: test purge_xfce.py script
 
 source: https://gitlab.com/kevinbowen/xfce-repocapp
-version: 0.8.5
-updated: 20220112
+version: 0.8.6
+updated: 20220113
 @author: kevin.bowen@gmail.com
 """
 
 import unittest
-
-from purge_xfce import purge_xfce
-from purge_xfce import main
 
 
 class TestPurgeXfce(unittest.TestCase):
@@ -50,6 +47,7 @@ class TestMain(unittest.TestCase):
     def test_main(self):
         """testing main() function in purge_xfce.py"""
         pass
+
 
 if __name__ == '__main__':
     unittest.main()

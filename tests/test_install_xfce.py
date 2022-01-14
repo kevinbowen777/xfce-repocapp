@@ -5,15 +5,12 @@ Name: test_install_xfce.py
 Purpose: test install_xfce.py script
 
 source: https://gitlab.com/kevinbowen/xfce-repocapp
-version: 0.8.5
-updated: 20220112
+version: 0.8.6
+updated: 20220113
 @author: kevin.bowen@gmail.com
 """
 
 import unittest
-
-from install_xfce import install_xfce
-from install_xfce import main
 
 
 class TestInstallXfce(unittest.TestCase):

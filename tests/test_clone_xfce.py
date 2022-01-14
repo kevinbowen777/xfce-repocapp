@@ -5,15 +5,15 @@ Name: test_clone_xfce.py
 Purpose: test clone_xfce.py script
 
 source: https://gitlab.com/kevinbowen/xfce-repocapp
-version: 0.8.5
-updated: 20220112
+version: 0.8.6
+updated: 20220113
 @author: kevin.bowen@gmail.com
 """
 
 import unittest
 
-from clone_xfce import clone_xfce
-from clone_xfce import main
+from xfce_repocapp.clone_xfce import clone_xfce
+from xfce_repocapp.clone_xfce import main
 
 
 args = 'bindings'
@@ -35,7 +35,8 @@ class TestCloneXfce(unittest.TestCase):
 
     def test_clone_xfce(self):
         """testing clone_xfce() function"""
-        self.assertIsNotNone(clone_xfce(component=bindings, comp_list=bindings))
+        self.assertIsNotNone(clone_xfce(component=bindings,
+                                        comp_list=bindings))
 
 
 class TestMain(unittest.TestCase):
