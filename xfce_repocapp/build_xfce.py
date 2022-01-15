@@ -15,7 +15,7 @@ import os
 import sys
 import time
 
-from cappdata import component_list
+from xfce_repocapp.cappdata import component_list
 
 parser = argparse.ArgumentParser(
     description='Build groups of Xfce components locally.')

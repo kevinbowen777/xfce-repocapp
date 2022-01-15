@@ -12,8 +12,8 @@ updated: 20220113
 """
 
 import sys
-import tty
 import termios
+import tty
 
 
 def component_list(component_group_list):

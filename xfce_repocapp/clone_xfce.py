@@ -9,6 +9,7 @@ source: https://gitlab.com/kevinbowen/xfce-repocapp
 version: 0.8.6
 updated: 20220113
 @author: kevin.bowen@gmail.com
+
 """
 
 import argparse
@@ -16,7 +17,7 @@ import os
 import subprocess
 import sys
 
-from cappdata import component_list
+from xfce_repocapp.cappdata import component_list
 
 parser = argparse.ArgumentParser(
     description='clone groups of Xfce components'

@@ -14,8 +14,8 @@ import argparse
 import os
 import sys
 
-from cappdata import component_list
-from cappdata import query_yes_no
+from xfce_repocapp.cappdata import component_list
+from xfce_repocapp.cappdata import query_yes_no
 
 parser = argparse.ArgumentParser(
     description='Install groups of Xfce components'

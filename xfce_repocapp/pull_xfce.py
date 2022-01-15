@@ -15,7 +15,7 @@ import argparse
 import os
 import sys
 
-from cappdata import component_list
+from xfce_repocapp.cappdata import component_list
 
 parser = argparse.ArgumentParser(
     description='Pull/update groups of Xfce components'

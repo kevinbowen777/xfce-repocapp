@@ -16,8 +16,8 @@ import os
 import shutil
 import sys
 
-from cappdata import component_list
-from cappdata import query_yes_no
+from xfce_repocapp.cappdata import component_list
+from xfce_repocapp.cappdata import query_yes_no
 
 parser = argparse.ArgumentParser(
     description='Purge(Delete) groups of local Xfce component directories.')

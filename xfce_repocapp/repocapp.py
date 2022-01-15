@@ -15,7 +15,7 @@ import os
 import subprocess
 import sys
 
-from cappdata import press_any_key
+from xfce_repocapp.cappdata import press_any_key
 
 menus = {'clone': ['apps', 'bindings', 'xfce', 'panel-plugins',
                    'thunar-plugins', 'www', 'all'],

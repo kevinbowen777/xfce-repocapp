@@ -1,19 +1,11 @@
 import unittest
 
-from xfce_repocapp import __version__
-from xfce_repocapp import __author__
-
-
-def test_author():
-    assert __author__ == 'Kevin Bowen <kevin.bowen@gmail.com>'
-
-
-def test_version():
-    assert __version__ == '0.8.6'
+from xfce_repocapp.repocapp import main_menu
+from xfce_repocapp.repocapp import sub_menus
 
 
 class TestMainMenu(unittest.TestCase):
-    """Test the clone_xfce() function of clone_xfce.py."""
+    """Test the main_menu() function of repocapp.py."""
 
     def setUp(self):
         """Set up the test features."""
@@ -27,13 +19,12 @@ class TestMainMenu(unittest.TestCase):
         pass
 
     def test_xfce_repocapp(self):
-        """testing clone_xfce() function"""
-        self.assertIsNotNone(clone_xfce(component=bindings,
-                                        comp_list=bindings))
+        """testing main_menu() function"""
+        self.assertIsNotNone(main_menu())
 
 
 class TestSubMenus(unittest.TestCase):
-    """Test the main() function of clone_xfce.py."""
+    """Test the sub_menu() function of repocapp.py."""
 
     def setUp(self):
         """Set up the test features."""
@@ -46,8 +37,8 @@ class TestSubMenus(unittest.TestCase):
         pass
 
     def test_main(self):
-        """testing main() function in clone_xfce.py"""
-        self.assertIsNotNone(main(bindings))
+        """testing main() function in repocapp.py"""
+        self.assertEquals(sub_menus('clone'))
 
 
 if __name__ == '__main__':

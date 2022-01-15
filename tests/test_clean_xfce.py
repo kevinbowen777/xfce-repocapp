@@ -14,7 +14,7 @@ import unittest
 
 
 class TestCleanXfce(unittest.TestCase):
-    """Test the clone_xfce() function of clone_xfce.py."""
+    """Test the clean_xfce() function of clean_xfce.py."""
 
     def setUp(self):
         """Set up the test features."""

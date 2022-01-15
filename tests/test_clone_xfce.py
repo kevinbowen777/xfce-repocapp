@@ -15,7 +15,6 @@ import unittest
 from xfce_repocapp.clone_xfce import clone_xfce
 from xfce_repocapp.clone_xfce import main
 
-
 args = 'bindings'
 
 
