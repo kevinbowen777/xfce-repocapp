@@ -1,6 +1,6 @@
 
 [tool.poetry]
-name = "xfce_repocapp"
+name = "xfce-repocapp"
 version = "0.8.6"
 description = "A collection of scripts to maintain local Xfce repositories"
 authors = ["Kevin Bowen <kevin.bowen@gmail.com>"]

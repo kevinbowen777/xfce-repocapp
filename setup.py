@@ -8,7 +8,7 @@ setuptools.setup(
     version="0.8.6",
     author="Kevin Bowen",
     author_email="kevin.bowen@gmail.com",
-    description="Scripts for managing Xfce repositories",
+    description="A collection of scripts to maintain local Xfce repositories",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://gitlab.com/kevinbowen/xfce-repocapp",
