@@ -19,7 +19,7 @@ import termios
 def component_list(component_group_list):
     """returns lists of components."""
     if component_group_list == 'apps':
-        apps = ['catfish', 'gigolo', 'mousepad', 'parole', 'ristretto',
+        apps = ['catfish', 'gigolo', 'mousepad', 'orage', 'parole', 'ristretto',
                 'xfburn', 'xfce4-dict', 'xfce4-mixer', 'xfce4-notifyd',
                 'xfce4-panel-profiles', 'xfce4-screensaver',
                 'xfce4-screenshooter', 'xfce4-taskmanager', 'xfce4-terminal',
