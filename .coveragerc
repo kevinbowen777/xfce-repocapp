@@ -1,0 +1,13 @@
+[run]
+omit =
+    */__init__.py,
+    *manage.py,
+    *settings*.py,
+    .idea/*,
+    *logs/*,
+    *migrations/*,
+    *tests/*,
+    *test_*.py,
+    *tests.py,
+    *conftest.py,
+    */extra*
