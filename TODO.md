@@ -48,7 +48,7 @@
  - ~~rewrite main menu in Python~~
  - write tests
  - ~~improve main menu (`xfce-repocapp.sh`)~~
-   - ~~rewrite in python~~  
+   - ~~rewrite in python~~
  - add final successful count of actions when using `all`
 
 ### as of 20211220
@@ -58,7 +58,7 @@
  - ~~rewrite main menu in Python~~
  - write tests
  - ~~improve main menu (`xfce-repocapp.sh`)~~
-   - ~~rewrite in python~~  
+   - ~~rewrite in python~~
  - add final successful count of actions when using `all`**
 
 ### as of 20211215
@@ -86,7 +86,7 @@
      - convert .sh file to .py
      - prefer _not_ to rely on 3rd party libs
    - improve menu selection
-     - allow words and first letter of actions 
+     - allow words and first letter of actions
 
    - rewrite main menu in Python
      - build
@@ -97,14 +97,14 @@
      - purge
  - write tests
    - main menu(`xfce-repocapp.sh`)
-   - 
+   -
  - provide summary of actions upon completion
 
 ----
 ### as of 20211209
  - change `echo` statements to `printf` for more reliable behavior
  - ~~fix `FileNotFound` bug with `build` when component dir is missing~~
- - ~~fix silent failure bug with `install` doesn't generate an error 
+ - ~~fix silent failure bug with `install` doesn't generate an error
    ~~when component dir is missing~~
  - ~~fix silent failure bug with`pull` doesn't generate an error~~
     ~~when component dir is missing~~
@@ -126,7 +126,7 @@
  - improve main menu (`xfce-repocapp.sh`)
    - which library?
    - improve menu selection
-     - allow words and first letter of actions 
+     - allow words and first letter of actions
 
    - rewrite main menu in Python
      - build
@@ -137,7 +137,7 @@
      - purge
  - write tests
    - main menu(`xfce-repocapp.sh`)
-   - 
+   -
  - provide summary of actions upon completion
  - package for TestPy/PyPi
 ---
@@ -149,7 +149,7 @@
     this app
  - add banner to install menu indicating that 'build' needs to
     be run first
- - ~~add exception handling for changing into non-existent 
+ - ~~add exception handling for changing into non-existent
     directories~~
  - Update README with instructions for changing install
     directory
@@ -170,7 +170,7 @@
  - improve main menu (xfce-repocapp.sh)
    - which library?
    - improve menu selection
-     - allow words and first letter of actions 
+     - allow words and first letter of actions
 
    - rewrite main menu in Python
  - ~~move packages into single file in parent directory~~
@@ -182,7 +182,7 @@
    - which library?
    - improve menu selection
      - allow words and first letter of actions
-     - 
+     -
    - rewrite main menu in Python
  - move packages into single file in parent directory
    - clean up path manipulation in individual scripts
@@ -194,7 +194,6 @@
      - purge
  - write tests
    - main menu(xfce-repocapp.sh)
-   - 
+   -
  - provide summary of actions upon completion
  - package for TestPy/PyPi
-

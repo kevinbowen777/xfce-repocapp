@@ -12,11 +12,9 @@ updated: 20220113
 
 import unittest
 
-from xfce_repocapp.clone_xfce import clone_xfce
-from xfce_repocapp.clone_xfce import main
+from xfce_repocapp.clone_xfce import clone_xfce, main
 
-
-args = 'bindings'
+args = "bindings"
 
 
 class TestCloneXfce(unittest.TestCase):
@@ -24,19 +22,20 @@ class TestCloneXfce(unittest.TestCase):
 
     def setUp(self):
         """Set up the test features."""
-        print('setUp')
+        print("setUp")
         pass
         # begins with self.
 
     def tearDown(self):
         """Tear down the test features."""
-        print('tearDown\n')
+        print("tearDown\n")
         pass
 
     def test_clone_xfce(self):
         """testing clone_xfce() function"""
-        self.assertIsNotNone(clone_xfce(component=bindings,
-                                        comp_list=bindings))
+        self.assertIsNotNone(
+            clone_xfce(component=bindings, comp_list=bindings)
+        )
 
 
 class TestMain(unittest.TestCase):
@@ -44,12 +43,12 @@ class TestMain(unittest.TestCase):
 
     def setUp(self):
         """Set up the test features."""
-        print('setUp')
+        print("setUp")
         pass
 
     def tearDown(self):
         """Tear down the test features."""
-        print('tearDown\n')
+        print("tearDown\n")
         pass
 
     def test_main(self):
@@ -57,5 +56,5 @@ class TestMain(unittest.TestCase):
         self.assertIsNotNone(main(bindings))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
