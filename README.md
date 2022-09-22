@@ -60,7 +60,6 @@ components. This is the equivalent of running, for example, `pull_xfce -c apps`.
     Master: git clone https://gitlab.com/kevinbowen/xfce-repocapp.git
     Mirror: git clone https://github.com/kevinbowen777/xfce-repocapp.git
 
-note: testing mirror - 20220922
 
 ----
 ### Reporting Bugs
