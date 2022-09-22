@@ -18,12 +18,12 @@ class TestPullXfce(unittest.TestCase):
 
     def setUp(self):
         """Set up the test features."""
-        print('setUp')
+        print("setUp")
         pass
 
     def tearDown(self):
         """Tear down the test features."""
-        print('tearDown\n')
+        print("tearDown\n")
         pass
 
     def test_pull_xfce(self):
@@ -36,12 +36,12 @@ class TestMain(unittest.TestCase):
 
     def setUp(self):
         """Set up the test features."""
-        print('setUp')
+        print("setUp")
         pass
 
     def tearDown(self):
         """Tear down the test features."""
-        print('tearDown\n')
+        print("tearDown\n")
         pass
 
     def test_main(self):
@@ -49,5 +49,5 @@ class TestMain(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

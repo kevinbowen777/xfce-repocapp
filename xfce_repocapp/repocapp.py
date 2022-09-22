@@ -17,31 +17,72 @@ import sys
 
 from cappdata import press_any_key
 
-menus = {'clone': ['apps', 'bindings', 'xfce', 'panel-plugins',
-                   'thunar-plugins', 'www', 'all'],
-         'build': ['apps', 'bindings', 'xfce', 'panel-plugins',
-                   'thunar-plugins', 'all'],
-         'install': ['apps', 'bindings', 'xfce', 'panel-plugins',
-                     'thunar-plugins', 'all'],
-         'clean':  ['apps', 'bindings', 'xfce', 'panel-plugins',
-                    'thunar-plugins', 'all'],
-         'pull':  ['apps', 'bindings', 'xfce', 'panel-plugins',
-                   'thunar-plugins', 'www', 'all'],
-         'purge': ['apps', 'bindings', 'xfce', 'panel-plugins',
-                   'thunar-plugins', 'www', 'all'],
-         'quit': 'quit',
-         }
+menus = {
+    "clone": [
+        "apps",
+        "bindings",
+        "xfce",
+        "panel-plugins",
+        "thunar-plugins",
+        "www",
+        "all",
+    ],
+    "build": [
+        "apps",
+        "bindings",
+        "xfce",
+        "panel-plugins",
+        "thunar-plugins",
+        "all",
+    ],
+    "install": [
+        "apps",
+        "bindings",
+        "xfce",
+        "panel-plugins",
+        "thunar-plugins",
+        "all",
+    ],
+    "clean": [
+        "apps",
+        "bindings",
+        "xfce",
+        "panel-plugins",
+        "thunar-plugins",
+        "all",
+    ],
+    "pull": [
+        "apps",
+        "bindings",
+        "xfce",
+        "panel-plugins",
+        "thunar-plugins",
+        "www",
+        "all",
+    ],
+    "purge": [
+        "apps",
+        "bindings",
+        "xfce",
+        "panel-plugins",
+        "thunar-plugins",
+        "www",
+        "all",
+    ],
+    "quit": "quit",
+}
 
 currentdir = os.path.dirname(os.path.realpath(__file__))
 os.chdir(currentdir)
 
 
 def main_menu():
-    """ Display selection of available actions to take with repositories. """
-    os.system('clear')
-    main_banner = "\u2248: xfce-repocapp: local " \
-                  "Xfce repository maintenance :\u2248"
-    border = '\u2248' * len(main_banner)
+    """Display selection of available actions to take with repositories."""
+    os.system("clear")
+    main_banner = (
+        "\u2248: xfce-repocapp: local " "Xfce repository maintenance :\u2248"
+    )
+    border = "\u2248" * len(main_banner)
     print(f"{border}\n{main_banner}\n{border}")
     main_list = list(menus.keys())
     selection = range(1, len(main_list) + 1)
@@ -67,11 +108,12 @@ def main_menu():
 
 
 def sub_menus(action):
-    """ Display actions to take upon a specific repository. """
-    os.system('clear')
-    banner = f"\u2248: xfce-repocapp: {action} " \
-             f"local Xfce repositories :\u2248"
-    border = '\u2248' * len(banner)
+    """Display actions to take upon a specific repository."""
+    os.system("clear")
+    banner = (
+        f"\u2248: xfce-repocapp: {action} " f"local Xfce repositories :\u2248"
+    )
+    border = "\u2248" * len(banner)
     print(f"{border}\n{banner}\n{border}")
     selection = list(range(1, len(menus[action]) + 1))
     for select, component in zip(selection, menus[action]):
@@ -95,11 +137,11 @@ def sub_menus(action):
                 main_menu()
             else:
                 component_list = list(menus[action])
-                if component_list[answer - 1] == 'all':
-                    component = 'all_components'
+                if component_list[answer - 1] == "all":
+                    component = "all_components"
                 else:
                     component = component_list[answer - 1]
-                script = action + '_xfce.py'
+                script = action + "_xfce.py"
                 command = f"{currentdir}/{script} -c {component}"
                 subprocess.run([command], shell=True)
                 press_any_key()
@@ -109,10 +151,10 @@ def sub_menus(action):
         sub_menus(action)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     try:
         main_menu()
     except KeyboardInterrupt:
         print()
-        print('Stopped xfce-repocapp. Exiting...')
+        print("Stopped xfce-repocapp. Exiting...")
         sys.exit()

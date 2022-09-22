@@ -20,15 +20,15 @@ Xfce repository structure (https://gitlab.xfce.org).
   This is entirely optional. All of these scripts can be run independently.
 
 ----
-#### Individual action scripts 
+#### Individual action scripts
 
  - `clone_xfce.py` - Clone Xfce repositories from https://gitlab.xfce.org
  - `build_xfce.py` - Run autogen & make against local component repositories
- 
+
 **N.B.: These scripts perform _ABSOLUTELY NO CHECKS_ for missing system libraries or the
 order of component compilation. It is assumed that you know what you are
 doing. Use at your own risk. No guarantees.**
-         
+
 For additional information on building Xfce see: https://docs.xfce.org/xfce/building
  - `pull_xfce.py` - Update local component repositories with git pull
  - `purge_xfce.py` - Delete local component repositories by category
@@ -36,7 +36,7 @@ For additional information on building Xfce see: https://docs.xfce.org/xfce/buil
  - `clean_xfce.py` - Clean local component directories (make clean)
 
 #### Running individual scripts
-All of the *-xfce.py scripts take the argument `-c` and the name of the 
+All of the *-xfce.py scripts take the argument `-c` and the name of the
 component group to be acted upon. The following names are used:
  - apps
  - bindings
@@ -46,7 +46,7 @@ component group to be acted upon. The following names are used:
  - www
  - all
 
-For example: 
+For example:
  - `clone_xfce.py -c panel-plugins`
  - `purge_xfce.py -c all`
 

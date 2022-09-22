@@ -1,3 +1,43 @@
+[tool.black]
+line-length = 79
+# include =
+exclude = '''
+/(
+    \.git
+  | __pycache__
+  | .pytest_cache
+  | .idea
+  | logs
+  | .venv
+  | staticfiles
+  | build
+  | dist
+  | staticfiles
+)/
+'''
+
+[tool.coverage.paths]
+source = ["xfce_repocapp"]
+
+[tool.coverage.run]
+branch = true
+source = ["xfce_repocapp"]
+omit = [
+    "*/__init__.py",
+    "*tests/*",
+    "*test_*.py",
+    "*tests.py",
+]
+
+[tool.coverage.report]
+show_missing = true
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+skip = ["*.gitignore"]
+extend_skip = ["*.md", "*.json"]
+line_length = 79
 
 [tool.poetry]
 name = "xfce_repocapp"
@@ -13,7 +53,17 @@ python = "^3.9"
 pytest = "^6.2.5"
 pytest-cov = "^3.0.0"
 pylint = "^2.12.2"
+black = "^22.3.0"
+flake8 = "^4.0.1"
+isort = "^5.10.1"
+pre-commit = "^2.19.0"
+
+[tool.pytest.ini_options]
+python_files = ["tests.py", "test_*.py", "*_tests.py"]
+filterwarnings = [ ]
 
 [build-system]
+# requires = ["setuptools", "wheel"]
+# build-backend = "setuptools.build_meta"
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
