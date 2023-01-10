@@ -6,8 +6,8 @@ Purpose: component lists and query function for use with
            xfce-repocapp.py and associated scripts
 
 source: https://gitlab.com/kevinbowen/xfce-repocapp
-version: 0.8.6
-updated: 20220113
+version: 0.8.7
+updated: 20230109
 @author: kevin.bowen@gmail.com
 """
 
@@ -51,6 +51,7 @@ def component_list(component_group_list):
             "garcon",
             "libxfce4ui",
             "libxfce4util",
+            "libxfce4windowing",
             "thunar",
             "thunar-volman",
             "tumbler",
@@ -79,6 +80,7 @@ def component_list(component_group_list):
             "xfce4-embed-plugin",
             "xfce4-eyes-plugin",
             "xfce4-fsguard-plugin",
+            "xfce4-generic-slider",
             "xfce4-genmon-plugin",
             "xfce4-indicator-plugin",
             "xfce4-mailwatch-plugin",
@@ -100,6 +102,7 @@ def component_list(component_group_list):
             "xfce4-wavelan-plugin",
             "xfce4-weather-plugin",
             "xfce4-whiskermenu-plugin",
+            "xfce4-windowck-plugin",
             "xfce4-xkb-plugin",
         ]
         return panel_plugins
