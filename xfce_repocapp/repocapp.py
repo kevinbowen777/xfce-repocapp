@@ -14,6 +14,7 @@ updated: 20220101
 import os
 import subprocess
 import sys
+from pathlib import Path
 
 from cappdata import press_any_key
 
@@ -72,7 +73,8 @@ menus = {
     "quit": "quit",
 }
 
-currentdir = os.path.dirname(os.path.realpath(__file__))
+# currentdir = os.path.dirname(os.path.realpath(__file__))
+currentdir = Path(__file__).parent.resolve()
 os.chdir(currentdir)
 
 
