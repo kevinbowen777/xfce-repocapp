@@ -6,8 +6,8 @@ Purpose: Clones Xfce repositories pulled from
            https://gitlab.xfce.org/
 
 source: https://gitlab.com/kevinbowen/xfce-repocapp
-version: 0.8.6
-updated: 20220101
+version: 0.8.7
+updated: 20230314
 @author: kevin.bowen@gmail.com
 """
 
@@ -73,9 +73,8 @@ menus = {
     "quit": "quit",
 }
 
-# currentdir = os.path.dirname(os.path.realpath(__file__))
-currentdir = Path(__file__).parent.resolve()
-os.chdir(currentdir)
+path = Path(__file__).parent.resolve()
+os.chdir(path)
 
 
 def main_menu():
@@ -144,7 +143,7 @@ def sub_menus(action):
                 else:
                     component = component_list[answer - 1]
                 script = action + "_xfce.py"
-                command = f"{currentdir}/{script} -c {component}"
+                command = f"{path}/{script} -c {component}"
                 subprocess.run([command], shell=True)
                 press_any_key()
                 main_menu()
