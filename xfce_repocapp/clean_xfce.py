@@ -5,8 +5,8 @@ Name: clean_xfce.py
 Purpose: Clean local Xfce repository directories
 
 source: https://gitlab.com/kevinbowen/xfce-repocapp
-version: 0.8.6
-updated: 20220113
+version: 0.8.7
+updated: 20230314
 @author: kevin.bowen@gmail.com
 """
 
@@ -14,6 +14,7 @@ import argparse
 import os
 import sys
 import time
+from pathlib import Path
 
 from cappdata import component_list
 
@@ -35,7 +36,7 @@ parser.add_argument(
     ],
     help="Specify an Xfce component group" " directory to clean.",
 )
-parser.add_argument("--version", action="version", version="%(prog)s 0.8.6")
+parser.add_argument("--version", action="version", version="%(prog)s 0.8.7")
 args = parser.parse_args()
 if args.component is None:
     print(
@@ -48,23 +49,22 @@ if args.component is None:
 def clean_xfce(component, comp_list):
     """Run make clean on component directories."""
     print(f"Cleaning the Xfce {component} group...")
-    os.chdir(os.path.dirname(os.path.realpath(__file__)))
+    os.chdir(Path(__file__).parent.resolve())
 
     def get_path(comp_group):
         # grandparent directory (../../) relative to script.
-        installpath = os.path.abspath(
-            os.path.join(os.getcwd(), os.pardir, os.pardir, comp_group)
-        )
+        installpath = Path.cwd().parent.parent.joinpath(comp_group)
 
         return installpath
 
     repopath = get_path(component)
     success_count = 0
 
-    if os.path.isdir(repopath):
+    if Path.is_dir(repopath):
         os.chdir(repopath)
         for item in component_list(comp_list):
-            if os.path.isdir(item):
+            p = Path(item)
+            if p.is_dir():
                 os.chdir(item)
                 print(f"\nCleaning {item} directory...\n")
                 time.sleep(1.5)
