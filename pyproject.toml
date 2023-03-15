@@ -9,10 +9,8 @@ exclude = '''
   | .idea
   | logs
   | .venv
-  | staticfiles
   | build
   | dist
-  | staticfiles
 )/
 '''
 
@@ -41,7 +39,7 @@ line_length = 79
 
 [tool.poetry]
 name = "xfce_repocapp"
-version = "0.8.6"
+version = "0.8.7"
 description = "A collection of scripts to maintain local Xfce repositories"
 authors = ["Kevin Bowen <kevin.bowen@gmail.com>"]
 license = "GPL-2.0-only"
@@ -51,12 +49,22 @@ python = "^3.9"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.0.0"
+coverage = {extras = ["toml"], version = "^7.0.0"}
 pytest-cov = "^4.0.0"
 pylint = "^2.12.2"
 black = "^23.0.0"
 flake8 = "^6.0.0"
 isort = "^5.10.1"
 pre-commit = "^3.0.0"
+nox = "^2022.1.7"
+flake8-bandit = "^4.0.0"
+flake8-black = "^0.3.3"
+flake8-bugbear = "^23.0.0"
+flake8-import-order = "^0.18.1"
+safety = "2.4.0b1"
+pip-check = "^2.7"
+Sphinx = "^6.1.0"
+pip-audit = "^2.4.0"
 
 [tool.pytest.ini_options]
 python_files = ["tests.py", "test_*.py", "*_tests.py"]
