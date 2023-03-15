@@ -1,0 +1,13 @@
+[flake8]
+select = B,B9,BLK,C,E,F,I,S,W
+# enable docstring check(D) for future testing
+ignore = E203,E501,W503
+application-import-names = tests
+docstring-convention = google
+import-order-style = google
+max-complexity = 10
+max-line-length = 80
+per-file-ignores =
+    tests/tests_*:S101,S106
+    src/tests/*:S101,S106
+    src/*.py:S101,S106
