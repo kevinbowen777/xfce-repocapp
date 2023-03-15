@@ -20,51 +20,51 @@ fi
 
 function cov:pytest {
   # Run pytest
-  cmd coverage run -m pytest "${@}"
+  coverage run -m pytest "${@}"
 }
 
 function cov:report {
   # Generate coverage report to terminal
-  cmd coverage report "${@}"
+  coverage report "${@}"
 }
 
 function cov:html {
   # Output coverage report to ./htmlcov
-  cmd coverage html "${@}"
+  coverage html "${@}"
 }
 
 function nox:black {
   # Check code for formatting violations
-  cmd nox -s black-3.11 "${@}"
+  nox -s black-3.11 "${@}"
 }
 
 function nox:docs {
   # Create Sphinx documentation in ./docs/_build directory
-  cmd nox -s docs-3.11 "${@}"
+  nox -s docs-3.11 "${@}"
 }
 
 function nox:lint {
   # Run a number of flake8 linting tests
-  cmd nox -s lint-3.11 "${@}"
+  nox -s lint-3.11 "${@}"
 }
 
 function nox:safety {
   # Check code/packages for vulnerabilites against Safety db
-  cmd nox -s safety-3.11 "${@}"
+  nox -s safety-3.11 "${@}"
 }
 
 function nox:tests {
   # Run several pytest and coverage checks
-  cmd nox -s tests-3.11 "${@}"
+  nox -s tests-3.11 "${@}"
   # cmd black . "${@}"
 }
 
 function nox:all {
   # Perform all nox code quality tests together(except black)
   # cmd nox -s black-3.11 "${@}"
-  cmd nox -s lint-3.11 "${@}"
-  cmd nox -s safety-3.11 "${@}"
-  cmd nox -s tests-3.11 "${@}"
+  nox -s lint-3.11 "${@}"
+  nox -s safety-3.11 "${@}"
+  nox -s tests-3.11 "${@}"
 }
 
 function poe:old {
@@ -92,7 +92,7 @@ function reqs:prod {
 
 function secret {
   # Generate a random secret that can be used for your SECRET_KEY and more
-  cmd python3 -c 'import secrets; print(secrets.token_urlsafe(38))'
+  python3 -c 'import secrets; print(secrets.token_urlsafe(38))'
 }
 
 function help {
