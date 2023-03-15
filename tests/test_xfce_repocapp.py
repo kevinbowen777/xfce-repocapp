@@ -1,6 +1,6 @@
 import unittest
 
-from xfce_repocapp import __author__, __version__
+from src import __author__, __version__
 
 
 def test_author():
@@ -8,7 +8,7 @@ def test_author():
 
 
 def test_version():
-    assert __version__ == "0.8.6"
+    assert __version__ == "0.8.7"
 
 
 class TestMainMenu(unittest.TestCase):
