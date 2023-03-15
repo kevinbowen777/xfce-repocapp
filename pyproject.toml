@@ -15,11 +15,11 @@ exclude = '''
 '''
 
 [tool.coverage.paths]
-source = ["xfce_repocapp"]
+source = ["src"]
 
 [tool.coverage.run]
 branch = true
-source = ["xfce_repocapp"]
+source = ["src"]
 omit = [
     "*/__init__.py",
     "*tests/*",
@@ -38,7 +38,7 @@ extend_skip = ["*.md", "*.json"]
 line_length = 79
 
 [tool.poetry]
-name = "xfce_repocapp"
+name = "xfce-repocapp"
 version = "0.8.7"
 description = "A collection of scripts to maintain local Xfce repositories"
 authors = ["Kevin Bowen <kevin.bowen@gmail.com>"]
