@@ -67,7 +67,11 @@ Sphinx = "^6.1.0"
 pip-audit = "^2.4.0"
 
 [tool.pytest.ini_options]
+# addopts = [
+#     "--import-mode=importlib",
+# ]
 python_files = ["tests.py", "test_*.py", "*_tests.py"]
+pythonpath = "src"
 filterwarnings = [ ]
 
 [build-system]
