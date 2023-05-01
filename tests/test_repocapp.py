@@ -1,6 +1,7 @@
 import unittest
 
 from src import __author__, __version__
+from src.cappdata import *  # noqa: F401
 
 
 def test_author():
@@ -12,7 +13,7 @@ def test_version():
 
 
 class TestMainMenu(unittest.TestCase):
-    """Test the clone_xfce() function of clone_xfce.py."""
+    """Test the clone_xfce() function of cappdata.py."""
 
     def setUp(self):
         """Set up the test features."""
@@ -26,7 +27,7 @@ class TestMainMenu(unittest.TestCase):
         pass
 
     def test_xfce_repocapp(self):
-        """testing clone_xfce() function"""
+        """testing cappdata functions"""
         # self.assertIsNotNone(
         #     clone_xfce(component=bindings, comp_list=bindings)
         # )
@@ -34,7 +35,7 @@ class TestMainMenu(unittest.TestCase):
 
 
 class TestSubMenus(unittest.TestCase):
-    """Test the main() function of clone_xfce.py."""
+    """Test the main() function of cappdata.py."""
 
     def setUp(self):
         """Set up the test features."""
@@ -47,7 +48,7 @@ class TestSubMenus(unittest.TestCase):
         pass
 
     def test_main(self):
-        """testing main() function in clone_xfce.py"""
+        """testing main() function in cappdata.py"""
         # self.assertIsNotNone(main(bindings))
         pass
 

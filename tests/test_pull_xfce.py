@@ -5,12 +5,17 @@ Name: test_pull_xfce.py
 Purpose: test pull_xfce.py script
 
 source: https://gitlab.com/kevinbowen/xfce-repocapp
-version: 0.8.6
-updated: 20220113
+version: 0.8.7
+updated: 20230315
 @author: kevin.bowen@gmail.com
 """
 
 import unittest
+
+from src import cappdata  # noqa: F401
+from src.pull_xfce import pull_xfce  # noqa: F401
+
+args = "bindings"
 
 
 class TestPullXfce(unittest.TestCase):

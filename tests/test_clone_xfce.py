@@ -5,15 +5,15 @@ Name: test_clone_xfce.py
 Purpose: test clone_xfce.py script
 
 source: https://gitlab.com/kevinbowen/xfce-repocapp
-version: 0.8.6
-updated: 20220113
+version: 0.8.7
+updated: 20230315
 @author: kevin.bowen@gmail.com
 """
 
 import unittest
 
-# from ..cappdata import *
-# from src.clone_xfce import clone_xfce, main
+from src import cappdata  # noqa: F401
+from src.clone_xfce import clone_xfce  # noqa: F401
 
 args = "bindings"
 

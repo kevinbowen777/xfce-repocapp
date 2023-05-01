@@ -5,16 +5,21 @@ Name: test_clean_xfce.py
 Purpose: test clean_xfce.py script
 
 source: https://gitlab.com/kevinbowen/xfce-repocapp
-version: 0.8.6
-updated: 20220113
+version: 0.8.7
+updated: 20230315
 @author: kevin.bowen@gmail.com
 """
 
 import unittest
 
+from src import cappdata  # noqa: F401
+from src.clean_xfce import clean_xfce  # noqa: F401
+
+args = "bindings"
+
 
 class TestCleanXfce(unittest.TestCase):
-    """Test the clone_xfce() function of clone_xfce.py."""
+    """Test the clean_xfce() function of clean_xfce.py."""
 
     def setUp(self):
         """Set up the test features."""

@@ -5,12 +5,17 @@ Name: test_purge_xfce.py
 Purpose: test purge_xfce.py script
 
 source: https://gitlab.com/kevinbowen/xfce-repocapp
-version: 0.8.6
-updated: 20220113
+version: 0.8.7
+updated: 20230315
 @author: kevin.bowen@gmail.com
 """
 
 import unittest
+
+from src import cappdata  # noqa: F401
+from src.purge_xfce import purge_xfce  # noqa: F401
+
+args = "bindings"
 
 
 class TestPurgeXfce(unittest.TestCase):
