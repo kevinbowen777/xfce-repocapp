@@ -45,11 +45,14 @@ if args.component is None:
     )
     args.component = "apps"
 
+line_rule = "\u2248" * 16
+path = Path(__file__).parent.resolve()
+os.chdir(path)
+
 
 def clean_xfce(component, comp_list):
     """Run make clean on component directories."""
     print(f"Cleaning the Xfce {component} group...")
-    os.chdir(Path(__file__).parent.resolve())
 
     def get_path(comp_group):
         # grandparent directory (../../) relative to script.

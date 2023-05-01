@@ -44,15 +44,19 @@ args = parser.parse_args()
 if args.component is None:
     print(
         "No component was specified. Default to cloning"
-        " the 'apps' components...."
+        " the 'bindings' components...."
     )
-    args.component = "apps"
+    args.component = "bindings"
+
+line_rule = "\u2248" * 16
+path = Path(__file__).parent.resolve()
+os.chdir(path)
 
 
 def clone_xfce(component, comp_list):
     """Run 'git clone' for selected components."""
     print(f"Cloning the Xfce {component} group...")
-    os.chdir(Path(__file__).parent.resolve())
+    # os.chdir(Path(__file__).parent.resolve())
 
     def get_path(comp_group):
         # grandparent directory (../../) relative to script.
@@ -70,24 +74,24 @@ def clone_xfce(component, comp_list):
         p = Path(item)
         if p.is_dir():
             print(f"\nThe '{item}' directory already exists. Skipping...\n")
-            print("\u2248" * 16)
+            print(line_rule)
         else:
             try:
                 url = f"https://gitlab.xfce.org/{component}/{item}.git"
                 subprocess.run(["git", "clone", url], stdout=None, check=True)
                 success_count += 1
-                print("\u2248" * 16)
+                print(line_rule)
                 print(f"{item} repository cloned successfully.")
             except subprocess.CalledProcessError:
                 # On error, returns a non-zero exit status 128.
-                print("\u2248" * 16)
+                print(line_rule)
                 print(f"Failed to clone {item} repository.")
 
             print(
                 f"{success_count}/{len(component_list(comp_list))} "
                 f"'{component}' repositories cloned successfully."
             )
-            print("\u2248" * 16)
+            print(line_rule)
 
 
 def main(component_group_name):

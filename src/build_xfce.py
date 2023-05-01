@@ -1,15 +1,5 @@
 #!/usr/bin/env python3
 
-"""
-Name: build_xfce.py
-Purpose: Build local Xfce repositories
-
-source: https://gitlab.com/kevinbowen/xfce-repocapp
-version: 0.8.7
-updated: 20230314
-@author: kevin.bowen@gmail.com
-"""
-
 import argparse
 import os
 import sys
@@ -45,11 +35,14 @@ if args.component is None:
     )
     args.component = "apps"
 
+line_rule = "\u2248" * 16
+path = Path(__file__).parent.resolve()
+os.chdir(path)
+
 
 def build_xfce(component, comp_list):
     """Run autogen.sh and make on selected components."""
     print(f"Building the Xfce {component} group...")
-    os.chdir(Path(__file__).parent.resolve())
 
     def get_path(comp_group):
         # grandparent directory (../../) relative to script.
@@ -71,7 +64,6 @@ def build_xfce(component, comp_list):
                 print(f"\nRunning make for {item} ...\n")
                 time.sleep(1.5)
                 os.system("make")
-                print("\u2248" * 16)
                 os.chdir("..")
             else:
                 print("\nNothing to do...\n")
@@ -79,7 +71,7 @@ def build_xfce(component, comp_list):
                     f"The '{item}' repository does not exist.\n\n"
                     "Perhaps you need to clone it first.\n"
                 )
-                print("\u2248" * 16)
+                print(line_rule)
 
     else:
         print("Nothing to do...\n")
@@ -87,7 +79,7 @@ def build_xfce(component, comp_list):
             f"The '{component}' repositories do not exist.\n\n"
             "Perhaps you need to clone the directory first.\n"
         )
-        print("\u2248" * 16)
+        print(line_rule)
 
 
 def main(component_group_name):

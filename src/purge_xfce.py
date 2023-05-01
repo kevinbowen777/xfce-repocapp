@@ -44,7 +44,7 @@ if args.component is None:
         "No component was specified.\nPlease specify a component group'"
         " to delete with the '-c' option."
     )
-    sys.exit()
+    args.component = "apps"
 
 
 def purge_xfce(component, comp_list):

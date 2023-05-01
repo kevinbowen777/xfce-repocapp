@@ -1,15 +1,5 @@
 #!/usr/bin/env python3
 
-"""
-Name: install_xfce.py
-Purpose: Install Xfce components into system
-
-source: https://gitlab.com/kevinbowen/xfce-repocapp
-version: 0.8.7
-updated: 20230314
-@author: kevin.bowen@gmail.com
-"""
-
 import argparse
 import os
 import sys

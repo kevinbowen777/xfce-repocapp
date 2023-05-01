@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 """
 Name: cappdata.py
 Purpose: component lists and query function for use with
@@ -175,7 +173,3 @@ def query_yes_no(question, answer="no"):
             sys.stdout.write(
                 "Please respond with 'yes' or 'no' " "(or 'y' or 'n').\n"
             )
-
-
-if __name__ == "__main__":
-    pass
