@@ -1,4 +1,4 @@
-"""Nox sessions - default template - django-start"""
+"""Nox sessions - xfce-repocapp"""
 import tempfile
 
 import nox
