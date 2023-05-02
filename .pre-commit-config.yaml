@@ -1,4 +1,4 @@
-exclude: 'docs|node_modules|migrations|.git'
+exclude: 'docs|.git'
 fail_fast: true
 
 repos:
@@ -48,7 +48,7 @@ repos:
       types: [python]
   
   - repo: https://github.com/python-poetry/poetry
-    rev: '1.3.0'
+    rev: '1.4.0'
     hooks:
       - id: poetry-check
       - id: poetry-lock
