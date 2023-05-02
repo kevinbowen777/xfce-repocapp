@@ -12,8 +12,9 @@ updated: 20230315
 
 import unittest
 
-from src import cappdata  # noqa: F401
-from src.pull_xfce import pull_xfce  # noqa: F401
+from cappdata import component_list  # noqa: F401
+
+from pull_xfce import pull_xfce  # noqa: F401
 
 args = "bindings"
 

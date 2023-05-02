@@ -12,8 +12,9 @@ updated: 20230315
 
 import unittest
 
-from src import cappdata  # noqa: F401
-from src.purge_xfce import purge_xfce  # noqa: F401
+from cappdata import component_list, query_yes_no  # noqa: F401
+
+from purge_xfce import purge_xfce  # noqa: F401
 
 args = "bindings"
 

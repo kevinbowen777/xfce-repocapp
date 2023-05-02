@@ -12,8 +12,9 @@ updated: 20230315
 
 import unittest
 
-from src import cappdata  # noqa: F401
-from src.install_xfce import install_xfce  # noqa: F401
+from cappdata import component_list, query_yes_no  # noqa: F401
+
+from install_xfce import install_xfce  # noqa: F401
 
 args = "bindings"
 
