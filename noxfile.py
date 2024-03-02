@@ -1,4 +1,5 @@
 """Nox sessions - xfce-repocapp"""
+
 import tempfile
 
 import nox
