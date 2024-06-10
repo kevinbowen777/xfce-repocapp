@@ -3,7 +3,7 @@ fail_fast: true
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+    rev: v4.6.0
     hooks:
     # add supported hooks https://pre-commit.com/hooks.html
       - id: check-added-large-files
@@ -27,7 +27,7 @@ repos:
         files: (^|/)a/.+\.(py|html|sh|css|js)$
 
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.3.0
+    rev: v0.4.8
     hooks:
       # Run the linter
       - id: ruff
