@@ -2,8 +2,14 @@
 name = "xfce-repocapp"
 version = "0.8.7"
 description = "A collection of scripts to maintain local Xfce repositories"
-authors = ["Kevin Bowen <kevin.bowen@gmail.com>"]
+authors = [
+    "Kevin Bowen <kevin.bowen@gmail.com>"
+]
+maintainers = [
+]
 license = "GPL-2.0-only"
+
+package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.9"
