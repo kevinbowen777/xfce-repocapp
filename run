@@ -90,6 +90,12 @@ function reqs:prod {
   poetry export --output requirements.txt
 }
 
+function reqs:all {
+  # Export production package requirements
+  poetry export --output requirements.txt
+  poetry export --with=dev --output requirements-dev.txt
+}
+
 function secret {
   # Generate a random secret that can be used for your SECRET_KEY and more
   python3 -c 'import secrets; print(secrets.token_urlsafe(38))'

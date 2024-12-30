@@ -56,7 +56,8 @@ os.chdir(path)
 def clone_xfce(component, comp_list):
     """Run 'git clone' for selected components."""
     print(f"Cloning the Xfce {component} group...")
-    # os.chdir(Path(__file__).parent.resolve())
+    # Move to the directory where the script is located
+    os.chdir(Path(__file__).parent.resolve())
 
     def get_path(comp_group):
         # grandparent directory (../../) relative to script.
