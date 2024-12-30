@@ -1,9 +1,9 @@
-exclude: 'docs|.git'
+exclude: 'htmlcov|docs|.git'
 fail_fast: true
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.6.0
+    rev: v5.0.0
     hooks:
     # add supported hooks https://pre-commit.com/hooks.html
       - id: check-added-large-files
@@ -15,6 +15,7 @@ repos:
       - id: check-json
       - id: check-merge-conflict
       - id: check-toml
+        exclude: poetry\.lock
       - id: check-yaml
       - id: debug-statements
       # - id: detect-aws-credentials
@@ -27,7 +28,7 @@ repos:
         files: (^|/)a/.+\.(py|html|sh|css|js)$
 
   - repo: https://github.com/charliermarsh/ruff-pre-commit
-    rev: v0.4.8
+    rev: v0.8.4
     hooks:
       # Run the linter
       - id: ruff
@@ -35,28 +36,6 @@ repos:
       # Run the formatter
       - id: ruff-format
 
-  - repo: local
-    hooks:
-    - id: black
-      name: black
-      entry: poetry run black
-      language: system
-      types: [python]
-      exclude: ^.*\b(migrations)\b.*$
-      # See bug: https://github.com/psf/black/issues/2964
-      # If possible, run rev: 22.3.0 to obviate the need for pinning click
-      # additional_dependencies: ["click==8.0.4"]
-    - id: flake8
-      name: flake8
-      entry: poetry run flake8
-      language: system
-      types: [python]
-        #    - id: isort
-      # name: isort
-      # entry: poetry run isort
-      # language: system
-      # types: [python]
-  
   - repo: https://github.com/python-poetry/poetry
     rev: 1.8.0
     hooks:
