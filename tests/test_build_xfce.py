@@ -13,7 +13,6 @@ updated: 20230315
 import unittest
 
 from build_xfce import build_xfce  # noqa: F401
-
 from cappdata import component_list  # noqa: F401
 
 arg = "bindings"

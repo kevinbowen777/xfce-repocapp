@@ -18,9 +18,14 @@ fi
 
 # -----------------------------------------------------------------------------
 
-function cov:pytest {
+function cov:test {
   # Run pytest
   coverage run -m pytest "${@}"
+}
+
+function cov:test-slow {
+  # Run pytest & show 10 slowest tests
+  coverage run -m pytest "${@}" --durations 10
 }
 
 function cov:report {
@@ -33,46 +38,67 @@ function cov:html {
   coverage html "${@}"
 }
 
-function nox:black {
+function nox:cov {
   # Check code for formatting violations
-  nox -s black-3.11 "${@}"
+  nox -s coverage-3.13 "${@}"
 }
 
 function nox:docs {
   # Create Sphinx documentation in ./docs/_build directory
-  nox -s docs-3.11 "${@}"
+  nox -s docs-3.13 "${@}"
 }
 
 function nox:lint {
   # Run a number of flake8 linting tests
-  nox -s lint-3.11 "${@}"
+  nox -s lint-3.13 "${@}"
 }
 
-function nox:safety {
-  # Check code/packages for vulnerabilites against Safety db
-  nox -s safety-3.11 "${@}"
+function nox:pyright {
+  # Run pyright typing checks
+  # cmd nox -s pyright-3.13 "${@}"
+  nox -s pyright-3.13 "${@}"
+}
+
+function nox:test {
+  # Run several pytest and coverage checks
+  # cmd nox -s tests-3.13 "${@}"
+  nox -s tests-3.13 "${@}"
 }
 
 function nox:tests {
-  # Run several pytest and coverage checks
-  nox -s tests-3.11 "${@}"
-  # cmd black . "${@}"
+  # Run tests for all currently supported Python versions
+  nox -s tests-3.10 tests-3.11 tests-3.12 tests-3.13 "${@}"
+}
+
+function nox:re-tests {
+  # Run tests for all currently supported Python versions
+  nox -rs tests-3.10 tests-3.11 tests-3.12 tests-3.13 "${@}"
+}
+
+function nox:current {
+  # Run code quality tests only for latest supported Python version
+  nox -s lint-3.13 coverage-3.13 safety-3.13 tests-3.13 "${@}"
+}
+
+function nox:re-current {
+  # Run tests only for latest supported Python version
+  # DO NOT REBUILD VENVS
+  nox -s lint-3.13 coverage-3.13 safety-3.13 tests-3.13 "${@}"
 }
 
 function nox:all {
-  # Perform all nox code quality tests together(except black)
-  # cmd nox -s black-3.11 "${@}"
-  nox -s lint-3.11 "${@}"
-  nox -s safety-3.11 "${@}"
-  nox -s tests-3.11 "${@}"
+  # Perform all nox code quality tests together
+  nox
 }
 
+function nox:re-all {
+  # Perform all nox code quality tests together
+  # DO NOT REBUILD VENVS
+  nox -rs
+}
 function poe:old {
   # List any installed packages that are outdated
   poetry show -ol
-  # The following command runs twice as fast; but, requires the container
-  # to be running:
-  # cmd poetry show -ol
 }
 
 function poe:up {
@@ -96,9 +122,14 @@ function reqs:all {
   poetry export --with=dev --output requirements-dev.txt
 }
 
-function secret {
-  # Generate a random secret that can be used for your SECRET_KEY and more
-  python3 -c 'import secrets; print(secrets.token_urlsafe(38))'
+function ruff:check {
+  # check for linting errors. Do not fix.
+  ruff check .
+}
+
+function ruff:fix {
+  # check for linting errors and apply fixes.
+  ruff check --fix .
 }
 
 function help {

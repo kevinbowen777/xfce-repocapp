@@ -13,7 +13,6 @@ updated: 20230315
 import unittest
 
 from cappdata import component_list  # noqa: F401
-
 from clone_xfce import clone_xfce  # noqa: F401
 
 args = "bindings"
