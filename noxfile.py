@@ -4,7 +4,8 @@ import tempfile
 
 import nox
 
-nox.options.sessions = "lint", "safety", "tests"
+PYTHON_VERSIONS = ["3.10", "3.11", "3.12", "3.13"]
+nox.options.sessions = "lint", "tests"
 locations = (
     "src",
     "./noxfile.py",
@@ -41,64 +42,28 @@ def install_with_constraints(session, *args, **kwargs):
         session.install(f"--requirement={requirements.name}", *args, **kwargs)
 
 
-@nox.session(python=["3.12", "3.11", "3.10", "3.9", "3.8"])
-def black(session):
-    """Run black code formatter."""
-    args = session.posargs or locations
-    install_with_constraints(session, "black")
-    session.run("black", *args)
-
-
-@nox.session(python=["3.12", "3.11", "3.10", "3.9", "3.8"])
+@nox.session(python=PYTHON_VERSIONS)
 def docs(session):
     """Build the documentation."""
     install_with_constraints(session, "sphinx")
     session.run("sphinx-build", "docs", "docs/_build")
 
 
-@nox.session(python=["3.12", "3.11", "3.10", "3.9", "3.8"])
+@nox.session(python=PYTHON_VERSIONS)
 def lint(session):
-    """Lint using flake8."""
+    """Lint using ruff."""
     args = session.posargs or locations
     install_with_constraints(
         session,
-        "flake8",
-        "flake8-bandit",
-        "flake8-black",
-        "flake8-bugbear",
-        # "flake8-docstrings",
-        "flake8-import-order",
+        "ruff",
     )
-    session.run("flake8", *args)
+    session.run("ruff", "check", ".", *args)
 
 
-@nox.session(python=["3.12", "3.11", "3.10", "3.9", "3.8"])
-def safety(session):
-    """Scan dependencies for insecure packages."""
-    with tempfile.NamedTemporaryFile() as requirements:
-        session.run(
-            "poetry",
-            "export",
-            "--with",
-            "dev",
-            "--format=requirements.txt",
-            "--without-hashes",
-            f"--output={requirements.name}",
-            external=True,
-        )
-        install_with_constraints(session, "safety")
-        session.run(
-            "safety",
-            "check",
-            f"--file={requirements.name}",
-            "--full-report",
-        )
-
-
-@nox.session(python=["3.12", "3.11", "3.10", "3.9", "3.8"])
+@nox.session(python=PYTHON_VERSIONS)
 def tests(session):
     """Run the test suite."""
-    args = session.posargs or ["--cov"]
+    args = session.posargs
     with tempfile.NamedTemporaryFile() as requirements:
         session.run(
             "poetry",

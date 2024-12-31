@@ -13,7 +13,6 @@ updated: 20230315
 import unittest
 
 from cappdata import component_list  # noqa: F401
-
 from clean_xfce import clean_xfce  # noqa: F401
 
 args = "bindings"

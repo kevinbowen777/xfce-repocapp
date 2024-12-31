@@ -1,0 +1,21 @@
+name: nox-lint_multi-arch
+on: push
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+    name: Python ${{ matrix.python-version }} xfce-repocapp
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          allow-prereleases: true
+          architecture: x64
+      - run: pip install nox==2024.10.09
+      - run: pip install poetry==1.8.5
+      - run: |
+          nox -s lint-${{ matrix.python-version }}

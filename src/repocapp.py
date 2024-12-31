@@ -12,7 +12,7 @@ updated: 20230314
 """
 
 import os
-import subprocess
+import subprocess  # noqa: S404
 import sys
 from pathlib import Path
 
@@ -79,15 +79,13 @@ os.chdir(path)
 
 def main_menu():
     """Display selection of available actions to take with repositories."""
-    os.system("clear")
-    main_banner = (
-        "\u2248: xfce-repocapp: local " "Xfce repository maintenance :\u2248"
-    )
+    os.system("/usr/bin/clear")  # noqa: S605
+    main_banner = "\u2248: xfce-repocapp: local Xfce repository maintenance :\u2248"
     border = "\u2248" * len(main_banner)
     print(f"{border}\n{main_banner}\n{border}")
     main_list = list(menus.keys())
     selection = range(1, len(main_list) + 1)
-    for select, m_list in zip(selection, main_list):
+    for select, m_list in zip(selection, main_list, strict=False):
         print(f"{select}. {m_list.title()}")
     print(f"{border}")
     question = f"Please enter your choice[1-{len(menus)}]: "
@@ -110,14 +108,12 @@ def main_menu():
 
 def sub_menus(action):
     """Display actions to take upon a specific repository."""
-    os.system("clear")
-    banner = (
-        f"\u2248: xfce-repocapp: {action} " f"local Xfce repositories :\u2248"
-    )
+    os.system("/usr/bin/clear")  # noqa: S605
+    banner = f"\u2248: xfce-repocapp: {action} local Xfce repositories :\u2248"
     border = "\u2248" * len(banner)
     print(f"{border}\n{banner}\n{border}")
     selection = list(range(1, len(menus[action]) + 1))
-    for select, component in zip(selection, menus[action]):
+    for select, component in zip(selection, menus[action], strict=False):
         print(f"{select}. {action.title()} {component}")
     # Add numbers to selection list for menu options not in action list.
     selection.append(selection[-1] + 1)
@@ -144,7 +140,7 @@ def sub_menus(action):
                     component = component_list[answer - 1]
                 script = action + "_xfce.py"
                 command = f"{path}/{script} -c {component}"
-                subprocess.run([command], shell=True)
+                subprocess.run([command], shell=True)  # noqa: S602
                 press_any_key()
                 main_menu()
     except (ValueError, EOFError):
