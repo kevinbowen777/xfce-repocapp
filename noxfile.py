@@ -5,7 +5,7 @@ import tempfile
 import nox
 
 PYTHON_VERSIONS = ["3.10", "3.11", "3.12", "3.13"]
-nox.options.sessions = "lint", "tests"
+nox.options.sessions = "lint", "coverage", "tests"
 locations = (
     "src",
     "./noxfile.py",
@@ -40,6 +40,17 @@ def install_with_constraints(session, *args, **kwargs):
             external=True,
         )
         session.install(f"--requirement={requirements.name}", *args, **kwargs)
+
+
+@nox.session(python=PYTHON_VERSIONS)
+def coverage(session):
+    """Build JSON coverage report."""
+    install_with_constraints(session, "coverage")
+    session.run("coverage", "run", "-p", "-m", "pytest")
+    session.run("coverage", "combine")
+    session.run("coverage", "report", "-m", "--skip-covered")
+    session.run("coverage", "json", "-o", "htmlcov/coverage.json")
+    session.run("coverage", "html")
 
 
 @nox.session(python=PYTHON_VERSIONS)
