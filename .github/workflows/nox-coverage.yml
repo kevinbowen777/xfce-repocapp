@@ -1,4 +1,4 @@
-name: nox-coveragea
+name: nox-coverage
 on: push
 jobs:
   coverage:
@@ -34,8 +34,8 @@ jobs:
         uses: schneegans/dynamic-badges-action@v1.4.0
         with:
           auth: ${{ secrets.GIST_TOKEN }}
-          gistID: 261b3eac2838cf0bc3b365335c8323df
-          filename: covbadge.json
+          gistID: e1cbfcb69276c8b91e37a811b9fab725
+          filename: xfce-repocapp_covbadge.json
           label: Coverage
           message: ${{ env.total }}%
           minColorRange: 50
