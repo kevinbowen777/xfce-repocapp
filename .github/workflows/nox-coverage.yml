@@ -38,7 +38,7 @@ jobs:
         with:
           auth: ${{ secrets.GIST_TOKEN }}
           gistID: e1cbfcb69276c8b91e37a811b9fab725
-          filename: xfce-repocapp_covbadge.json
+          filename: xfrepos_covbadge.json
           label: Coverage
           message: ${{ env.total }}%
           minColorRange: 50

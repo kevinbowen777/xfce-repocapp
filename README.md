@@ -12,10 +12,19 @@
 A collection of scripts to maintain local Xfce repositories.
 
 The purpose of the scripts contained in the `xfrepos` repository is to
-facilitate managing your local Xfce repositories in bulk.
-Cloning, running automake, installing, purging and updating tasks are
+facilitate the management of local Xfce repositories in bulk.
+Cloning, building repositories, installing, purging and updating tasks are
 performed in groups, organized by categories, according to the official
 Xfce repository structure (https://gitlab.xfce.org).
+
+
+   * [List of scripts](#list-of-scripts)
+     * [Menu scripts](#menu-scripts)
+     * [Individual action scripts](#individual-action-scripts)
+     * [Running individual scripts](#running-individual-scripts)
+   * [Installation of xfrepos project](#installation-of-xfrepos-project)
+   * [List of repository mirrors](#list-of-repository-mirrors)
+   * [Reporting Bugs](#reporting-bugs)
 
 ----
 ### List of scripts
@@ -27,7 +36,7 @@ Xfce repository structure (https://gitlab.xfce.org).
 #### Individual action scripts
 
  - `clone_xfce.py` - Clone Xfce repositories from https://gitlab.xfce.org
- - `build_xfce.py` - Run autogen & make against local component repositories
+ - `build_xfce.py` - Compile local component repositories
 
 **N.B.: These scripts perform _ABSOLUTELY NO CHECKS_ for missing system libraries or the
 order of component compilation. It is assumed that you know what you are
@@ -55,7 +64,7 @@ For example:
  - `purge_xfce.py -c all`
 
 Running the script without an argument will, by default, act upon the `apps`
-components. This is the equivalent of running, for example, `pull_xfce -c apps`.
+components(e.g. `pull_xfce -c apps`).
 
 ----
 
@@ -64,7 +73,15 @@ components. This is the equivalent of running, for example, `pull_xfce -c apps`.
     git clone https://github.com/kevinbowen777/xfrepos.git
 
 ----
+### List of repository mirrors
+
+- https://github.com/kevinbowen777/xfrepos
+- https://gitlab.com/kevinbowen/xfrepos
+- https://codeberg.org/kevinbowen/xfrepos
+- http://bitbucket.org/kevinbowen/xfrepos
+
+----
 ### Reporting Bugs
 
-   Visit the [Issues page](https://gitlab.com/kevinbowen/xfrepos/-/issues)
+   Visit the [Issues page](https://github.com/kevinbowen777/xfrepos/issues)
      to view currently open bug reports or open a new issue.
