@@ -7,7 +7,7 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.12", "3.13", "3.14"]
-    name: Python ${{ matrix.python-version }} xfce-repocapp
+    name: Python ${{ matrix.python-version }} xfrepos
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
@@ -19,7 +19,7 @@ jobs:
           allow-prereleases: true
           architecture: x64
       - run: pip install nox==2026.8.17
-      - run: pip install poetry==2.4.2
+      - run: pip install poetry==2.4.3
       - run: pip install poetry-plugin-export==1.10.0
       - run: |
           nox -s lint-${{ matrix.python-version }}
